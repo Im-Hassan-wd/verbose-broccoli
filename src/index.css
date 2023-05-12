@@ -1,53 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 /* variables */
 :root {
-  --heading-color: #444;
-  --text-color: #999;
-  --primary-color: #8d69f1;
-  --highlight-color: #d13267;
-  --bg-color: #f4f4f4;
+  --blue: #2a85fe;
+  --smoke: #f9f9f9;
 }
 
 /* base styles */
 body {
-  font-family: Poppins, sans-serif;
-  margin: 0;
-  font-size: 1.1em;
-  background: var(--bg-color);
+  font-family: "Open Sans", sans-serif;
+  background: var(--smoke);
 }
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4 {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
 
 /* layout */
-.page-title {
-  font-size: 1em;
-  color: var(--heading-color);
-  display: inline-block;
-}
 .btn {
   background: #fff;
   padding: 8px 12px;
   border-radius: 4px;
-  color: var(--primary-color);
+  color: var(--blue);
   cursor: pointer;
-  font-size: 1em;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--blue);
 }
 .btn:hover {
   color: #fff;
-  background-color: var(--primary-color);
+  background-color: var(--blue);
 }
 
 /* forms */
