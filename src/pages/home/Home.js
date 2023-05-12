@@ -1,6 +1,11 @@
 // styles
+import Create from "./Create";
 import "./Home.css";
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Create />
+    </div>
+  );
 }

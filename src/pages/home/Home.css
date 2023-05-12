@@ -1,0 +1,45 @@
+.create-post {
+  background: #ffff;
+  border-radius: 10px;
+  margin: 32px;
+  padding: 16px 24px;
+  border: 1px solid #f5f5f5;
+}
+.create-post input {
+  padding: 10px;
+  background: var(--smoke);
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+.create-post .icons {
+  margin-top: 16px;
+}
+.create-post svg {
+  width: 25px;
+  margin: 0 8px;
+}
+.create-post .action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create-post button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--smoke);
+  border: none;
+  width: 100px;
+  padding: 8px 0;
+  border-radius: 5px;
+}
+button.edit {
+  background: none;
+}
+button.edit svg {
+  width: 20px;
+}
+.form-btn {
+  display: flex;
+  align-items: center;
+}
