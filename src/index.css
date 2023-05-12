@@ -6,6 +6,10 @@
   --smoke: #f9f9f9;
   --black: #17191d;
   --gray: #8d9196;
+  --dark-100: #34353e;
+  --dark-200: #27282f;
+  --dark-300: #1e1f23;
+  --dark-400: #17181c;
 }
 
 /* base styles */

@@ -1,18 +1,21 @@
 import { NavLink } from "react-router-dom";
+import { useTheme } from "../hooks/useTheme";
 
 // styles
 import "./Sidebar.css";
 
 export default function Sidebar() {
+  const { color } = useTheme();
+
   return (
     <div className="sidebar">
       <div className="logo">
-        <span>Chatter</span>
+        <span style={{ color: color }}>Chatter</span>
       </div>
 
       <ul>
         <li>
-          <NavLink exact to="/">
+          <NavLink style={{ color: color }} exact to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

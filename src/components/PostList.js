@@ -7,7 +7,7 @@ export default function PostList({ posts }) {
     <div className="">
       {posts.length === 0 && <p>No posts yet!</p>}
       {posts.map((post) => (
-        <div className="post">
+        <div className="post" key={post.id}>
           <div className="info">
             <Avatar src={post.author.photoURL} />
             <li>
