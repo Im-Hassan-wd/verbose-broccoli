@@ -1,8 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
+
+// components
+import Avatar from "./Avatar";
+
 // styles
 import "./Navbar.css";
 
 export default function Navbar() {
+  const { logout, isPending } = useLogout();
+  const { user } = useAuthContext();
+
   return (
     <nav>
       <div className="logo">
@@ -35,7 +44,7 @@ export default function Navbar() {
           <NavLink to="/friends">Mutual Friends</NavLink>
         </li>
       </ul>
-      <div className="">
+      <div className="more">
         <button className="action">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +61,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <button className="action">
+        <button className="action" onClick={logout}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -69,8 +78,8 @@ export default function Navbar() {
           </svg>
         </button>
         <button className="user">
-          <span>Hey user</span>
-          {/* <Avatar /> */}
+          <span>{user.displayName}</span>
+          <Avatar src={user.photoURL} />
         </button>
       </div>
     </nav>

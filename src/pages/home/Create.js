@@ -1,12 +1,77 @@
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useFirestore } from "../../hooks/useFirestore";
+import Avatar from "../../components/Avatar";
+
 export default function Create() {
+  const { user } = useAuthContext();
+  const history = useHistory();
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState(null);
+  const [imageError, setImageError] = useState(null);
+  const { addDocument, response } = useFirestore("posts");
+
+  const handleFileChange = (e) => {
+    setImage(null);
+    let selected = e.target.files[0];
+    console.log(selected);
+
+    if (!selected) {
+      setImageError("Please select a file");
+      return;
+    }
+    if (!selected.type.includes("image")) {
+      setImageError("Selected file must be an image");
+      return;
+    }
+
+    setImageError(null);
+    setImage(selected);
+    console.log("thumbnail updated");
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const author = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.uid,
+    };
+
+    const post = {
+      content,
+      comments: [],
+      likes: "",
+      share: "",
+      impressions: [],
+      author,
+    };
+
+    await addDocument(post, image);
+    if (!response.erro) {
+      history.push("/");
+    }
+  };
+
   return (
-    <form className="create-post">
-      <div className="">
-        {/* avatar */}
-        <input type="text" placeholder="What's on your mind?" />
-      </div>
+    <form className="create-post" onSubmit={handleSubmit}>
+      {/* <textarea placeholder="What's on your mind?"></textarea> */}
+      <Avatar src={user.photoURL} />
+      <input
+        type="text"
+        placeholder="What's on your mind?"
+        onChange={(e) => setContent(e.target.value)}
+        value={content}
+      />
+
+      <input type="file" id="file" onChange={handleFileChange} />
+      {imageError && <div className="error">{imageError}</div>}
+
       <div className="action">
         <div className="icons">
+          {/* <label htmlFor="file"> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -26,6 +91,7 @@ export default function Create() {
               d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
             />
           </svg>
+          {/* </label> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

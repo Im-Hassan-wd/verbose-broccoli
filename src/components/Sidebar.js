@@ -51,7 +51,7 @@ export default function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/s">
+          <NavLink to="/settings">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

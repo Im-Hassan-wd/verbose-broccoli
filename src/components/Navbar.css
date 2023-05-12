@@ -22,9 +22,8 @@ nav ul {
 nav a {
   display: inline-block;
   color: var(--black);
-  padding: 5px 24px;
+  padding: 5px 16px;
   font-size: 14px;
-  margin: 0 16px;
   border-radius: 3px;
 }
 nav a.active {
@@ -37,23 +36,33 @@ nav svg {
   width: 30px;
 }
 nav button svg {
-  width: 25px;
+  width: 20px;
 }
-nav button.action {
+nav .more {
+  display: flex;
+  align-items: center;
+}
+nav .action {
   background: var(--smoke);
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin: 0 8px;
   border: none;
   cursor: pointer;
 }
 
-/* nav button.user {
+nav .user {
   display: flex;
   justify-content: center;
   align-items: center;
   background: none;
   border: none;
-  width: 20px;
-} */
+  gap: 10px;
+  margin-left: 16px;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
+nav .user span {
+  font-size: 16px;
+}
