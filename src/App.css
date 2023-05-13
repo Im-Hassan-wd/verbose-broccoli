@@ -4,6 +4,9 @@
 .App.dark {
   background: var(--dark-400);
 }
+.App.dark .loading {
+  color: #fff;
+}
 .App .container {
   flex-grow: 1;
 }

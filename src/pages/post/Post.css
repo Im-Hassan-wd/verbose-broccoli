@@ -1,0 +1,30 @@
+.post-details {
+  margin: 24px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 10px;
+}
+.post-details .navigation {
+  margin: 16px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navigation svg {
+  width: 30px;
+}
+.navigation span {
+  font-size: 20px;
+}
+
+/* dark mode  */
+.post-details.dark {
+  background: var(--dark-300);
+  color: #fff;
+}
+.post-details.dark .navigation {
+  color: #fff;
+}

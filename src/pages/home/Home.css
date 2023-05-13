@@ -46,6 +46,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.create-post-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 button.edit {
   background: none;
 }
@@ -70,6 +75,6 @@ button.edit svg {
   color: #fff;
   background: var(--dark-100);
 }
-button.edit {
+.create-post.dark button.edit {
   background: none;
 }

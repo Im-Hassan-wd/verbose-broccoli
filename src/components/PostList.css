@@ -3,6 +3,7 @@
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
+  display: block;
 }
 .post .info {
   padding: 16px;

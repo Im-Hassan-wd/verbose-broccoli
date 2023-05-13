@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import Avatar from "./Avatar";
 // styles
@@ -10,7 +11,7 @@ export default function PostList({ posts }) {
     <div className="">
       {posts.length === 0 && <p>No posts yet!</p>}
       {posts.map((post) => (
-        <div className={`post ${mode}`} key={post.id}>
+        <Link className={`post ${mode}`} key={post.id} to={`/posts/${post.id}`}>
           <div className="info">
             <Avatar src={post.author.photoURL} />
             <li>
@@ -48,7 +49,7 @@ export default function PostList({ posts }) {
           </div>
           <p>{post.content}</p>
           <img className="post-img" src={post.imageURL} alt="" />
-        </div>
+        </Link>
       ))}
     </div>
   );
