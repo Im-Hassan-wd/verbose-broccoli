@@ -10,12 +10,12 @@ export default function Sidebar() {
   return (
     <div className={`sidebar ${mode}`}>
       <div className="logo">
-        <span style={{ color: color }}>Chatter</span>
+        <span className={`color-${color}`}>Chatter</span>
       </div>
 
       <ul>
         <li>
-          <NavLink className={`${mode}`} style={{ color: color }} exact to="/">
+          <NavLink className={`${mode} color-${color}`} exact to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -35,7 +35,7 @@ export default function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className={`${mode}`} to="/c">
+          <NavLink className={`${mode} color-${color}`} to="/c">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,7 +54,7 @@ export default function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className={`${mode}`} to="/settings">
+          <NavLink className={`${mode} color-${color}`} to="/settings">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

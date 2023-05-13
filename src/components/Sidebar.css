@@ -1,20 +1,23 @@
 .sidebar {
-  /* position: fixed;
-  top: 0; */
   border: 1px solid #f5f5f5;
   padding: 24px;
   width: 250px;
   background: #fff;
   height: 100vh;
 }
-.sidebar.dark {
-  border: 1px solid var(--dark-100);
-  background: var(--dark-300);
-}
+/* logo theme color  */
 .sidebar .logo span {
   font-size: 30px;
-  font-weight: 600;
-  color: var(--blue);
+  font-weight: bold;
+}
+.sidebar .logo span.color-b70233 {
+  color: #b70233;
+}
+.sidebar .logo span.color-2a85fe {
+  color: #2a85fe;
+}
+.sidebar .logo span.color-249c6b {
+  color: #249c6b;
 }
 .sidebar ul {
   margin: 24px 0;
@@ -31,17 +34,37 @@
 .sidebar li a.dark {
   color: #fff;
 }
-.sidebar li a:hover {
-  color: var(--blue);
+/* hover color  */
+.sidebar li a.color-b70233:hover {
+  color: #b70233;
 }
+.sidebar li a.color-2a85fe:hover {
+  color: #2a85fe;
+}
+.sidebar li a.color-249c6b:hover {
+  color: #249c6b;
+}
+/* active color  */
 .sidebar li a.active {
   background: var(--smoke);
-  color: var(--blue);
+}
+.sidebar li a.color-249c6b.active {
+  color: #249c6b;
+}
+.sidebar li a.color-b70233.active {
+  color: #b70233;
+}
+.sidebar li a.color-2a85fe.active {
+  color: #2a85fe;
 }
 .sidebar li a.active.dark {
   background: var(--dark-100);
-  color: #fff;
 }
 .sidebar svg {
   width: 25px;
+}
+/* dark mode  */
+.sidebar.dark {
+  border: 1px solid var(--dark-100);
+  background: var(--dark-300);
 }

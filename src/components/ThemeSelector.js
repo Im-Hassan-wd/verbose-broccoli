@@ -4,7 +4,7 @@ import modeIcon from "../assets/mode-icon.svg";
 // styles
 import "./ThemeSelector.css";
 
-const themeColors = ["#58249c", "#249c6b", "#b70233"];
+const themeColors = ["2a85fe", "249c6b", "b70233"];
 
 export default function ThemeSelector() {
   const { changeColor, mode, changeMode } = useTheme();
@@ -28,7 +28,7 @@ export default function ThemeSelector() {
           <div
             key={color}
             onClick={() => changeColor(color)}
-            style={{ background: color }}
+            style={{ background: "#" + color }}
           />
         ))}
       </div>
