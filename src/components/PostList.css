@@ -1,0 +1,43 @@
+.post {
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.post .info {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.post-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.post p {
+  margin: 10px 0;
+  padding: 0 16px;
+}
+.post svg {
+  width: 20px;
+}
+.post li {
+  margin-right: auto;
+  list-style: none;
+}
+.post span {
+  display: block;
+}
+.post span:nth-child(1) {
+  font-size: 20px;
+}
+.post span:nth-child(2) {
+  color: var(--gray);
+}
+
+/* dark mode  */
+.post.dark {
+  background: var(--dark-300);
+  color: #fff;
+}

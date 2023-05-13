@@ -1,13 +1,16 @@
+import { useTheme } from "../hooks/useTheme";
 import Avatar from "./Avatar";
 // styles
 import "./PostList.css";
 
 export default function PostList({ posts }) {
+  const { mode } = useTheme();
+
   return (
     <div className="">
       {posts.length === 0 && <p>No posts yet!</p>}
       {posts.map((post) => (
-        <div className="post" key={post.id}>
+        <div className={`post ${mode}`} key={post.id}>
           <div className="info">
             <Avatar src={post.author.photoURL} />
             <li>

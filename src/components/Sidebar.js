@@ -5,17 +5,17 @@ import { useTheme } from "../hooks/useTheme";
 import "./Sidebar.css";
 
 export default function Sidebar() {
-  const { color } = useTheme();
+  const { color, mode } = useTheme();
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${mode}`}>
       <div className="logo">
         <span style={{ color: color }}>Chatter</span>
       </div>
 
       <ul>
         <li>
-          <NavLink style={{ color: color }} exact to="/">
+          <NavLink className={`${mode}`} style={{ color: color }} exact to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -35,7 +35,7 @@ export default function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/c">
+          <NavLink className={`${mode}`} to="/c">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,7 +54,7 @@ export default function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/settings">
+          <NavLink className={`${mode}`} to="/settings">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

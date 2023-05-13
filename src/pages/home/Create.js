@@ -3,9 +3,11 @@ import { useHistory } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
+import { useTheme } from "../../hooks/useTheme";
 
 export default function Create() {
   const { user } = useAuthContext();
+  const { mode, color } = useTheme();
   const history = useHistory();
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
@@ -56,7 +58,7 @@ export default function Create() {
   };
 
   return (
-    <form className="create-post" onSubmit={handleSubmit}>
+    <form className={`create-post ${mode}`} onSubmit={handleSubmit}>
       {/* <textarea placeholder="What's on your mind?"></textarea> */}
       <Avatar src={user.photoURL} />
       <input

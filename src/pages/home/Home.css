@@ -1,43 +1,6 @@
 .home {
   margin: 24px;
 }
-.post {
-  margin-bottom: 20px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.post .info {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.post-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-.post p {
-  margin: 10px 0;
-  padding: 0 16px;
-}
-.post svg {
-  width: 20px;
-}
-.post li {
-  margin-right: auto;
-  list-style: none;
-}
-.post span {
-  display: block;
-}
-.post span:nth-child(1) {
-  font-size: 20px;
-}
-.post span:nth-child(2) {
-  color: var(--gray);
-}
 
 /* create new post  */
 .create-post {
@@ -92,4 +55,21 @@ button.edit svg {
 .form-btn {
   display: flex;
   align-items: center;
+}
+
+/* dark mode  */
+.create-post.dark {
+  background: var(--dark-300);
+  border: 1px solid var(--dark-100);
+}
+.create-post.dark input {
+  background: var(--dark-200);
+  outline-color: var(--dark-100);
+}
+.create-post.dark button {
+  color: #fff;
+  background: var(--dark-100);
+}
+button.edit {
+  background: none;
 }

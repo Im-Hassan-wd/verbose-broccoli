@@ -7,6 +7,10 @@
   background: #fff;
   height: 100vh;
 }
+.sidebar.dark {
+  border: 1px solid var(--dark-100);
+  background: var(--dark-300);
+}
 .sidebar .logo span {
   font-size: 30px;
   font-weight: 600;
@@ -24,12 +28,19 @@
   gap: 10px;
   border-radius: 5px;
 }
+.sidebar li a.dark {
+  color: #fff;
+}
 .sidebar li a:hover {
   color: var(--blue);
 }
 .sidebar li a.active {
   background: var(--smoke);
   color: var(--blue);
+}
+.sidebar li a.active.dark {
+  background: var(--dark-100);
+  color: #fff;
 }
 .sidebar svg {
   width: 25px;

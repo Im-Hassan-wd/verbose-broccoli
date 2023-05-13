@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
+import { useTheme } from "./hooks/useTheme";
 import "./App.css";
 
 // pages & components
@@ -13,8 +14,9 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
+  const { mode } = useTheme();
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}

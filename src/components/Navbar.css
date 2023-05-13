@@ -66,3 +66,23 @@ nav .user {
 nav .user span {
   font-size: 16px;
 }
+
+/* dark mode */
+nav.dark {
+  background: var(--dark-300);
+  border: 1px solid var(--dark-100);
+  color: #fff;
+}
+nav ul.dark {
+  background: var(--dark-200);
+}
+nav ul a.dark {
+  color: #fff;
+}
+nav ul a.dark.active {
+  background: var(--dark-100);
+  color: #fff;
+}
+nav.dark button span {
+  color: #fff;
+}

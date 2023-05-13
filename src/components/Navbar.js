@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
-import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { useLogout } from "../hooks/useLogout";
+import { useTheme } from "../hooks/useTheme";
+import { NavLink } from "react-router-dom";
 
 // components
 import Avatar from "./Avatar";
@@ -11,9 +12,10 @@ import "./Navbar.css";
 export default function Navbar() {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
+  const { mode } = useTheme();
 
   return (
-    <nav>
+    <nav className={`${mode}`}>
       <div className="logo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,17 +33,21 @@ export default function Navbar() {
         </svg>
         <span>Home</span>
       </div>
-      <ul>
+      <ul className={`${mode}`}>
         <li>
-          <NavLink exact to="/">
+          <NavLink className={`${mode}`} exact to="/">
             Explore
           </NavLink>
         </li>
         <li>
-          <NavLink to="/community">Community Feed</NavLink>
+          <NavLink className={`${mode}`} to="/community">
+            Community Feed
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/friends">Mutual Friends</NavLink>
+          <NavLink className={`${mode}`} to="/friends">
+            Mutual Friends
+          </NavLink>
         </li>
       </ul>
       <div className="more">

@@ -1,6 +1,9 @@
 .App {
   display: flex;
 }
+.App.dark {
+  background: var(--dark-400);
+}
 .App .container {
   flex-grow: 1;
 }
