@@ -1,8 +1,9 @@
 .post-details {
   margin: 24px;
   border-radius: 10px;
+  background: #fff;
 }
-.post-details .navigation {
+.navigation {
   margin-bottom: 16px;
   display: flex;
   gap: 10px;
@@ -10,6 +11,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  margin: 16px 24px;
 }
 .navigation svg {
   width: 30px;
@@ -19,6 +21,7 @@
 }
 .post-summary {
   background: #fff;
+  border-radius: 10px 10px 0px 0px;
 }
 .post-summary .post-summary-img {
   width: 100%;
@@ -54,9 +57,13 @@
 }
 
 /* dark mode  */
-.post-summary.dark {
+.post-summary.dark,
+.post-details.dark {
   background: var(--dark-300);
   color: #fff;
+  border: none;
+}
+.post-details.dark {
   border: 1px solid var(--dark-100);
 }
 .post-details.dark .navigation {

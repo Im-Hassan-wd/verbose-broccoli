@@ -50,7 +50,9 @@ export default function PostList({ posts }) {
               </svg>
             </div>
             <p>{post.content}</p>
-            <img className="post-img" src={post.imageURL} alt="" />
+            {post.imageURL && (
+              <img className="post-img" src={post.imageURL} alt="" />
+            )}
           </Link>
           <Reaction post={post} />
         </div>

@@ -3,7 +3,7 @@
 }
 .comment-form input {
   padding: 10px;
-  background: #fff;
+  background: var(--smoke);
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
   border: none;

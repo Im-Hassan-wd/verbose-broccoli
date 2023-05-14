@@ -57,27 +57,44 @@ export const useFirestore = (collection) => {
   // add a document
   const addDocument = async (doc, image) => {
     dispatch({ type: "IS_PENDING" });
+    if (image) {
+      try {
+        // if doc include images
+        // upload doc iamge
 
-    try {
-      // if doc include images
-      // upload doc iamge
-      const uploadPath = `images/${image.name}`;
-      const img = await storage.ref(uploadPath).put(image);
-      const downloadURL = await img.ref.getDownloadURL();
+        const uploadPath = `images/${image.name}`;
+        const img = await storage.ref(uploadPath).put(image);
+        const downloadURL = await img.ref.getDownloadURL();
 
-      const createdAt = timestamp.fromDate(new Date());
+        const createdAt = timestamp.fromDate(new Date());
 
-      const addedDocument = await ref.add({
-        ...doc,
-        createdAt,
-        imageURL: downloadURL,
-      });
-      dispatchIfNotCancelled({
-        type: "ADDED_DOCUMENT",
-        payload: addedDocument,
-      });
-    } catch (err) {
-      dispatchIfNotCancelled({ type: "ERROR", payload: err.message });
+        const addedDocument = await ref.add({
+          ...doc,
+          createdAt,
+          imageURL: downloadURL,
+        });
+        dispatchIfNotCancelled({
+          type: "ADDED_DOCUMENT",
+          payload: addedDocument,
+        });
+      } catch (err) {
+        dispatchIfNotCancelled({ type: "ERROR", payload: err.message });
+      }
+    } else {
+      try {
+        const createdAt = timestamp.fromDate(new Date());
+
+        const addedDocument = await ref.add({
+          ...doc,
+          createdAt,
+        });
+        dispatchIfNotCancelled({
+          type: "ADDED_DOCUMENT",
+          payload: addedDocument,
+        });
+      } catch (err) {
+        dispatchIfNotCancelled({ type: "ERROR", payload: err.message });
+      }
     }
   };
 

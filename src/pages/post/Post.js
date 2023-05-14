@@ -22,7 +22,7 @@ export default function Post() {
   }
 
   return (
-    <div className={`post-details ${mode}`}>
+    <>
       <button className="navigation" onClick={() => history.goBack()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +41,10 @@ export default function Post() {
 
         <span>Posts</span>
       </button>
-      <PostSummary post={document} />
-      <PostComment post={document} />
-    </div>
+      <div className={`post-details ${mode}`}>
+        <PostSummary post={document} />
+        <PostComment post={document} />
+      </div>
+    </>
   );
 }
