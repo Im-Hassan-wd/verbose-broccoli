@@ -2,6 +2,7 @@ import Avatar from "../../components/Avatar";
 import Input from "../../components/Input";
 import { useTheme } from "../../hooks/useTheme";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Reaction from "../../components/Reaction";
 
 export default function PostSummary({ post }) {
   const { mode } = useTheme();
@@ -47,17 +48,7 @@ export default function PostSummary({ post }) {
         </div>
         <p>{post.content}</p>
         <img className="post-summary-img" src={post.imageURL} alt="" />
-        <div className="reaction">
-          <button>
-            <span>Like</span>
-          </button>
-          <button>
-            <span>Comment</span>
-          </button>
-          <button>
-            <span>Share</span>
-          </button>
-        </div>
+        <Reaction post={post} />
       </div>
       <div className="comment-header">
         <Avatar src={user.photoURL} />

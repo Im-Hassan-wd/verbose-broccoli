@@ -2,7 +2,9 @@
 
 /* variables */
 :root {
+  --red: #ff4545;
   --blue: #2a85fe;
+  --purple: #a058b3;
   --smoke: #f9f9f9;
   --black: #17191d;
   --gray: #8d9196;
@@ -78,4 +80,30 @@ textarea {
   padding: 8px;
   margin: 10px 0;
   font-size: 12px;
+}
+
+/* color theme picker */
+a.dark {
+  color: #fff;
+}
+a.color-a058b3.active,
+p.color-a058b3,
+div.color-a058b3,
+button.color-a058b3 {
+  color: var(--purple);
+}
+a.color-ff4545.active,
+p.color-ff4545,
+div.color-ff4545,
+button.color-ff4545 {
+  color: var(--red);
+}
+a.color-2a85fe.active,
+p.color-2a85fe,
+div.color-2a85fe,
+button.color-2a85fe {
+  color: var(--blue);
+}
+a.active.dark {
+  background: var(--dark-100);
 }

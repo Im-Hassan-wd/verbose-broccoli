@@ -1,7 +1,6 @@
 import Avatar from "../../components/Avatar";
 
 export default function PostComment({ post }) {
-  console.log(post.comments);
   return (
     <ul className="post-comments">
       {post.comments.length > 0 &&

@@ -45,7 +45,7 @@ export default function Create() {
     const post = {
       content,
       comments: [],
-      likes: "",
+      likes: [],
       share: "",
       impressions: [],
       author,

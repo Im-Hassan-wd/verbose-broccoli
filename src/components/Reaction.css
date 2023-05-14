@@ -8,7 +8,30 @@
   background: none;
   border: none;
   padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.dark .reaction .reactions {
+  color: #fff;
+}
+.reaction svg {
+  width: 20px;
 }
 .reaction span {
   font-size: 14px;
+}
+.reaction .like {
+  display: flex;
+  align-items: center;
+}
+.reaction .count {
+  background: var(--smoke);
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+.dark .reaction .count {
+  background: var(--dark-100);
 }
