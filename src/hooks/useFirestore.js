@@ -66,6 +66,7 @@ export const useFirestore = (collection) => {
       const downloadURL = await img.ref.getDownloadURL();
 
       const createdAt = timestamp.fromDate(new Date());
+
       const addedDocument = await ref.add({
         ...doc,
         createdAt,

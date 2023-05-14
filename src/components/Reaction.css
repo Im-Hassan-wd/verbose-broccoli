@@ -1,0 +1,14 @@
+.reaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 8px 0;
+}
+.reaction button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+}
+.reaction span {
+  font-size: 14px;
+}

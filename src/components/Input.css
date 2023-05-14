@@ -1,0 +1,22 @@
+.comment-form {
+  width: 100%;
+}
+.comment-form input {
+  padding: 10px;
+  background: #fff;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  outline-color: #f5f5f5;
+  min-width: 100%;
+}
+.comment-form svg {
+  color: var(--gray);
+  width: 30px;
+}
+
+/* dark mode  */
+.comment-form.dark input {
+  background: var(--dark-200);
+  outline-color: var(--dark-100);
+}

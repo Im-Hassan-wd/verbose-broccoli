@@ -4,6 +4,8 @@ import "./Post.css";
 import { useParams, useHistory } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { useTheme } from "../../hooks/useTheme";
+import PostSummary from "./PostSummary";
+import PostComment from "./PostComment";
 
 export default function Post() {
   const { mode } = useTheme();
@@ -39,7 +41,8 @@ export default function Post() {
 
         <span>Posts</span>
       </button>
-      <h1>{document.content}</h1>
+      <PostSummary post={document} />
+      <PostComment post={document} />
     </div>
   );
 }

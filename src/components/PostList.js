@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import Avatar from "./Avatar";
+import Reaction from "./Reaction";
 // styles
 import "./PostList.css";
 
@@ -15,7 +16,7 @@ export default function PostList({ posts }) {
           <div className="info">
             <Avatar src={post.author.photoURL} />
             <li>
-              <span>{post.author.displayName}</span>
+              <span className="name">{post.author.displayName}</span>
               <span>date here</span>
             </li>
             <svg
@@ -49,6 +50,7 @@ export default function PostList({ posts }) {
           </div>
           <p>{post.content}</p>
           <img className="post-img" src={post.imageURL} alt="" />
+          <Reaction post={post} />
         </Link>
       ))}
     </div>

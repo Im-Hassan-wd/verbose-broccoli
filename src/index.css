@@ -31,6 +31,9 @@ a {
 }
 
 /* layout */
+button {
+  font-family: "Open Sans", sans-serif;
+}
 .btn {
   background: #fff;
   padding: 8px 12px;

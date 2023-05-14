@@ -1,11 +1,9 @@
 .post-details {
   margin: 24px;
-  padding: 16px;
-  background: #fff;
   border-radius: 10px;
 }
 .post-details .navigation {
-  margin: 16px 0;
+  margin-bottom: 16px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -19,12 +17,51 @@
 .navigation span {
   font-size: 20px;
 }
+.post-summary {
+  background: #fff;
+}
+.post-summary .post-summary-img {
+  width: 100%;
+}
+.comment-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* post comment  */
+.post-comments li {
+  padding: 16px;
+  padding-bottom: 0px;
+  margin-top: 20px;
+}
+.comment-author {
+  display: flex;
+  align-items: center;
+}
+.comment-author .avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.comment-date {
+  color: var(--gray);
+  font-size: 0.9em;
+  margin: 4px 0 10px;
+}
+.comment-content {
+  font-size: 0.9em;
+}
 
 /* dark mode  */
-.post-details.dark {
+.post-summary.dark {
   background: var(--dark-300);
   color: #fff;
+  border: 1px solid var(--dark-100);
 }
 .post-details.dark .navigation {
+  color: #fff;
+}
+.post-details.dark ul {
   color: #fff;
 }
