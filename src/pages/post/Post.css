@@ -97,3 +97,6 @@
 .dark .post-comments li {
   border-bottom: 1px solid var(--dark-200);
 }
+.dark .navigation {
+  color: #fff;
+}
