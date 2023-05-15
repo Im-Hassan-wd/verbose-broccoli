@@ -18,6 +18,7 @@ export default function Create() {
     setImage(null);
     let selected = e.target.files[0];
     console.log(selected);
+    console.log(e.target.files);
 
     if (!selected) {
       setImageError("Please select a file");
@@ -61,12 +62,21 @@ export default function Create() {
     <form className={`create-post ${mode}`} onSubmit={handleSubmit}>
       <div className="create-post-header">
         <Avatar src={user.photoURL} />
-        <input
+        {/* <input
           type="text"
           placeholder="What's on your mind?"
           onChange={(e) => setContent(e.target.value)}
           value={content}
-        />
+        /> */}
+        <textarea
+          name=""
+          id=""
+          cols="0"
+          rows="0"
+          placeholder="What's on your mind?"
+          onChange={(e) => setContent(e.target.value)}
+          value={content}
+        ></textarea>
       </div>
 
       <input
@@ -143,6 +153,7 @@ export default function Create() {
             />
           </svg>
         </div>
+        {image && <img src={image.name} />}
         <div className="form-btn">
           <button className="edit">
             <svg

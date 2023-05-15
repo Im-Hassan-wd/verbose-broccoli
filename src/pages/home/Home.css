@@ -10,13 +10,17 @@
   border: 1px solid #f5f5f5;
   margin-bottom: 24px;
 }
-.create-post input {
+
+textarea {
+  height: 20px;
   padding: 10px;
   background: var(--smoke);
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
   border: none;
   outline-color: #f5f5f5;
+  resize: none;
+  width: 100%;
 }
 .create-post label {
   display: inline;
