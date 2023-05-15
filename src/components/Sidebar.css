@@ -3,7 +3,7 @@
   padding: 24px;
   width: 250px;
   background: #fff;
-  height: 100vh;
+  min-height: 100%;
 }
 /* logo theme color  */
 .sidebar .logo span {

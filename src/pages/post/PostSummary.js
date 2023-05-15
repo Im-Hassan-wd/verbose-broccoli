@@ -15,7 +15,9 @@ export default function PostSummary({ post }) {
           <Avatar src={post.author.photoURL} />
           <li>
             <span>{post.author.displayName}</span>
-            <span>date here</span>
+            <span className="post-date">
+              {post.createdAt.toDate().toDateString().slice(3)}
+            </span>
           </li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
