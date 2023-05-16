@@ -18,6 +18,7 @@ export default function Reaction({ post }) {
 
   const like = likedPost();
 
+  // like to add
   const handleLike = async () => {
     const likeToAdd = {
       displayName: user.displayName,
@@ -27,6 +28,7 @@ export default function Reaction({ post }) {
       uid: user.uid,
     };
 
+    // check whether post has been liked by user
     if (like.length && like[0].uid === user.uid) {
       console.log("you already like this post");
     } else {

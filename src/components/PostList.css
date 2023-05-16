@@ -39,6 +39,9 @@
 .post-summary span {
   display: block;
 }
+.post a {
+  width: 100%;
+}
 .post-date {
   color: var(--gray);
   font-size: 14px;

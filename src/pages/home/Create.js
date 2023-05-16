@@ -4,15 +4,17 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
 import { useTheme } from "../../hooks/useTheme";
+// import natural from "natural";
 
 export default function Create() {
   const { user } = useAuthContext();
   const { mode, color } = useTheme();
   const history = useHistory();
+
+  const { addDocument, response } = useFirestore("posts");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
-  const { addDocument, response } = useFirestore("posts");
 
   const handleFileChange = (e) => {
     setImage(null);
@@ -35,6 +37,9 @@ export default function Create() {
   };
 
   const handleSubmit = async (e) => {
+    // const keywords = extractKeywords(content);
+    // console.log(keywords);
+
     e.preventDefault();
 
     const author = {
@@ -48,7 +53,9 @@ export default function Create() {
       comments: [],
       likes: [],
       share: "",
-      impressions: [],
+      bookmarked: [],
+      expands: 0,
+      views: [],
       author,
     };
 

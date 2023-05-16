@@ -1,5 +1,5 @@
 import Avatar from "../../components/Avatar";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+// import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 export default function PostComment({ post }) {
   return (
@@ -34,9 +34,10 @@ export default function PostComment({ post }) {
               <span>{comment.content}</span>
             </div>
             <div className="comment-date">
-              {formatDistanceToNow(comment.createdAt.toDate(), {
+              {/* {formatDistanceToNow(comment.createdAt.toDate(), {
                 addSuffix: true,
-              })}
+              })} */}
+              date here
             </div>
           </li>
         ))}
