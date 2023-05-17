@@ -3,7 +3,7 @@
   padding: 24px;
   width: 250px;
   background: #fff;
-  min-height: 100%;
+  min-height: 100vh;
 }
 /* logo theme color  */
 .sidebar .logo span {
@@ -54,4 +54,32 @@
 .sidebar.dark {
   border: 1px solid var(--dark-100);
   background: var(--dark-300);
+}
+
+@media (max-width: 890px) {
+  .sidebar {
+    width: auto;
+    padding: 24px 0;
+  }
+  .sidebar .logo {
+    display: none;
+  }
+  .sidebar a span {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .sidebar {
+    position: fixed;
+    width: 230px;
+    left: 0;
+    top: 0;
+    padding: 24px;
+    /* z-index: 10; */
+  }
+  .sidebar .logo,
+  .sidebar a span {
+    display: initial;
+  }
 }

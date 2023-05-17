@@ -76,7 +76,7 @@
   margin: 4px 0 10px;
 }
 .comment-content {
-  font-size: 0.9em;
+  display: flex;
 }
 
 /* dark mode  */

@@ -8,5 +8,16 @@
   color: #fff;
 }
 .App .container {
-  flex-grow: 1;
+  width: 100%;
+}
+
+@media (max-width: 550px) {
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+  }
 }

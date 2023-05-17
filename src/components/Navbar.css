@@ -86,3 +86,14 @@ nav ul a.dark.active {
 nav.dark button span {
   color: #fff;
 }
+
+@media (max-width: 890px) {
+  nav .logo {
+    display: none;
+  }
+}
+@media (max-width: 690px) {
+  nav .user span {
+    display: none;
+  }
+}

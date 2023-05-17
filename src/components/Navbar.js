@@ -44,11 +44,6 @@ export default function Navbar() {
             Community Feed
           </NavLink>
         </li>
-        <li>
-          <NavLink className={`${mode}`} to="/friends">
-            Mutual Friends
-          </NavLink>
-        </li>
       </ul>
       <div className="more">
         <button className="action">

@@ -30,15 +30,17 @@ export default function PostComment({ post }) {
           <li key={comment.id}>
             <div className="comment-author">
               <Avatar src={comment.photoURL} />
-              <p>{comment.displayName}:</p>
-              <span>{comment.content}</span>
+              <div className="comment-content">
+                <p>{comment.displayName}:</p>
+                <span>{comment.content}</span>
+              </div>
             </div>
-            <div className="comment-date">
+            <span className="comment-date">
+              date here
               {/* {formatDistanceToNow(comment.createdAt.toDate(), {
                 addSuffix: true,
               })} */}
-              date here
-            </div>
+            </span>
           </li>
         ))}
     </ul>
