@@ -5,6 +5,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";
+import Confirm from "./Confirm";
 
 // styles
 import "./PostList.css";
@@ -23,6 +24,7 @@ export default function PostList({ posts }) {
   // check whether post has been viewed by user
 
   const handleMouseEnter = async (post) => {
+    // posts viewed by the current user
     const viewPost = () => {
       return post.views && post.views.filter((view) => view.uid === user.uid);
     };
@@ -34,10 +36,10 @@ export default function PostList({ posts }) {
       id: Math.random(),
     };
 
-    // check whether post has been liked by user
+    // check whether post has been viewed by the current user
     if (viewed) {
       if (viewed.length && viewed[0].uid === user.uid) {
-        console.log("you already viewed");
+        //
       } else {
         await updateDocument(post.id, {
           views: [...post.views, views],
@@ -90,6 +92,8 @@ export default function PostList({ posts }) {
           <Reaction post={post} />
         </div>
       ))}
+
+      {/* <Confirm title="Delete post?" item="post/6hxwuie9eefh" type="delete" /> */}
     </div>
   );
 }

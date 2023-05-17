@@ -35,7 +35,7 @@ export default function BookmarkIcon({ post }) {
 
   const handleClick = async () => {
     if (bookmarked.length && bookmarked[0].uid === user.uid) {
-      console.log("post already bookmarked");
+      console.log("post already bookmarked by you");
     } else {
       await updateDocument(post.id, {
         bookmarks: [...post.bookmarks, bookmarkToAdd],

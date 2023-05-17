@@ -53,7 +53,7 @@ export default function Create() {
       comments: [],
       likes: [],
       share: "",
-      bookmarked: [],
+      bookmarks: [],
       expands: 0,
       views: [],
       author,
