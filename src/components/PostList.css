@@ -29,6 +29,7 @@
 .post svg,
 .post-summary svg {
   width: 20px;
+  cursor: pointer;
 }
 .post li,
 .post-summary li {

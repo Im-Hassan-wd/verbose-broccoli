@@ -1,0 +1,22 @@
+.options {
+  background: #fff;
+  position: absolute;
+}
+.options li {
+  border: 1px solid var(--smoke);
+  padding: 10px;
+}
+.options button {
+  border: none;
+  background: none;
+}
+
+/* dark mode  */
+.options.dark {
+  background: var(--dark-400);
+  color: #fff;
+}
+
+.options.dark button {
+  color: #fff;
+}

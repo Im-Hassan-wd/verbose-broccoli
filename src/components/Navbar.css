@@ -73,6 +73,12 @@ nav.dark {
   border: 1px solid var(--dark-100);
   color: #fff;
 }
+nav.dark .action {
+  background: var(--dark-200);
+}
+nav.dark .action svg {
+  color: #fff;
+}
 nav ul.dark {
   background: var(--dark-200);
 }

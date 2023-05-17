@@ -51,7 +51,6 @@ textarea {
 .create-post-header {
   display: flex;
   gap: 10px;
-  align-items: center;
 }
 button.edit {
   background: none;
@@ -79,4 +78,11 @@ button.edit svg {
 }
 .create-post.dark button.edit {
   background: none;
+}
+
+/* media query   */
+@media (max-width: 550px) {
+  .create-post-header {
+    display: initial;
+  }
 }
