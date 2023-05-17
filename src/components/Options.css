@@ -1,22 +1,36 @@
 .options {
   background: #fff;
   position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 24px 0;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid var(--smoke);
 }
 .options li {
-  border: 1px solid var(--smoke);
-  padding: 10px;
+  border-bottom: 1px solid var(--smoke);
+  border-top: 1px solid var(--smoke);
 }
 .options button {
   border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 16px;
   background: none;
+  cursor: pointer;
 }
 
 /* dark mode  */
 .options.dark {
-  background: var(--dark-400);
+  background: var(--dark-200);
   color: #fff;
+  border: none;
 }
-
+.options.dark li {
+  border-bottom: 1px solid var(--dark-100);
+  border-top: 1px solid var(--dark-100);
+}
 .options.dark button {
   color: #fff;
 }

@@ -1,4 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
+// styles
+import "./PostList.css";
+
+// hooks and components
 import { useTheme } from "../hooks/useTheme";
 import { useFirestore } from "../hooks/useFirestore";
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -6,14 +12,14 @@ import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";
 import Confirm from "./Confirm";
-
-// styles
-import "./PostList.css";
+import Options from "./Options";
 
 export default function PostList({ posts }) {
   const { mode } = useTheme();
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("posts");
+
+  const [options, setOptions] = useState(false);
 
   const handleClick = async (post) => {
     await updateDocument(post.id, {
@@ -67,6 +73,7 @@ export default function PostList({ posts }) {
             </li>
             <BookmarkIcon post={post} />
             <svg
+              onClick={() => setOptions(!options)}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -90,9 +97,10 @@ export default function PostList({ posts }) {
             </Link>
           </div>
           <Reaction post={post} />
+          {options && <Options />}
         </div>
       ))}
-
+      {/* popups and options  */}
       {/* <Confirm title="Delete post?" item="post/6hxwuie9eefh" type="delete" /> */}
     </div>
   );
