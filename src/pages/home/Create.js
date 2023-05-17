@@ -60,7 +60,7 @@ export default function Create() {
     };
 
     await addDocument(post, image);
-    if (!response.erro) {
+    if (!response.error) {
       history.push("/");
     }
   };
