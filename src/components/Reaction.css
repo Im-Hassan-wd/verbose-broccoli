@@ -35,3 +35,10 @@
 .dark .reaction .count {
   background: var(--dark-100);
 }
+
+/* media query */
+@media (max-width: 550px) {
+  .reaction span {
+    display: none;
+  }
+}

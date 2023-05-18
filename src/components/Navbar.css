@@ -66,6 +66,14 @@ nav .user {
 nav .user span {
   font-size: 16px;
 }
+nav .burger {
+  margin-right: 16px;
+  border: 1px solid #f5f5f5;
+  background: var(--smoke);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
 
 /* dark mode */
 nav.dark {
@@ -90,6 +98,13 @@ nav ul a.dark.active {
   color: #fff;
 }
 nav.dark button span {
+  color: #fff;
+}
+nav.dark .burger {
+  background: var(--dark-400);
+  border: 1px solid var(--dark-100);
+}
+nav.dark .burger svg {
   color: #fff;
 }
 
