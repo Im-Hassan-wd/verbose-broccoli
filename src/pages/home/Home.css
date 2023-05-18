@@ -68,7 +68,8 @@ button.edit svg {
   background: var(--dark-300);
   border: 1px solid var(--dark-100);
 }
-.create-post.dark input {
+.create-post.dark input,
+.dark textarea {
   background: var(--dark-200);
   outline-color: var(--dark-100);
 }
@@ -84,5 +85,9 @@ button.edit svg {
 @media (max-width: 550px) {
   .create-post-header {
     display: initial;
+  }
+  .create-post .action {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
