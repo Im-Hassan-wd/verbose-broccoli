@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 import { useTheme } from "./hooks/useTheme";
@@ -16,14 +17,46 @@ import Analytics from "./pages/analytics/Analytics";
 function App() {
   const { user, authIsReady } = useAuthContext();
   const { mode } = useTheme();
+
+  // states
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", changeWidth);
+
+    // cleanup function
+    return () => {
+      window.removeEventListener("resize", changeWidth);
+    };
+  }, []);
+
   return (
     <div className={`App ${mode}`}>
-      <div className="backdrop"></div>
+      {mobileMenu && (
+        <div className="backdrop" onClick={() => setMobileMenu(false)}></div>
+      )}
       {authIsReady && (
         <BrowserRouter>
-          {user && <Sidebar />}
+          {user && (
+            <Sidebar
+              screenWidth={screenWidth}
+              mobileMenu={mobileMenu}
+              setMobileMenu={setMobileMenu}
+            />
+          )}
           <div className="container">
-            {user && <Navbar />}
+            {user && (
+              <Navbar
+                screenWidth={screenWidth}
+                mobileMenu={mobileMenu}
+                setMobileMenu={setMobileMenu}
+              />
+            )}
             <Switch>
               <Route exact path="/">
                 {!user && <Redirect to="/login" />}

@@ -6,7 +6,7 @@ import ThemeSelector from "../../components/ThemeSelector";
 
 export default function Settings() {
   return (
-    <div>
+    <div className="settings">
       <ThemeSelector />
     </div>
   );

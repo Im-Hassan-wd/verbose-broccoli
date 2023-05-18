@@ -9,13 +9,16 @@ import Avatar from "./Avatar";
 // styles
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
   const { mode } = useTheme();
 
   return (
     <nav className={`${mode}`}>
+      {!mobileMenu && screenWidth < 549 && (
+        <button onClick={() => setMobileMenu(true)}>Burger</button>
+      )}
       <div className="logo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
