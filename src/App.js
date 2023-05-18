@@ -11,6 +11,7 @@ import Post from "./pages/post/Post";
 import Settings from "./pages/settings/Settings";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Analytics from "./pages/analytics/Analytics";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -40,9 +41,13 @@ function App() {
                 {!user && <Redirect to="/" />}
                 {user && <Settings />}
               </Route>
-              <Route path="/posts/:id">
+              <Route exact path="/posts/:id">
                 {!user && <Redirect to="/login" />}
                 {user && <Post />}
+              </Route>
+              <Route path="/posts/:id/analytics">
+                {!user && <Redirect to="/login" />}
+                {user && <Analytics />}
               </Route>
             </Switch>
           </div>

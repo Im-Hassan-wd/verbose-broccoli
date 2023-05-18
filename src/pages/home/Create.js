@@ -19,8 +19,6 @@ export default function Create() {
   const handleFileChange = (e) => {
     setImage(null);
     let selected = e.target.files[0];
-    console.log(selected);
-    console.log(e.target.files);
 
     if (!selected) {
       setImageError("Please select a file");

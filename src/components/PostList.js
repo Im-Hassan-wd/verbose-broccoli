@@ -97,7 +97,7 @@ export default function PostList({ posts }) {
             </Link>
           </div>
           <Reaction post={post} />
-          {options && <Options />}
+          {options && <Options post={post} />}
         </div>
       ))}
       {/* popups and options  */}
