@@ -2,12 +2,16 @@
   margin: 24px;
 }
 .analytics .post,
-.analytics .react {
+.analytics .react,
+.analytics .impressions {
   margin-top: 24px;
   border: 1px solid #f5f5f5;
   padding: 16px;
   background: #fff;
   border-radius: 20px;
+}
+.analytics .navigations {
+  margin: 0;
 }
 .analytics .author {
   display: flex;
@@ -24,4 +28,59 @@
 }
 .analytics .img-div {
   width: 100px;
+}
+.analytics .impressions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+.analytics .impressions li {
+  border: 1px solid #f5f5f5;
+  padding: 8px;
+  color: #ed9b3c;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 10px;
+}
+.analytics .impressions li {
+  color: #215ec2;
+}
+.analytics .impressions span {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--black);
+}
+.analytics .impressions p {
+  font-size: 2rem;
+  color: var(--black);
+  font-weight: bold;
+}
+.analytics .svg-div {
+  background: #fff3ea;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.analytics .impressions li svg {
+  width: 100%;
+}
+
+/* dark mode  */
+.analytics.dark {
+  color: #fff;
+}
+.analytics.dark .post,
+.analytics.dark .react,
+.analytics.dark .impressions {
+  background: var(--dark-300);
+  border: 1px solid var(--dark-100);
+}
+.analytics.dark .impressions li {
+  border: 1px solid var(--dark-100);
+}
+.analytics.dark .impressions p,
+.analytics.dark .impressions span {
+  color: #fff;
 }
