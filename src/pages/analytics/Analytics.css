@@ -43,8 +43,11 @@
   align-items: center;
   border-radius: 10px;
 }
-.analytics .impressions li {
+.analytics .impressions li:nth-child(2) {
   color: #215ec2;
+}
+.analytics .impressions li:nth-child(3) {
+  color: #3b9343;
 }
 .analytics .impressions span {
   text-transform: uppercase;
@@ -62,6 +65,12 @@
   height: 40px;
   border-radius: 50%;
   padding: 5px;
+}
+.analytics .svg-div-2 {
+  background: #e7f8ff;
+}
+.analytics .svg-div-3 {
+  background: #ebf9ed;
 }
 .analytics .impressions li svg {
   width: 100%;
