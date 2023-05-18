@@ -29,9 +29,6 @@ nav a {
 nav a.active {
   background: #fff;
 }
-nav div:nth-child(3) {
-  margin-left: auto;
-}
 nav svg {
   width: 30px;
 }
@@ -39,6 +36,7 @@ nav button svg {
   width: 20px;
 }
 nav .more {
+  margin-left: auto;
   display: flex;
   align-items: center;
 }

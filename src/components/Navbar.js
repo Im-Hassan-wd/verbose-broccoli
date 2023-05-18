@@ -54,12 +54,12 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
       <ul className={`${mode}`}>
         <li>
           <NavLink className={`${mode}`} exact to="/">
-            Explore
+            Feeds
           </NavLink>
         </li>
         <li>
-          <NavLink className={`${mode}`} to="/community">
-            Community Feed
+          <NavLink className={`${mode}`} to="/explore">
+            Explore
           </NavLink>
         </li>
       </ul>
