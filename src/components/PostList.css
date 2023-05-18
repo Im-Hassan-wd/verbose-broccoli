@@ -5,7 +5,7 @@
   margin-bottom: 20px;
   background: #fff;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: block;
 }
 .post .info,
