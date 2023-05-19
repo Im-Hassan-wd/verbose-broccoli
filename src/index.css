@@ -36,6 +36,7 @@ a {
 /* layout */
 button {
   font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 }
 .btn {
   background: #fff;

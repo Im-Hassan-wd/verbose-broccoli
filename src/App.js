@@ -72,12 +72,8 @@ function App() {
                 {!user && <Signup />}
               </Route>
               <Route path="/interest">
-                {!user && <Redirect to="/" />}
+                {!user && <Redirect to="/login" />}
                 {user && <Interest />}
-              </Route>
-              <Route path="/settings">
-                {!user && <Redirect to="/" />}
-                {user && <Settings />}
               </Route>
               <Route exact path="/posts/:id">
                 {!user && <Redirect to="/login" />}
@@ -86,6 +82,10 @@ function App() {
               <Route path="/posts/:id/analytics">
                 {!user && <Redirect to="/login" />}
                 {user && <Analytics />}
+              </Route>
+              <Route path="/settings">
+                {!user && <Redirect to="/login" />}
+                {user && <Settings />}
               </Route>
             </Switch>
           </div>

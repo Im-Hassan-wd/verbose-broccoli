@@ -14,6 +14,12 @@ const interests = [
 export default function Interest() {
   const { mode, color } = useTheme();
 
+  const handleClick = (interest) => {
+    const selectedInterets = [];
+
+    console.log(selectedInterets);
+  };
+
   return (
     <div className={`interest ${mode}`}>
       <h2>Interest</h2>
@@ -23,7 +29,7 @@ export default function Interest() {
       </p>
       <ul>
         {interests.map((i) => (
-          <li key={i.value}>
+          <li key={i.value} onClick={() => handleClick(i.value)}>
             <img src={i.src} alt={i.value} />
             <p>{i.value}</p>
           </li>

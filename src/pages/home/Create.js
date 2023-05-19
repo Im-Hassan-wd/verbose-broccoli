@@ -8,7 +8,7 @@ import { useTheme } from "../../hooks/useTheme";
 
 export default function Create() {
   const { user } = useAuthContext();
-  const { mode, color } = useTheme();
+  const { mode } = useTheme();
   const history = useHistory();
 
   const { addDocument, response } = useFirestore("posts");
