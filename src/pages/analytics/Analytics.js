@@ -50,7 +50,9 @@ export default function Analytics() {
             <div className="author">
               <Avatar src={post.author.photoURL} />
               <span>{post.author.displayName}</span>
-              <span className="post-date">. date here</span>
+              <span className="post-date">
+                . {post.createdAt.toDate().toDateString()}
+              </span>
             </div>
             <div className="content">
               <div className="img-div">
