@@ -64,3 +64,8 @@
     width: initial;
   }
 }
+@media (min-width: 550px) {
+  .interest button {
+    margin-top: 64px;
+  }
+}

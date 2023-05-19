@@ -1,7 +1,13 @@
+import { useHistory } from "react-router-dom";
+
 // styles
 import "./Interest.css";
 
+// components and hooks
 import { useTheme } from "../../hooks/useTheme";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useDocument } from "../../hooks/useDocument";
 
 const interests = [
   { src: "./img/tech.png", value: "Technology" },
@@ -11,13 +17,25 @@ const interests = [
   { src: "./img/reading.png", value: "Reading" },
 ];
 
+// intresest to add when populated
+const selectedInterets = [];
+
 export default function Interest() {
+  const history = useHistory();
   const { mode, color } = useTheme();
+  const { user } = useAuthContext();
+  const { updateDocument, response } = useFirestore("users");
+  const { error, document } = useDocument("users", user.uid);
 
-  const handleClick = (interest) => {
-    const selectedInterets = [];
+  const handleClick = async (interest) => {
+    selectedInterets.push(interest);
 
-    console.log(selectedInterets);
+    await updateDocument(user.uid, {
+      interests: selectedInterets,
+    });
+    if (!response.error) {
+      console.log(selectedInterets);
+    }
   };
 
   return (
@@ -36,7 +54,9 @@ export default function Interest() {
         ))}
       </ul>
       <div>
-        <button className={`color-${color}`}>Confirm interests</button>
+        <button className={`color-${color}`} onClick={() => history.push("/")}>
+          Confirm interests
+        </button>
       </div>
     </div>
   );
