@@ -1,0 +1,66 @@
+.interest {
+  margin: 24px;
+}
+.interest h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 16px 0;
+}
+.interest ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  justify-content: center;
+}
+.interest p {
+  font-size: 1rem;
+  max-width: 350px;
+  margin-bottom: 16px;
+}
+.interest li {
+  margin: 8px 0;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  gap: 20px;
+  cursor: pointer;
+}
+.interest img {
+  width: 100px;
+}
+.interest div {
+  text-align: center;
+}
+.interest button {
+  border: none;
+  background: none;
+  padding: 10px 16px;
+  color: #fff;
+  border-radius: 20px;
+  margin-top: 24px;
+}
+.interest button.color-2a85fe {
+  background: var(--blue);
+}
+
+/* dark mode  */
+.interest.dark {
+  color: #fff;
+}
+.interest.dark li {
+  background: var(--dark-300);
+}
+
+/* media query 0 */
+@media (max-width: 750px) {
+  .interest ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .interest li {
+    width: initial;
+  }
+}

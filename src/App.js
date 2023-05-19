@@ -13,6 +13,7 @@ import Settings from "./pages/settings/Settings";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Analytics from "./pages/analytics/Analytics";
+import Interest from "./pages/interest/Interest";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -69,6 +70,10 @@ function App() {
               <Route path="/signup">
                 {user && <Redirect to="/" />}
                 {!user && <Signup />}
+              </Route>
+              <Route path="/interest">
+                {!user && <Redirect to="/" />}
+                {user && <Interest />}
               </Route>
               <Route path="/settings">
                 {!user && <Redirect to="/" />}
