@@ -19,13 +19,13 @@ const interests = [
 
 // intresest to add when populated
 const selectedInterets = [];
+console.log(selectedInterets);
 
 export default function Interest() {
   const history = useHistory();
   const { mode, color } = useTheme();
   const { user } = useAuthContext();
   const { updateDocument, response } = useFirestore("users");
-  const { error, document } = useDocument("users", user.uid);
 
   const handleClick = async (interest) => {
     selectedInterets.push(interest);
