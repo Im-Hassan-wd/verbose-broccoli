@@ -63,6 +63,30 @@ button.edit svg {
   align-items: center;
 }
 
+/* rich text editor  */
+.wrapper-class {
+  padding: 16px;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  background: #fff;
+}
+.toolbar-class {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.editor-class {
+  background-color: var(--smoke);
+  padding: 0 8px;
+}
+/* .rdw-emoji-wrapper {
+} */
+.rdw-emoji-modal {
+  border: 1px solid #f5f5f5;
+  left: -70px;
+}
+
 /* dark mode  */
 .create-post.dark {
   background: var(--dark-300);
@@ -80,23 +104,23 @@ button.edit svg {
 .create-post.dark button.edit {
   background: none;
 }
-
-/* rich text editor  */
-.wrapper-class {
-  padding: 1rem;
-  border: 1px solid #f5f5f5;
-  border-radius: 20px;
-  background: #fff;
+.text-editor.dark .wrapper-class {
+  background: var(--dark-300);
+  outline-color: var(--dark-100);
+  border: 1px solid var(--dark-100);
 }
-.editor-class {
-  background-color: var(--smoke);
-  padding: 0 8px;
+.text-editor.dark .editor-class {
+  background: var(--dark-200);
+  color: #fff;
 }
-.toolbar-class {
-  border: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.text-editor.dark .toolbar-class {
+  background: var(--dark-400);
+  color: #fff;
+}
+.text-editor.dark .rdw-emoji-modal {
+  background: var(--dark-200);
+  border: 1px solid var(--dark-100);
+  border-radius: 10px;
 }
 
 /* media query   */

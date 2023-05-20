@@ -9,7 +9,7 @@ import { useTheme } from "../../hooks/useTheme";
 
 export default function Create() {
   const { user } = useAuthContext();
-  const { mode } = useTheme();
+  const { color, mode } = useTheme();
   const history = useHistory();
 
   const { addDocument, response } = useFirestore("posts");
@@ -179,8 +179,14 @@ export default function Create() {
 
             <span>Draft</span>
           </button>
-          {!response.isPending && <button>Post</button>}
-          {response.isPending && <button disabled>Posting...</button>}
+          {!response.isPending && (
+            <button style={{ background: color }}>Post</button>
+          )}
+          {response.isPending && (
+            <button style={{ background: color }} disabled>
+              Posting...
+            </button>
+          )}
         </div>
       </div>
     </form>
