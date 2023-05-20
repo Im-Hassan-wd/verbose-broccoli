@@ -64,9 +64,12 @@ button.edit svg {
 }
 
 /* rich text editor  */
+.text-editor {
+  width: 100%;
+}
 .wrapper-class {
-  padding: 16px;
   border: 1px solid #f5f5f5;
+  border: none;
   border-radius: 10px;
   background: #fff;
 }
@@ -85,6 +88,10 @@ button.edit svg {
 .rdw-emoji-modal {
   border: 1px solid #f5f5f5;
   left: -70px;
+}
+.preview {
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 /* dark mode  */

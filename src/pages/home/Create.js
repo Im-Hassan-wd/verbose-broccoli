@@ -4,6 +4,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
 import { useTheme } from "../../hooks/useTheme";
+import RichTextEditor from "./RichTextEditor";
 
 // import natural from "natural";
 
@@ -68,21 +69,7 @@ export default function Create() {
     <form className={`create-post ${mode}`} onSubmit={handleSubmit}>
       <div className="create-post-header">
         <Avatar src={user.photoURL} />
-        {/* <input
-          type="text"
-          placeholder="What's on your mind?"
-          onChange={(e) => setContent(e.target.value)}
-          value={content}
-        /> */}
-        <textarea
-          name=""
-          id=""
-          cols="0"
-          rows="0"
-          placeholder="What's on your mind?"
-          onChange={(e) => setContent(e.target.value)}
-          value={content}
-        ></textarea>
+        <RichTextEditor />
       </div>
 
       <input

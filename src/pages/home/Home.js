@@ -1,6 +1,5 @@
 // components and hooks
 import Create from "./Create";
-import RichTextEditor from "./RichTextEditor";
 import { useCollection } from "../../hooks/useCollection";
 import { useTheme } from "../../hooks/useTheme";
 import PostList from "../../components/PostList";
@@ -20,7 +19,6 @@ export default function Home() {
   return (
     <div className={`home ${mode}`}>
       <Create />
-      <RichTextEditor />
       {error && <p className="error">{error}</p>}
       {documents && <PostList posts={documents} />}
     </div>
