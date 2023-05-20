@@ -83,6 +83,12 @@ button.edit svg {
 
 /* media query   */
 @media (max-width: 550px) {
+  .home {
+    margin: 8px;
+  }
+  .create-post {
+    padding: 8px;
+  }
   .create-post-header {
     display: initial;
   }

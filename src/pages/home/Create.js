@@ -4,6 +4,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
 import { useTheme } from "../../hooks/useTheme";
+
 // import natural from "natural";
 
 export default function Create() {
