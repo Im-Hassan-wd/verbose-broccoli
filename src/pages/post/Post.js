@@ -4,7 +4,7 @@ import "./Post.css";
 import { useParams, useHistory } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { useTheme } from "../../hooks/useTheme";
-import PostSummary from "./PostSummary";
+import PostDetails from "./PostDetails";
 import PostComment from "./PostComment";
 
 export default function Post() {
@@ -42,8 +42,8 @@ export default function Post() {
         <span>Posts</span>
       </button>
       <div className={`post-details ${mode}`}>
-        <PostSummary post={document} />
-        <PostComment post={document} />z
+        <PostDetails post={document} />
+        <PostComment post={document} />
       </div>
     </>
   );
