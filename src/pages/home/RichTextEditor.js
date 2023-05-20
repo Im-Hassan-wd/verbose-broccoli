@@ -1,37 +1,18 @@
-import { useState, useRef } from "react";
-import { Editor, EditorState, convertToRaw } from "draft-js";
-import draftToHtml from "draftjs-to-html";
+import { useState } from "react";
+import { EditorState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const RichTextEditor = () => {
-  const editorRef = useRef(null);
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
 
-  const handleEditorChange = (newEditorState) => {
-    setEditorState(newEditorState);
-  };
-
-  const handleSave = () => {
-    const content = JSON.stringify(
-      convertToRaw(editorState.getCurrentContent())
-    );
-    const htmlContent = draftToHtml(
-      convertToRaw(editorState.getCurrentContent())
-    );
-
-    console.log("Content (JSON):", content);
-    console.log("Content (HTML):", htmlContent);
-  };
-
   return (
     <div className="text-editor">
-      <Editor
-        ref={editorRef}
-        editorState={editorState}
-        onChange={handleEditorChange}
-      />
-      <button onClick={handleSave}>Save</button>
+      <Editor editorState={editorState} onEditorStateChange={setEditorState} />
+      <button>Save</button>
     </div>
   );
 };

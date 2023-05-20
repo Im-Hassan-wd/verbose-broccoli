@@ -81,6 +81,8 @@ button.edit svg {
   background: none;
 }
 
+/* rich text editor  */
+
 /* media query   */
 @media (max-width: 550px) {
   .home {
