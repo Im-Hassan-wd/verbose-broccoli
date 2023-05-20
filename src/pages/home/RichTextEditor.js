@@ -10,20 +10,20 @@ import { useCollection } from "../../hooks/useCollection";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-const RichTextEditor = () => {
+const RichTextEditor = ({ setConvertedContent, convertedContent }) => {
   const { mode } = useTheme();
   const { documents } = useCollection("users");
 
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
-  const [convertedContent, setConvertedContent] = useState(null);
 
   useEffect(() => {
     let html = convertToHTML(editorState.getCurrentContent());
     setConvertedContent(html);
   }, [editorState]);
 
+  // purifying user inputs to prevent cross-site scripting (XSS
   function createMarkup(html) {
     return {
       __html: DOMPurify.sanitize(html),

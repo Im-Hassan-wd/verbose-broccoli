@@ -122,6 +122,7 @@ button.edit svg {
 }
 .text-editor.dark .toolbar-class {
   background: var(--dark-400);
+  border: 1px solid var(--dark-100);
   color: #fff;
 }
 .text-editor.dark .rdw-emoji-modal {

@@ -14,7 +14,7 @@ export default function Create() {
   const history = useHistory();
 
   const { addDocument, response } = useFirestore("posts");
-  const [content, setContent] = useState("");
+  const [convertedContent, setConvertedContent] = useState(null);
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
 
@@ -49,7 +49,7 @@ export default function Create() {
     };
 
     const post = {
-      content,
+      content: convertedContent,
       comments: [],
       likes: [],
       share: "",
@@ -69,7 +69,10 @@ export default function Create() {
     <form className={`create-post ${mode}`} onSubmit={handleSubmit}>
       <div className="create-post-header">
         <Avatar src={user.photoURL} />
-        <RichTextEditor />
+        <RichTextEditor
+          setConvertedContent={setConvertedContent}
+          convertedContent={convertedContent}
+        />
       </div>
 
       <input

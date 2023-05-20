@@ -92,7 +92,7 @@ export default function PostList({ posts }) {
           </div>
           <div onClick={() => handleClick(post)}>
             <Link to={`/posts/${post.id}`}>
-              <p>{post.content}</p>
+              <p dangerouslySetInnerHTML={{ __html: post.content }} />
               {post.imageURL && (
                 <img className="post-img" src={post.imageURL} alt="" />
               )}
