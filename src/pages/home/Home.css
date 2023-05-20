@@ -85,6 +85,7 @@ button.edit svg {
 }
 /* .rdw-emoji-wrapper {
 } */
+
 .rdw-emoji-modal {
   border: 1px solid #f5f5f5;
   left: -70px;
@@ -125,10 +126,17 @@ button.edit svg {
   border: 1px solid var(--dark-100);
   color: #fff;
 }
-.text-editor.dark .rdw-emoji-modal {
+.text-editor.dark .rdw-emoji-modal,
+.text-editor.dark .rdw-dropdown-optionwrapper {
   background: var(--dark-200);
   border: 1px solid var(--dark-100);
   border-radius: 10px;
+}
+.text-editor.dark .rdw-dropdownoption-default.rdw-dropdownoption-active {
+  background: var(--dark-300);
+}
+.text-editor.dark .rdw-dropdownoption-highlighted {
+  background: var(--dark-100);
 }
 
 /* media query   */

@@ -61,7 +61,9 @@ export default function Create() {
 
     await addDocument(post, image);
     if (!response.error) {
-      history.push("/");
+      // resetting the fields
+      setConvertedContent("");
+      setImage("");
     }
   };
 
