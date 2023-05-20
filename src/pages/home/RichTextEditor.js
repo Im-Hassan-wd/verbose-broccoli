@@ -11,7 +11,13 @@ const RichTextEditor = () => {
 
   return (
     <div className="text-editor">
-      <Editor editorState={editorState} onEditorStateChange={setEditorState} />
+      <Editor
+        editorState={editorState}
+        onEditorStateChange={setEditorState}
+        wrapperClassName="wrapper-class"
+        editorClassName="editor-class"
+        toolbarClassName="toolbar-class"
+      />
       <button>Save</button>
     </div>
   );

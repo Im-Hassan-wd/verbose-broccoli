@@ -82,6 +82,22 @@ button.edit svg {
 }
 
 /* rich text editor  */
+.wrapper-class {
+  padding: 1rem;
+  border: 1px solid #f5f5f5;
+  border-radius: 20px;
+  background: #fff;
+}
+.editor-class {
+  background-color: var(--smoke);
+  padding: 0 8px;
+}
+.toolbar-class {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 /* media query   */
 @media (max-width: 550px) {
