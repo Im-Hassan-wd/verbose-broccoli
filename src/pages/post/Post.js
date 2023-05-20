@@ -43,7 +43,7 @@ export default function Post() {
       </button>
       <div className={`post-details ${mode}`}>
         <PostSummary post={document} />
-        <PostComment post={document} />
+        <PostComment post={document} />z
       </div>
     </>
   );
