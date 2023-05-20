@@ -25,7 +25,7 @@ const RichTextEditor = () => {
   };
 
   return (
-    <div>
+    <div className="text-editor">
       <Editor
         ref={editorRef}
         editorState={editorState}
