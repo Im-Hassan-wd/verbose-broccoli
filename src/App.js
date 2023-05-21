@@ -5,7 +5,6 @@ import { useTheme } from "./hooks/useTheme";
 import "./App.css";
 
 // pages & components & hooks
-import { useDocument } from "./hooks/useDocument";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
@@ -72,7 +71,7 @@ function App() {
                 {user && <Redirect to="/" />}
                 {!user && <Signup />}
               </Route>
-              <Route path="/interest">
+              <Route path="/">
                 {!user && <Redirect to="/login" />}
                 {user && <Interest />}
               </Route>
