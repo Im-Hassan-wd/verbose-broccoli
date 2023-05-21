@@ -33,9 +33,6 @@ export default function Interest() {
     await updateDocument(user.uid, {
       interests: selectedInterets,
     });
-    if (!response.error) {
-      console.log(selectedInterets);
-    }
   };
 
   return (
