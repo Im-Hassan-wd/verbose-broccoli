@@ -84,7 +84,7 @@
     padding: 24px;
     z-index: 10;
   }
-  .sidebar .logo,
+  .sidebar .logo span,
   .sidebar a span {
     display: initial;
   }
