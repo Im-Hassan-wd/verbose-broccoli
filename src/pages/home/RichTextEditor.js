@@ -6,7 +6,6 @@ import DOMPurify from "dompurify";
 
 // hoooooooooks
 import { useTheme } from "../../hooks/useTheme";
-import { useCollection } from "../../hooks/useCollection";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 

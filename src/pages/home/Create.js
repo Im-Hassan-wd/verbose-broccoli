@@ -37,9 +37,6 @@ export default function Create() {
   };
 
   const handleSubmit = async (e) => {
-    // const keywords = extractKeywords(content);
-    // console.log(keywords);
-
     e.preventDefault();
 
     const author = {
@@ -62,7 +59,8 @@ export default function Create() {
     await addDocument(post, image);
     if (!response.error) {
       // resetting the fields
-      setConvertedContent("");
+      setConvertedContent(null);
+      console.log(convertedContent);
       setImage("");
     }
   };
