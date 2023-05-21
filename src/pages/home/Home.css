@@ -31,16 +31,21 @@
   padding: 8px 0;
   border-radius: 5px;
   cursor: pointer;
+  color: #fff;
 }
 .create-post-header {
   display: flex;
   gap: 10px;
 }
-button.edit {
+div.edit {
+  display: flex;
+  align-items: center;
   background: none;
+  margin: 0 16px;
+  cursor: pointer;
 }
-button.edit svg {
-  width: 20px;
+div.edit svg {
+  width: 15px;
 }
 .form-btn {
   display: flex;
@@ -93,8 +98,9 @@ button.edit svg {
   color: #fff;
   background: var(--dark-100);
 }
-.create-post.dark button.edit {
+.create-post.dark div.edit {
   background: none;
+  color: #fff;
 }
 .text-editor.dark .wrapper-class {
   background: var(--dark-300);

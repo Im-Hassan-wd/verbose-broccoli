@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
@@ -11,7 +10,6 @@ import RichTextEditor from "./RichTextEditor";
 export default function Create() {
   const { user } = useAuthContext();
   const { color, mode } = useTheme();
-  const history = useHistory();
 
   const { addDocument, response } = useFirestore("posts");
   const [convertedContent, setConvertedContent] = useState(null);
@@ -60,7 +58,6 @@ export default function Create() {
     if (!response.error) {
       // resetting the fields
       setConvertedContent(null);
-      console.log(convertedContent);
       setImage("");
     }
   };
@@ -151,7 +148,7 @@ export default function Create() {
         </div>
         {image && <img src={image.name} />}
         <div className="form-btn">
-          <button className="edit">
+          <div className="edit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -168,12 +165,12 @@ export default function Create() {
             </svg>
 
             <span>Draft</span>
-          </button>
+          </div>
           {!response.isPending && (
-            <button style={{ backgroundColor: color }}>Post</button>
+            <button style={{ backgroundColor: `#${color}` }}>Post</button>
           )}
           {response.isPending && (
-            <button style={{ background: color }} disabled>
+            <button style={{ backgroundColor: `#${color}` }} disabled>
               Posting...
             </button>
           )}
