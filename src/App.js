@@ -57,32 +57,34 @@ function App() {
                 setMobileMenu={setMobileMenu}
               />
             )}
-            <Switch>
-              <Route exact path="/">
-                {!user && <Redirect to="/login" />}
-                {user && <Home />}
-              </Route>
-              <Route path="/login">
-                {user && <Redirect to="/" />}
-                {!user && <Login />}
-              </Route>
-              <Route path="/signup">
-                {user && <Redirect to="/" />}
-                {!user && <Signup />}
-              </Route>
-              <Route exact path="/posts/:id">
-                {!user && <Redirect to="/login" />}
-                {user && <Post />}
-              </Route>
-              <Route path="/posts/:id/analytics">
-                {!user && <Redirect to="/login" />}
-                {user && <Analytics />}
-              </Route>
-              <Route path="/settings">
-                {!user && <Redirect to="/login" />}
-                {user && <Settings />}
-              </Route>
-            </Switch>
+            <div className="pages">
+              <Switch>
+                <Route exact path="/">
+                  {!user && <Redirect to="/login" />}
+                  {user && <Home />}
+                </Route>
+                <Route path="/login">
+                  {user && <Redirect to="/" />}
+                  {!user && <Login />}
+                </Route>
+                <Route path="/signup">
+                  {user && <Redirect to="/" />}
+                  {!user && <Signup />}
+                </Route>
+                <Route exact path="/posts/:id">
+                  {!user && <Redirect to="/login" />}
+                  {user && <Post />}
+                </Route>
+                <Route path="/posts/:id/analytics">
+                  {!user && <Redirect to="/login" />}
+                  {user && <Analytics />}
+                </Route>
+                <Route path="/settings">
+                  {!user && <Redirect to="/login" />}
+                  {user && <Settings />}
+                </Route>
+              </Switch>
+            </div>
           </div>
         </BrowserRouter>
       )}
