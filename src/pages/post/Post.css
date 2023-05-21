@@ -93,9 +93,9 @@
 .App.dark .post-details ul {
   color: #fff;
 }
-.App.dark .dark .post-comments li {
+.App.dark .post-comments li {
   border-bottom: 1px solid var(--dark-200);
 }
-.App.dark .dark .navigation {
+.App.dark .navigation {
   color: #fff;
 }

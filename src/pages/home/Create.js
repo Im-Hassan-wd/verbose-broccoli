@@ -9,7 +9,9 @@ import RichTextEditor from "./RichTextEditor";
 
 export default function Create() {
   const { user } = useAuthContext();
-  const { color, mode } = useTheme();
+  const { color } = useTheme();
+
+  const localColor = localStorage.getItem("color");
 
   const { addDocument, response } = useFirestore("posts");
   const [convertedContent, setConvertedContent] = useState(null);
@@ -167,10 +169,25 @@ export default function Create() {
             <span>Draft</span>
           </div>
           {!response.isPending && (
-            <button style={{ backgroundColor: `#${color}` }}>Post</button>
+            <button
+              style={
+                localColor
+                  ? { backgroundColor: `#${localColor}` }
+                  : { backgroundColor: `#${color}` }
+              }
+            >
+              Post
+            </button>
           )}
           {response.isPending && (
-            <button style={{ backgroundColor: `#${color}` }} disabled>
+            <button
+              style={
+                localColor
+                  ? { backgroundColor: `#${localColor}` }
+                  : { backgroundColor: `#${color}` }
+              }
+              disabled
+            >
               Posting...
             </button>
           )}
