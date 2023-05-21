@@ -10,9 +10,8 @@ import { useCollection } from "../../hooks/useCollection";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-const RichTextEditor = ({ setConvertedContent, convertedContent }) => {
+const RichTextEditor = ({ setConvertedContent }) => {
   const { mode } = useTheme();
-  const { documents } = useCollection("users");
 
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()

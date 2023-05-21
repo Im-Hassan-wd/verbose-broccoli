@@ -172,7 +172,7 @@ export default function Create() {
             <span>Draft</span>
           </button>
           {!response.isPending && (
-            <button style={{ background: color }}>Post</button>
+            <button style={{ backgroundColor: color }}>Post</button>
           )}
           {response.isPending && (
             <button style={{ background: color }} disabled>
