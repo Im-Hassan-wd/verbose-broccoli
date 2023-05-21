@@ -13,7 +13,6 @@ import Settings from "./pages/settings/Settings";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Analytics from "./pages/analytics/Analytics";
-import Interest from "./pages/interest/Interest";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -70,10 +69,6 @@ function App() {
               <Route path="/signup">
                 {user && <Redirect to="/" />}
                 {!user && <Signup />}
-              </Route>
-              <Route path="/">
-                {!user && <Redirect to="/login" />}
-                {user && <Interest />}
               </Route>
               <Route exact path="/posts/:id">
                 {!user && <Redirect to="/login" />}
