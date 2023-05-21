@@ -21,8 +21,8 @@
   object-fit: cover;
   /* object-position: top; */
 }
-.post p,
-.post-summary p {
+.post .post-content,
+.post-summary .post-content {
   margin: 10px 0;
   padding: 0 16px;
   font-size: 14px;

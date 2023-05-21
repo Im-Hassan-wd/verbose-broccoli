@@ -36,7 +36,10 @@ export default function PostDetails({ post }) {
             />
           </svg>
         </div>
-        <p dangerouslySetInnerHTML={{ __html: post.content }} />
+        <p
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
         <img className="post-summary-img" src={post.imageURL} alt="" />
         <Reaction post={post} />
       </div>

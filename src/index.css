@@ -32,6 +32,10 @@ a {
   text-decoration: none;
   color: var(--black);
 }
+p p {
+  margin: 0;
+  padding: 0;
+}
 
 /* layout */
 button {

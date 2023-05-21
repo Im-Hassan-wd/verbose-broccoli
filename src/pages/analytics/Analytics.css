@@ -19,6 +19,9 @@
 .analytics .content {
   display: flex;
 }
+.analytics .content p {
+  padding: 0px 16px;
+}
 .analytics .content img {
   width: 100%;
   border-radius: 10px;

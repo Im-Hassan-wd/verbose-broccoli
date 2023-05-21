@@ -132,4 +132,8 @@ button.edit svg {
     flex-direction: column;
     align-items: flex-start;
   }
+  .create-post svg {
+    width: 15px;
+    display: none;
+  }
 }

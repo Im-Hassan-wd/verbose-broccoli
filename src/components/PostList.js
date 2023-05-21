@@ -91,7 +91,10 @@ export default function PostList({ posts }) {
           </div>
           <div onClick={() => handleClick(post)}>
             <Link to={`/posts/${post.id}`}>
-              <p dangerouslySetInnerHTML={{ __html: post.content }} />
+              <p
+                className="post-content"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
               {post.imageURL && (
                 <img className="post-img" src={post.imageURL} alt="" />
               )}
@@ -110,8 +113,6 @@ export default function PostList({ posts }) {
           <Reaction post={post} />
         </div>
       ))}
-      {/* popups and options  */}
-      {/* <Confirm title="Delete post?" item="post/6hxwuie9eefh" type="delete" /> */}
     </div>
   );
 }
