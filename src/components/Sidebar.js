@@ -3,6 +3,7 @@ import { useTheme } from "../hooks/useTheme";
 
 // styles
 import "./Sidebar.css";
+import Searchbar from "./Searchbar";
 
 export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { color, mode } = useTheme();
@@ -29,6 +30,8 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
 
             <span>Chatter</span>
           </div>
+
+          <Searchbar />
 
           <ul>
             <li>

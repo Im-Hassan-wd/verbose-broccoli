@@ -1,7 +1,7 @@
 .sidebar {
   border: 1px solid #f5f5f5;
   padding: 24px;
-  width: 250px;
+  width: 300px;
   background: #fff;
   min-height: 100vh;
 }
@@ -78,7 +78,7 @@
 @media (max-width: 550px) {
   .sidebar {
     position: fixed;
-    width: 230px;
+    width: 300px;
     left: 0;
     top: 0;
     padding: 24px;
