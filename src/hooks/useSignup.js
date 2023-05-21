@@ -33,6 +33,7 @@ export const useSignup = () => {
         online: true,
         displayName,
         photoURL: downloadURL,
+        interests: [],
       });
 
       // dispatch login action

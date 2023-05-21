@@ -4,10 +4,10 @@ import { useHistory } from "react-router-dom";
 import "./Interest.css";
 
 // components and hooks
-import { useTheme } from "../../hooks/useTheme";
-import { useAuthContext } from "../../hooks/useAuthContext";
-import { useFirestore } from "../../hooks/useFirestore";
-import { useDocument } from "../../hooks/useDocument";
+import { useTheme } from "../hooks/useTheme";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useFirestore } from "../hooks/useFirestore";
+import { useDocument } from "../hooks/useDocument";
 
 const interests = [
   { src: "./img/tech.png", value: "Technology" },
@@ -39,24 +39,29 @@ export default function Interest() {
   };
 
   return (
-    <div className={`interest ${mode}`}>
-      <h2>Interest</h2>
-      <p>
-        Posts are personalize based on your interests and search history. Learn
-        how this works
-      </p>
-      <ul>
-        {interests.map((i) => (
-          <li key={i.value} onClick={() => handleClick(i.value)}>
-            <img src={i.src} alt={i.value} />
-            <p>{i.value}</p>
-          </li>
-        ))}
-      </ul>
-      <div>
-        <button className={`color-${color}`} onClick={() => history.push("/")}>
-          Confirm interests
-        </button>
+    <div className="interest-container">
+      <div className={`interest ${mode}`}>
+        <h2>Interest</h2>
+        <p>
+          Posts are personalize based on your interests and search history.
+          Learn how this works
+        </p>
+        <ul>
+          {interests.map((i) => (
+            <li key={i.value} onClick={() => handleClick(i.value)}>
+              <img src={i.src} alt={i.value} />
+              <p>{i.value}</p>
+            </li>
+          ))}
+        </ul>
+        <div>
+          <button
+            className={`color-${color}`}
+            onClick={() => history.push("/")}
+          >
+            Confirm interests
+          </button>
+        </div>
       </div>
     </div>
   );

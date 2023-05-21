@@ -1,5 +1,4 @@
 .post-details {
-  margin: 24px;
   border-radius: 10px;
   background: #fff;
 }
@@ -11,7 +10,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  margin: 16px 24px;
 }
 .navigation svg {
   width: 30px;
