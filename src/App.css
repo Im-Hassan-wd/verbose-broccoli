@@ -1,5 +1,6 @@
 .App {
   display: flex;
+  min-height: 100vh;
 }
 .App.dark {
   background: var(--dark-400);
