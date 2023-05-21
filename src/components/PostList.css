@@ -44,6 +44,9 @@
 .post a {
   width: 100%;
 }
+.post a svg {
+  margin: 0 16px;
+}
 .post-date {
   color: var(--gray);
   font-size: 14px;
