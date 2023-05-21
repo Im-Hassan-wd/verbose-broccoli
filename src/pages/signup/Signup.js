@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSignup } from "../../hooks/useSignup";
 
 // styles
@@ -30,7 +31,7 @@ export default function Signup() {
       setThumbnailError("Selected file must be an image");
       return;
     }
-    if (selected.size > 100000) {
+    if (selected.size > 10000000) {
       setThumbnailError("Image file size must be less than 1000kb");
       return;
     }
@@ -82,6 +83,9 @@ export default function Signup() {
         </button>
       )}
       {error && <div className="error">{error}</div>}
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </form>
   );
 }

@@ -52,6 +52,15 @@ button {
 }
 
 /* forms */
+.auth-form p {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--purple);
+}
+.auth-form a {
+  text-decoration: underline;
+  color: var(--blue);
+}
 label {
   display: block;
   margin: 24px auto;
