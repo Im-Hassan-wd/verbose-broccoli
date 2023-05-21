@@ -39,7 +39,7 @@ export default function Interest() {
   };
 
   return (
-    <div className="interest-container">
+    <div className={`interest-container ${mode}`}>
       <div className={`interest ${mode}`}>
         <h2>Interest</h2>
         <p>

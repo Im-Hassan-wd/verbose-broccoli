@@ -56,11 +56,14 @@
 }
 
 /* dark mode  */
+.interest-container.dark {
+  background: var(--dark-300);
+}
 .interest.dark {
   color: #fff;
 }
 .interest.dark li {
-  background: var(--dark-300);
+  background: var(--dark-400);
 }
 
 /* media query 0 */
