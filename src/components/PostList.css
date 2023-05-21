@@ -60,15 +60,15 @@
 }
 
 /* dark mode  */
-.post.dark {
+.App.dark .post {
   background: var(--dark-300);
   color: #fff;
   border: 1px solid var(--dark-100);
 }
-.post.dark,
+.App.dark .post,
 .post-summary.dark {
   color: var(--gray);
 }
-.post.dark a {
+.App.dark .post a {
   color: #fff;
 }

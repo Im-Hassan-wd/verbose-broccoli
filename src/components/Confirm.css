@@ -63,10 +63,10 @@
 }
 
 /* dark mode  */
-.confirm-overlay.dark .confirm-popup {
+.App.dark .confirm-popup {
   background: var(--dark-400);
   color: #fff;
 }
-.confirm-overlay.dark h3 {
+.App.dark .confirm-overlay.dark h3 {
   color: #fff;
 }

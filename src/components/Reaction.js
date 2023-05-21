@@ -11,6 +11,7 @@ export default function Reaction({ post }) {
   const { updateDocument, response } = useFirestore("posts");
   const { user } = useAuthContext();
   const { color } = useTheme();
+  const localColor = localStorage.getItem("color");
 
   const likedPost = () => {
     return post.likes.filter((like) => like.uid === user.uid);
@@ -43,7 +44,9 @@ export default function Reaction({ post }) {
       <button
         className={
           like.length && like[0].uid === user.uid
-            ? `color-${color}`
+            ? localColor
+              ? `color-${localColor}`
+              : `color-${color}`
             : "reactions"
         }
         onClick={handleLike}

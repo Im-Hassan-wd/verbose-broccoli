@@ -24,7 +24,7 @@ export default function Analytics() {
   }
 
   return (
-    <div className={`analytics ${mode}`}>
+    <div className="analytics">
       <button className="navigation" onClick={() => history.goBack()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

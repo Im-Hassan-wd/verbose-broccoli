@@ -19,7 +19,6 @@ const interests = [
 
 // intresest to add when populated
 const selectedInterets = [];
-console.log(selectedInterets);
 
 export default function Interest() {
   const history = useHistory();
@@ -36,8 +35,8 @@ export default function Interest() {
   };
 
   return (
-    <div className={`interest-container ${mode}`}>
-      <div className={`interest ${mode}`}>
+    <div className="interest-container ">
+      <div className="interest">
         <h2>Interest</h2>
         <p>
           Posts are personalize based on your interests and search history.

@@ -58,7 +58,7 @@ export default function PostList({ posts }) {
       {posts.length === 0 && <p>No posts yet!</p>}
       {posts.map((post) => (
         <div
-          className={`post ${mode}`}
+          className="post"
           key={post.id}
           onMouseEnter={() => handleMouseEnter(post)}
         >

@@ -77,19 +77,19 @@
 }
 
 /* dark mode  */
-.analytics.dark {
+.App.dark .analytics {
   color: #fff;
 }
-.analytics.dark .post,
-.analytics.dark .react,
-.analytics.dark .impressions {
+.App.dark .analytics .post,
+.App.dark .analytics .react,
+.App.dark .analytics .impressions {
   background: var(--dark-300);
   border: 1px solid var(--dark-100);
 }
-.analytics.dark .impressions li {
+.App.dark .analytics .impressions li {
   border: 1px solid var(--dark-100);
 }
-.analytics.dark .impressions p,
-.analytics.dark .impressions span {
+.App.dark .analytics .impressions p,
+.App.dark .analytics .impressions span {
   color: #fff;
 }

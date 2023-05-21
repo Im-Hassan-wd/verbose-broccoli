@@ -6,7 +6,7 @@ export default function Confirm({ title, item, type }) {
   const { mode } = useTheme();
 
   return (
-    <div className={`confirm-overlay ${mode}`}>
+    <div className="confirm-overlay">
       <div className="confirm-popup">
         <h3>{title}</h3>
         <p>

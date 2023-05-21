@@ -74,35 +74,35 @@ nav .burger {
 }
 
 /* dark mode */
-nav.dark {
+.App.dark nav {
   background: var(--dark-300);
   border: 1px solid var(--dark-100);
   color: #fff;
 }
-nav.dark .action {
+.App.dark nav .action {
   background: var(--dark-200);
 }
-nav.dark .action svg {
+.App.dark nav .action svg {
   color: #fff;
 }
-nav ul.dark {
+.App.dark nav ul {
   background: var(--dark-200);
 }
-nav ul a.dark {
+.App.dark nav ul a {
   color: #fff;
 }
-nav ul a.dark.active {
+.App.dark nav ul a.active {
   background: var(--dark-100);
   color: #fff;
 }
-nav.dark button span {
+.App.dark nav button span {
   color: #fff;
 }
-nav.dark .burger {
+.App.dark nav .burger {
   background: var(--dark-400);
   border: 1px solid var(--dark-100);
 }
-nav.dark .burger svg {
+.App.dark nav .burger svg {
   color: #fff;
 }
 

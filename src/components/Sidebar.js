@@ -4,15 +4,23 @@ import { useTheme } from "../hooks/useTheme";
 // styles
 import "./Sidebar.css";
 import Searchbar from "./Searchbar";
+import { useState } from "react";
 
 export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { color, mode } = useTheme();
 
+  const localColor = localStorage.getItem("color");
+  const localMode = localStorage.getItem("mode");
+
   return (
     <>
       {(mobileMenu || screenWidth > 550) && (
-        <div className={`sidebar ${mode}`}>
-          <div className={`logo color-${color}`}>
+        <div className="sidebar">
+          <div
+            className={
+              localColor ? `logo color-${localColor}` : `logo color-${color}`
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -37,7 +45,9 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
             <li>
               <NavLink
                 onClick={() => setMobileMenu(false)}
-                className={`${mode} color-${color}`}
+                className={
+                  localColor ? `color-${localColor}` : `color-${color}`
+                }
                 exact
                 to="/"
               >
@@ -62,7 +72,9 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
             <li>
               <NavLink
                 onClick={() => setMobileMenu(false)}
-                className={`${mode} color-${color}`}
+                className={
+                  localColor ? `color-${localColor}` : `color-${color}`
+                }
                 to="/c"
               >
                 <svg
@@ -85,7 +97,9 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
             <li>
               <NavLink
                 onClick={() => setMobileMenu(false)}
-                className={`${mode} color-${color}`}
+                className={
+                  localColor ? `color-${localColor}` : `color-${color}`
+                }
                 to="/settings"
               >
                 <svg

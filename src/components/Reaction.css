@@ -32,7 +32,8 @@
   border-radius: 8px;
 }
 
-.dark .reaction .count {
+/* dark mode  */
+.App.dark .reaction .count {
   background: var(--dark-100);
 }
 

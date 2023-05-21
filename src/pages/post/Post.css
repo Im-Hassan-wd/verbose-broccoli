@@ -78,24 +78,24 @@
 }
 
 /* dark mode  */
-.post-summary.dark,
-.post-details.dark {
+.App.dark .post-summary,
+.App.dark .post-details {
   background: var(--dark-300);
   color: #fff;
   border: none;
 }
-.post-details.dark {
+.App.dark .post-details {
   border: 1px solid var(--dark-100);
 }
-.post-details.dark .navigation {
+.App.dark .post-details .navigation {
   color: #fff;
 }
-.post-details.dark ul {
+.App.dark .post-details ul {
   color: #fff;
 }
-.dark .post-comments li {
+.App.dark .dark .post-comments li {
   border-bottom: 1px solid var(--dark-200);
 }
-.dark .navigation {
+.App.dark .dark .navigation {
   color: #fff;
 }

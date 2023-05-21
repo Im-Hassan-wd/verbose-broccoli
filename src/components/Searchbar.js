@@ -1,14 +1,9 @@
 // styles
 import "./Searchbar.css";
 
-// hooks
-import { useTheme } from "../hooks/useTheme";
-
 export default function Searchbar() {
-  const { mode } = useTheme();
-
   return (
-    <div className={`searchbar ${mode}`}>
+    <div className="searchbar">
       <div className="seachbar-input-div">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -56,13 +56,13 @@
 }
 
 /* dark mode  */
-.interest-container.dark {
+.App.dark .interest-container {
   background: var(--dark-300);
 }
-.interest.dark {
+.App.dark .interest {
   color: #fff;
 }
-.interest.dark li {
+.App.dark .interest li {
   background: var(--dark-400);
 }
 

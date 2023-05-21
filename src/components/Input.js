@@ -33,7 +33,7 @@ export default function Input({ post }) {
   };
 
   return (
-    <form className={`comment-form ${mode}`} onSubmit={handleSubmit}>
+    <form className="comment-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Leave a comment"

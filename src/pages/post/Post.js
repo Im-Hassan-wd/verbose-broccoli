@@ -41,7 +41,7 @@ export default function Post() {
 
         <span>Posts</span>
       </button>
-      <div className={`post-details ${mode}`}>
+      <div className="post-details">
         <PostDetails post={document} />
         <PostComment post={document} />
       </div>

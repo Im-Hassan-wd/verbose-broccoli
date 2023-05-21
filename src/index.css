@@ -98,7 +98,7 @@ textarea {
 }
 
 /* color theme picker */
-a.dark {
+.App.dark a {
   color: #fff;
 }
 a.color-a058b3.active,
@@ -119,6 +119,6 @@ div.color-2a85fe,
 button.color-2a85fe {
   color: var(--blue);
 }
-a.active.dark {
+.App.dark a.active {
   background: var(--dark-100);
 }

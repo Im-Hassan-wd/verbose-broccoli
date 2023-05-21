@@ -21,10 +21,12 @@ export function ThemeProvider({ children }) {
 
   const changeColor = (color) => {
     dispatch({ type: "CHANGE_COLOR", payload: color });
+    localStorage.setItem("color", color);
   };
 
   const changeMode = (mode) => {
     dispatch({ type: "CHANGE_MODE", payload: mode });
+    localStorage.setItem("mode", mode);
   };
 
   return (

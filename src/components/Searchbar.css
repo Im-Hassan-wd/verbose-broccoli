@@ -24,9 +24,9 @@
 }
 
 /* dark mode  */
-.searchbar.dark .seachbar-input-div {
+.App.dark .seachbar-input-div {
   border-color: var(--dark-100);
 }
-.searchbar.dark .seachbar-input-div svg {
+.App.dark .seachbar-input-div svg {
   color: var(--smoke);
 }

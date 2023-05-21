@@ -26,7 +26,7 @@ export default function Home() {
     });
 
   return (
-    <div className={`home ${mode}`}>
+    <div className="home">
       {userList && userList[0].interests.length === 0 && <Interest />}
       <Create />
       {error && <p className="error">{error}</p>}

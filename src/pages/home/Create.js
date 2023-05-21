@@ -63,7 +63,7 @@ export default function Create() {
   };
 
   return (
-    <form className={`create-post ${mode}`} onSubmit={handleSubmit}>
+    <form className="create-post" onSubmit={handleSubmit}>
       <div className="create-post-header">
         <Avatar src={user.photoURL} />
         <RichTextEditor

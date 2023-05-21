@@ -85,47 +85,47 @@ div.edit svg {
 }
 
 /* dark mode  */
-.create-post.dark {
+.App.dark .create-post {
   background: var(--dark-300);
   border: 1px solid var(--dark-100);
 }
-.create-post.dark input,
+.App.dark .create-post input,
 .dark textarea {
   background: var(--dark-200);
   outline-color: var(--dark-100);
 }
-.create-post.dark button {
+.App.dark .create-post button {
   color: #fff;
   background: var(--dark-100);
 }
-.create-post.dark div.edit {
+.App.dark .create-post div.edit {
   background: none;
   color: #fff;
 }
-.text-editor.dark .wrapper-class {
+.App.dark .text-editor .wrapper-class {
   background: var(--dark-300);
   outline-color: var(--dark-100);
   border: 1px solid var(--dark-100);
 }
-.text-editor.dark .editor-class {
+.App.dark .text-editor .editor-class {
   background: var(--dark-200);
   color: #fff;
 }
-.text-editor.dark .toolbar-class {
+.App.dark .text-editor .toolbar-class {
   background: var(--dark-400);
   border: 1px solid var(--dark-100);
   color: #fff;
 }
-.text-editor.dark .rdw-emoji-modal,
-.text-editor.dark .rdw-dropdown-optionwrapper {
+.App.dark .text-editor .rdw-emoji-modal,
+.App.dark .text-editor .rdw-dropdown-optionwrapper {
   background: var(--dark-200);
   border: 1px solid var(--dark-100);
   border-radius: 10px;
 }
-.text-editor.dark .rdw-dropdownoption-default.rdw-dropdownoption-active {
+.App.dark .text-editor .rdw-dropdownoption-default.rdw-dropdownoption-active {
   background: var(--dark-300);
 }
-.text-editor.dark .rdw-dropdownoption-highlighted {
+.App.dark .text-editor .rdw-dropdownoption-highlighted {
   background: var(--dark-100);
 }
 

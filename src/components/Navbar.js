@@ -15,7 +15,7 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { mode } = useTheme();
 
   return (
-    <nav className={`${mode}`}>
+    <nav>
       {!mobileMenu && screenWidth < 549 && (
         <button className="burger" onClick={() => setMobileMenu(true)}>
           <svg
@@ -51,16 +51,14 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
         </svg>
         <span>Home</span>
       </div>
-      <ul className={`${mode}`}>
+      <ul>
         <li>
-          <NavLink className={`${mode}`} exact to="/">
+          <NavLink exact to="/">
             Feeds
           </NavLink>
         </li>
         <li>
-          <NavLink className={`${mode}`} to="/explore">
-            Explore
-          </NavLink>
+          <NavLink to="/explore">Explore</NavLink>
         </li>
       </ul>
       <div className="more">

@@ -16,7 +16,7 @@
 }
 
 /* dark mode  */
-.comment-form.dark input {
+.App.dark .comment-form input {
   background: var(--dark-200);
   outline-color: var(--dark-100);
 }

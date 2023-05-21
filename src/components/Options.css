@@ -31,18 +31,18 @@
 }
 
 /* dark mode  */
-.options.dark {
+.App.dark .options {
   background: var(--dark-200);
   color: #fff;
   border: none;
 }
-.options.dark li {
+.App.dark .options li {
   border-bottom: 1px solid var(--dark-100);
   border-top: 1px solid var(--dark-100);
 }
-.options.dark button {
+.App.dark .options button {
   color: #fff;
 }
-.options.dark button:active {
+.App.dark .options button:active {
   background: var(--dark-100);
 }

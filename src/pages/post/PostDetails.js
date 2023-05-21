@@ -1,17 +1,15 @@
 import Avatar from "../../components/Avatar";
 import Input from "../../components/Input";
-import { useTheme } from "../../hooks/useTheme";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Reaction from "../../components/Reaction";
 import BookmarkIcon from "../../components/BookmarkIcon";
 
 export default function PostDetails({ post }) {
-  const { mode } = useTheme();
   const { user } = useAuthContext();
 
   return (
     <div>
-      <div className={`post-summary ${mode}`}>
+      <div className="post-summary">
         <div className="info">
           <Avatar src={post.author.photoURL} />
           <li>

@@ -14,7 +14,7 @@ export default function Options({ post }) {
   const { mode } = useTheme();
 
   return (
-    <ul className={`options ${mode}`}>
+    <ul className="options">
       <li>
         <button>
           <Link to="/c">View anaytics</Link>

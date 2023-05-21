@@ -52,14 +52,15 @@
 .sidebar li a.active {
   background: var(--smoke);
 }
-.sidebar li a.active.dark {
-  background: var(--dark-100);
-}
 .sidebar svg {
   width: 25px;
 }
+
 /* dark mode  */
-.sidebar.dark {
+.App.dark .sidebar li a.active {
+  background: var(--dark-100);
+}
+.App.dark .sidebar {
   border: 1px solid var(--dark-100);
   background: var(--dark-300);
 }
