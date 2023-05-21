@@ -99,11 +99,3 @@
 .dark .navigation {
   color: #fff;
 }
-
-/* media query  */
-@media (max-width: 550px) {
-  .post-details,
-  .navigation {
-    margin: 16px 8px;
-  }
-}
