@@ -55,11 +55,13 @@ export default function Analytics() {
               </span>
             </div>
             <div className="content">
-              <div className="img-div">
-                <img src={post.imageURL} alt="" />
-              </div>
+              {post.imageURL && (
+                <div className="img-div">
+                  <img src={post.imageURL} alt="" />
+                </div>
+              )}
 
-              <p>{post.content}</p>
+              <p dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
           </div>
 
