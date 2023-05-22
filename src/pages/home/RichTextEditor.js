@@ -6,10 +6,23 @@ import DOMPurify from "dompurify";
 
 // hoooooooooks
 import { useTheme } from "../../hooks/useTheme";
+import { useCollection } from "../../hooks/useCollection";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const RichTextEditor = ({ setConvertedContent }) => {
+  const { documents: users, error } = useCollection("users");
+
+  // users for mention
+  const newSpreacdUsers =
+    users &&
+    users.map((user) => ({
+      ...user,
+      value: user.displayName,
+      text: user.displayName,
+      url: user.displayName,
+    }));
+
   const { mode } = useTheme();
 
   const [editorState, setEditorState] = useState(() =>
@@ -43,18 +56,11 @@ const RichTextEditor = ({ setConvertedContent }) => {
         hashtag={{
           separator: " ",
           trigger: "#",
-          suggestions: [
-            { text: "Mario", value: "mario", url: "js" },
-            { text: "Luigi", value: "luigi", url: "go" },
-          ],
         }}
         mention={{
           separator: " ",
           trigger: "@",
-          suggestions: [
-            { text: "JavaScript", value: "javascript", url: "js" },
-            { text: "Golang", value: "golang", url: "go" },
-          ],
+          suggestions: newSpreacdUsers,
         }}
       />
     </div>

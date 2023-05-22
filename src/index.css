@@ -61,6 +61,11 @@ button {
   font-size: 12px;
   color: var(--purple);
 }
+.App.dark .auth-form {
+  background: var(--dark-300);
+  border: 1px solid var(--dark-100);
+  color: #fff;
+}
 .auth-form a {
   text-decoration: underline;
   color: var(--blue);
@@ -98,7 +103,11 @@ textarea {
 }
 
 /* color theme picker */
-.App.dark a {
+.App a {
+  color: var(--black);
+}
+.App.dark a,
+.App.dark h2 {
   color: #fff;
 }
 a.color-a058b3.active,
