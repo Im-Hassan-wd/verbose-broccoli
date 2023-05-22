@@ -5,14 +5,15 @@ import { useTheme } from "./hooks/useTheme";
 import "./App.css";
 
 // pages & components & hooks
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import Signup from "./pages/signup/Signup";
-import Post from "./pages/post/Post";
-import Settings from "./pages/settings/Settings";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import Analytics from "./pages/analytics/Analytics";
+import Settings from "./pages/settings/Settings";
+import Sidebar from "./components/Sidebar";
+import Signup from "./pages/signup/Signup";
+import Search from "./pages/search/Search";
+import Navbar from "./components/Navbar";
+import Login from "./pages/login/Login";
+import Post from "./pages/post/Post";
+import Home from "./pages/home/Home";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -80,9 +81,13 @@ function App() {
                   {!user && <Redirect to="/login" />}
                   {user && <Analytics />}
                 </Route>
-                <Route path="/settings">
+                <Route exact path="/settings">
                   {!user && <Redirect to="/login" />}
                   {user && <Settings />}
+                </Route>
+                <Route path="/search">
+                  {!user && <Redirect to="/login" />}
+                  {user && <Search />}
                 </Route>
               </Switch>
             </div>
