@@ -11,16 +11,16 @@ import { useCollection } from "../../hooks/useCollection";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const RichTextEditor = ({ setConvertedContent }) => {
-  const { documents: users, error } = useCollection("users");
+  const { documents: users } = useCollection("users");
 
   // users for mention
-  const newSpreacdUsers =
+  const newSpreadUsers =
     users &&
     users.map((user) => ({
       ...user,
       value: user.displayName,
       text: user.displayName,
-      url: user.displayName,
+      url: user.photoURL,
     }));
 
   const { mode } = useTheme();
@@ -60,7 +60,7 @@ const RichTextEditor = ({ setConvertedContent }) => {
         mention={{
           separator: " ",
           trigger: "@",
-          suggestions: newSpreacdUsers,
+          suggestions: newSpreadUsers,
         }}
       />
     </div>

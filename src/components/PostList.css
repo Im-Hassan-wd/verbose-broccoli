@@ -55,7 +55,6 @@
 .post .name,
 .post-summary .name {
   font-size: 16px;
-  color: #fff;
 }
 .post-date {
   color: var(--gray);
@@ -68,8 +67,12 @@
   border: 1px solid var(--dark-100);
 }
 .App.dark .post,
-.post-summary.dark {
+.Appdark .post-summary {
   color: var(--gray);
+}
+.App.dark .post .name,
+.Appdark .post-summary .name {
+  color: #fff;
 }
 .App.dark .post a {
   color: #fff;

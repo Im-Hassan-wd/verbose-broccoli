@@ -87,7 +87,7 @@ div.edit svg {
   border-radius: 10px;
 }
 .rdw-suggestion-dropdown {
-  position: relative;
+  position: relative !important;
   width: 95%;
 }
 .rdw-suggestion-option {
@@ -135,6 +135,9 @@ div.edit svg {
 .App.dark .rdw-suggestion-dropdown {
   background: var(--dark-200);
   border: 1px solid var(--dark-100);
+}
+.App.dark .rdw-suggestion-option {
+  border-color: var(--dark-100);
 }
 .App.dark .text-editor .rdw-dropdownoption-default.rdw-dropdownoption-active,
 .App.dark .rdw-mention-link,

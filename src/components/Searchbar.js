@@ -1,10 +1,21 @@
+import { useState } from "react";
+
 // styles
 import "./Searchbar.css";
 
 export default function Searchbar() {
+  const [term, setTerm] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(term);
+    setTerm("");
+  };
+
   return (
     <div className="searchbar">
-      <div className="seachbar-input-div">
+      <form className="seachbar-input-div" onSubmit={handleSubmit}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -20,8 +31,14 @@ export default function Searchbar() {
           />
         </svg>
 
-        <input type="text" placeholder="Explore chatter..." />
-      </div>
+        <input
+          type="text"
+          onChange={(e) => setTerm(e.target.value)}
+          value={term}
+          required
+          placeholder="Explore chatter..."
+        />
+      </form>
     </div>
   );
 }
