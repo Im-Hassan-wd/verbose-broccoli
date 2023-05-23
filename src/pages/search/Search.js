@@ -24,11 +24,15 @@ export default function Search() {
     );
 
   return (
-    <div className="search">
-      <h2 className="navigation">
-        Posts including "{query}" ({posts.length})
-      </h2>
-      {posts && <PostList posts={posts} />}
-    </div>
+    <>
+      {posts && (
+        <div className="search">
+          <h2 className="navigation">
+            Posts including "{query}" ({posts.length})
+          </h2>
+          <PostList posts={posts} />
+        </div>
+      )}
+    </>
   );
 }

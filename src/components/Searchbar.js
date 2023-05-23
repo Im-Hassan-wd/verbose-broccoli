@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 // styles
 import "./Searchbar.css";
 
-export default function Searchbar() {
+export default function Searchbar({ setMobileMenu }) {
   const [term, setTerm] = useState("");
   const history = useHistory();
 
@@ -14,6 +14,7 @@ export default function Searchbar() {
     history.push(`/search?q=${term}`);
 
     setTerm("");
+    setMobileMenu(false);
   };
 
   return (

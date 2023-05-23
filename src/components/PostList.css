@@ -27,6 +27,9 @@
   padding: 0 16px;
   font-size: 14px;
 }
+.post-content > p {
+  margin: 8px 0;
+}
 .post svg,
 .post-summary svg {
   width: 20px;

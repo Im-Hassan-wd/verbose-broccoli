@@ -39,7 +39,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
             <span>Chatter</span>
           </div>
 
-          <Searchbar />
+          <Searchbar setMobileMenu={setMobileMenu} />
 
           <ul>
             <li>
