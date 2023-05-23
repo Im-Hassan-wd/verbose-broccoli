@@ -61,7 +61,10 @@ export default function Analytics() {
                 </div>
               )}
 
-              <p dangerouslySetInnerHTML={{ __html: post.content }} />
+              <p
+                className="post-content"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
             </div>
           </div>
 

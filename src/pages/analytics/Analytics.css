@@ -19,8 +19,17 @@
 .analytics .content {
   display: flex;
 }
-.analytics .content p {
-  padding: 0px 16px;
+.analytics p.post-content {
+  /* padding: 16px 0px; */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 0;
+}
+.analytics .content p > p {
+  padding: 0px;
+  margin: 8px 0;
 }
 .analytics .content img {
   width: 100%;
