@@ -27,6 +27,12 @@
   padding: 0 16px;
   font-size: 14px;
 }
+.post .post-content {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
 .post-content > p {
   margin: 8px 0;
 }
