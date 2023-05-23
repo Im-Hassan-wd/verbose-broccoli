@@ -16,11 +16,8 @@
   gap: 10px;
   margin-bottom: 16px;
 }
-.analytics .content {
-  display: flex;
-}
 .analytics p.post-content {
-  /* padding: 16px 0px; */
+  padding: 0px;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -101,4 +98,14 @@
 .App.dark .analytics .impressions p,
 .App.dark .analytics .impressions span {
   color: #fff;
+}
+
+/* media query  */
+@media (min-width: 550px) {
+  .analytics .content {
+    display: flex;
+  }
+  .analytics p.post-content {
+    padding-left: 16px;
+  }
 }
