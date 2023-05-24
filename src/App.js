@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/login/Login";
 import Post from "./pages/post/Post";
 import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -72,6 +73,10 @@ function App() {
                 <Route path="/signup">
                   {user && <Redirect to="/" />}
                   {!user && <Signup />}
+                </Route>
+                <Route exact path="/profile">
+                  {!user && <Redirect to="/login" />}
+                  {user && <Profile />}
                 </Route>
                 <Route exact path="/posts/:id">
                   {!user && <Redirect to="/login" />}

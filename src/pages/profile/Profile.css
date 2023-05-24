@@ -1,8 +1,8 @@
 .profile .banner {
-  max-width: 1440px;
-  height: 200px;
+  height: 150px;
   background: #f5f5f5;
-  border-top-left-radius: 100px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   display: flex;
   align-items: center;
 }
@@ -13,4 +13,5 @@
   padding: 10px;
   background: #fff;
   margin-top: -40px;
+  margin-left: 10px;
 }
