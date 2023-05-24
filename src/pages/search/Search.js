@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 // styles
 import "./Search.css";
 
 // hooks and components
 import { useCollection } from "../../hooks/useCollection";
-import { useEffect } from "react";
 import PostList from "../../components/PostList";
 
 export default function Search() {
@@ -19,7 +19,8 @@ export default function Search() {
     documents &&
     documents.filter(
       (doc) =>
-        doc.content.toLowerCase().includes(query.toLocaleLowerCase()) ||
+        (doc.content &&
+          doc.content.toLowerCase().includes(query.toLocaleLowerCase())) ||
         doc.author.displayName.toLowerCase().includes(query.toLocaleLowerCase())
     );
 
