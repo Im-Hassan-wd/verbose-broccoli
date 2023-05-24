@@ -59,7 +59,7 @@
   color: #fff;
 }
 .App.dark .profile .avatar {
-  background: var(--dark-400);
+  background: var(--dark-300);
 }
 .App.dark .profile button {
   border-color: var(--dark-100);
