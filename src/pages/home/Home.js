@@ -9,9 +9,12 @@ import { useTheme } from "../../hooks/useTheme";
 import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Create from "./Create";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useEffect } from "react";
 
 export default function Home() {
   const { user } = useAuthContext();
+  const { updateDocument, response } = useFirestore("users");
   const { documents, error } = useCollection("posts", "", [
     "createdAt",
     "desc",

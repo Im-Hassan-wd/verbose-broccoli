@@ -4,9 +4,13 @@ import "./Profile.css";
 // components and hooks
 import Avatar from "../../components/Avatar";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useTheme } from "../../hooks/useTheme";
 
 export default function Profile() {
   const { user } = useAuthContext();
+  const { color } = useTheme();
+  const localColor = localStorage.getItem("color");
+
   return (
     <div className="profile">
       <div className="banner">
@@ -16,6 +20,7 @@ export default function Profile() {
       <div className="info">
         <h2>Amanda Smith</h2>
         <p>Nigeria</p>
+
         <ul className="">
           <li>@amanda21</li>
           <li>. Lead product designer</li>
@@ -23,7 +28,13 @@ export default function Profile() {
 
         <div className="btns">
           <button>Message</button>
-          <button>
+          <button
+            style={
+              localColor
+                ? { backgroundColor: `#${localColor}` }
+                : { backgroundColor: `#${color}` }
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -43,6 +54,16 @@ export default function Profile() {
           </button>
         </div>
       </div>
+      <div className="interests">
+        <h2>Interests</h2>
+        <ul>
+          <li>#Entertaiment</li>
+        </ul>
+      </div>
+      <ul>
+        <li>Posts</li>
+        <li>Bookmarks</li>
+      </ul>
     </div>
   );
 }

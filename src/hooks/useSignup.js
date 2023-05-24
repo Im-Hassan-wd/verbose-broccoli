@@ -34,6 +34,7 @@ export const useSignup = () => {
         displayName,
         photoURL: downloadURL,
         interests: [],
+        email,
       });
 
       // dispatch login action
