@@ -1,9 +1,9 @@
+import { NavLink, Link } from "react-router-dom";
+
+// components and hooks
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from "../hooks/useLogout";
 import { useTheme } from "../hooks/useTheme";
-import { NavLink } from "react-router-dom";
-
-// components
 import Avatar from "./Avatar";
 
 // styles
@@ -94,10 +94,10 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
             />
           </svg>
         </button>
-        <button className="user">
+        <Link to="/profile" className="user">
           <span>{user.displayName}</span>
           <Avatar src={user.photoURL} />
-        </button>
+        </Link>
       </div>
     </nav>
   );

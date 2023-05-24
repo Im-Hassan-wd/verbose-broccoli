@@ -1,17 +1,33 @@
 .profile .banner {
   height: 150px;
-  background: #f5f5f5;
+  background: linear-gradient(90deg, #f8e1ab 14.04%, #f4d1c9 100%);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   display: flex;
   align-items: center;
 }
 .profile .avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  padding: 10px;
+  width: 100px;
+  height: 100px;
   background: #fff;
   margin-top: -40px;
   margin-left: 10px;
+}
+.profile .avatar img {
+  padding: 5px;
+  border-radius: 50%;
+}
+
+/* dark mode  */
+.App.dark .profile {
+  color: #fff;
+}
+.App.dark .profile .avatar {
+  background: var(--dark-400);
+}
+
+@media (max-width: 550px) {
+  .profile .banner {
+    height: 100px;
+  }
 }

@@ -11,6 +11,35 @@ export default function Profile() {
     <div className="profile">
       <div className="banner" />
       <Avatar src={user.photoURL} />
+      <div className="info">
+        <h2>Amanda Smith</h2>
+        <p>Nigeria</p>
+        <div className="">
+          <span>@amanda21</span>
+          <span>. Lead product designer</span>
+        </div>
+      </div>
+      <div className="btns">
+        <button>Message</button>
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3"
+            />
+          </svg>
+
+          <span>Share profile</span>
+        </button>
+      </div>
     </div>
   );
 }
