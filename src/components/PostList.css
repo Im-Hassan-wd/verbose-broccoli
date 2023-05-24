@@ -19,6 +19,7 @@
   height: 400px;
   object-fit: cover;
   object-position: top;
+  border: 1px solid #f5f5f5;
 }
 .post .post-content,
 .post-summary .post-content {
@@ -85,6 +86,9 @@
 .App.dark .post .name,
 .Appdark .post-summary .name {
   color: #fff;
+}
+.App.dark .post-img {
+  border-color: var(--dark-100);
 }
 .App.dark .post a {
   color: #fff;
