@@ -18,7 +18,7 @@ export const useLogin = () => {
 
       // update online status
       const documentRef = db.collection("users").doc(res.user.uid);
-      await documentRef.update({ online: true });
+      await documentRef.update({ online: true, email: res.user.email });
 
       // dispatch login action
       dispatch({ type: "LOGIN", payload: res.user });

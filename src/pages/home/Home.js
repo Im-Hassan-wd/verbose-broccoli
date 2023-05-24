@@ -19,17 +19,23 @@ export default function Home() {
     "createdAt",
     "desc",
   ]);
-  const { documents: userDocs, error: userError } = useCollection("users");
+  const { documents: users, error: userError } = useCollection("users");
   const { mode } = useTheme();
 
   const userList =
-    userDocs &&
-    userDocs.filter((u) => {
+    users &&
+    users.filter((u) => {
       return u.id === user.uid;
     });
 
+  const updateUser = async () => {
+    await updateDocument(user.uid, {
+      email: user.email,
+    });
+  };
+
   return (
-    <div className="home">
+    <div className="home" onClick={updateUser}>
       {userList && userList[0].interests.length === 0 && <Interest />}
       <Create />
       {error && <p className="error">{error}</p>}
