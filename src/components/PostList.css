@@ -23,7 +23,6 @@
 }
 .post .post-content,
 .post-summary .post-content {
-  margin: 10px 0;
   padding: 0 16px;
   font-size: 14px;
 }
@@ -51,7 +50,8 @@
   display: block;
   font-size: 12px;
 }
-.post .avatar {
+.post .avatar,
+.post-summary .avatar {
   width: 50px;
   height: 50px;
 }
@@ -92,4 +92,14 @@
 }
 .App .msg {
   color: #fff;
+}
+
+@media (max-width: 550px) {
+  .post .post-content,
+  .post-summary .post-content {
+    padding: 0 8px;
+  }
+  .post-summary .info {
+    padding: 8px;
+  }
 }

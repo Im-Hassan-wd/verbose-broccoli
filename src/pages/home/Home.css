@@ -41,7 +41,7 @@ div.edit {
   display: flex;
   align-items: center;
   background: none;
-  margin: 0 16px;
+  margin-right: 16px;
   cursor: pointer;
 }
 div.edit svg {
@@ -156,8 +156,5 @@ div.edit svg {
   .create-post .action {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .create-post svg {
-    width: 15px;
   }
 }
