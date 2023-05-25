@@ -8,6 +8,7 @@
   z-index: 8;
 }
 .interest {
+  position: relative;
   margin: 24px;
 }
 .interest h2 {
@@ -24,12 +25,12 @@
 }
 .interest p {
   font-size: 1rem;
-  max-width: 350px;
+  /* max-width: 350px; */
 }
 .interest li {
+  width: 300px;
   margin: 8px 0;
   display: flex;
-  width: 300px;
   align-items: center;
   background: var(--smoke);
   padding: 16px;
@@ -70,15 +71,15 @@
 @media (max-width: 750px) {
   .interest ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
   .interest li {
-    /* width: initial; */
+    width: inherit;
     padding: 8px;
     gap: 10px;
     font-size: 0.8rem;
   }
   .interest img {
-    width: 50px;
+    width: 80px;
   }
 }

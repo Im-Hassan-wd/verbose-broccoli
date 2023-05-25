@@ -39,7 +39,7 @@ export default function Interest() {
       <div className="interest">
         <h2>Interest</h2>
         <p>
-          Posts are personalize based on your interests and search history.
+          Posts are personalized based on your interests and search history.
           Learn how this works
         </p>
         <ul>
