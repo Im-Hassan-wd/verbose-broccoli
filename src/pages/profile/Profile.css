@@ -44,6 +44,9 @@
 .profile .info ul {
   gap: 5px;
 }
+.profile .tabs {
+  margin: 16px 0;
+}
 .profile .interests li {
   margin: 16px 0;
   padding: 6px;

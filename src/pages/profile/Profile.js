@@ -87,9 +87,19 @@ export default function Profile() {
               ))}
             </ul>
           </div>
-          <ul>
-            <li onClick={() => setIsTabbed(true)}>Posts</li>
-            <li onClick={() => setIsTabbed(false)}>Bookmarks</li>
+          <ul className="tabs">
+            <li
+              className={isTabbed ? "active-tab" : ""}
+              onClick={() => setIsTabbed(true)}
+            >
+              Posts
+            </li>
+            <li
+              className={!isTabbed ? "active-tab" : ""}
+              onClick={() => setIsTabbed(false)}
+            >
+              Bookmarks
+            </li>
           </ul>
           {isTabbed ? (
             posts && (
