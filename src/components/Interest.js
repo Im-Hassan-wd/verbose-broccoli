@@ -27,13 +27,18 @@ export default function Interest() {
   const { user } = useAuthContext();
   const { updateDocument, response } = useFirestore("users");
 
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState({});
 
-  const handleClick = (interest) => {
+  const handleClick = (interest, index) => {
+    setIsClicked((state) => ({
+      ...state,
+      [index]: !state[index],
+    }));
+
     if (!selectedInterets.includes(interest)) {
       selectedInterets.push(interest);
     }
-    setIsClicked(true);
+    console.log(selectedInterets);
   };
 
   const handleSubmit = async () => {
@@ -51,11 +56,11 @@ export default function Interest() {
           Learn how this works
         </p>
         <ul>
-          {interests.map((i) => (
+          {interests.map((i, index) => (
             <li
               key={i.value}
-              onClick={() => handleClick(i.value)}
-              className={isClicked ? "active" : ""}
+              onClick={() => handleClick(i.value, index)}
+              className={isClicked[index] ? "active" : ""}
             >
               <img className="interest-img" src={i.src} alt={i.value} />
               <p>{i.value}</p>
