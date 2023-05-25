@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div className="home" onClick={updateUser}>
-      {<Interest />}
+      {userList && userList[0].interests.length === 0 && <Interest />}
       <Create />
       {error && <p className="error">{error}</p>}
       {documents && <PostList posts={documents} msg="No posts yet!" />}
