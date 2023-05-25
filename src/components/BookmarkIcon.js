@@ -20,6 +20,8 @@ export default function BookmarkIcon({ post }) {
     comments: post.comments,
     likes: post.likes,
     share: post.share,
+    views: post.views,
+    bookmarks: post.bookmarks,
   };
 
   const bookmarkToAdd = {
@@ -29,7 +31,10 @@ export default function BookmarkIcon({ post }) {
 
   // post bookmarked by the current user
   const bookmarkedPost = () => {
-    return post.bookmarks.filter((bookmark) => bookmark.uid === user.uid);
+    return (
+      post.bookmarks &&
+      post.bookmarks.filter((bookmark) => bookmark.uid === user.uid)
+    );
   };
   const bookmarked = bookmarkedPost();
 
