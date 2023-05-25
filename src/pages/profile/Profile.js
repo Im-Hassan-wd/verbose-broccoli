@@ -26,7 +26,7 @@ export default function Profile() {
     user.uid,
   ]);
   const { documents: bookmarks } = useCollection("bookmarks", [
-    "author.id",
+    "id",
     "==",
     user.uid,
   ]);
