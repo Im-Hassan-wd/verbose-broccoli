@@ -31,9 +31,6 @@ export default function Profile() {
     user.uid,
   ]);
 
-  console.log("bookmarks:", bookmarks);
-  console.log("posts:", posts);
-
   return (
     <>
       {currentUser && (
@@ -94,12 +91,11 @@ export default function Profile() {
             <li onClick={() => setIsTabbed(true)}>Posts</li>
             <li onClick={() => setIsTabbed(false)}>Bookmarks</li>
           </ul>
-          {/* {isTabbed ? (
-            ) : (
-              <PostList posts={bookmarks} />
-              )} */}
-          {posts && <PostList posts={posts} />}
-          {bookmarks && <PostList posts={bookmarks} />}
+          {isTabbed ? (
+            posts && <PostList posts={posts} />
+          ) : (
+            <PostList posts={bookmarks} />
+          )}
         </div>
       )}
     </>
