@@ -4,7 +4,7 @@ export default function NavbarOption() {
   const { logout, isPending } = useLogout();
 
   return (
-    <div className="navbar-option">
+    <div className="navbar navbar-option">
       <button className="action">
         <svg
           xmlns="http://www.w3.org/2000/svg"

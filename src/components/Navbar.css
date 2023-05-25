@@ -1,4 +1,4 @@
-nav {
+.navbar {
   display: flex;
   align-items: center;
   padding: 8px 24px;
@@ -6,41 +6,41 @@ nav {
   background: #fff;
   border: 1px solid #f5f5f5;
 }
-nav .logo {
+.navbar .logo {
   display: flex;
   align-items: center;
   margin-right: 24px;
   gap: 10px;
 }
-nav ul {
+.navbar ul {
   display: flex;
   align-items: center;
   background: var(--smoke);
   border-radius: 5px;
   padding: 8px;
 }
-nav a {
+.navbar a {
   display: inline-block;
   color: var(--black);
   padding: 5px 16px;
   font-size: 14px;
   border-radius: 3px;
 }
-nav a.active {
+.navbar a.active {
   background: #fff;
 }
-nav svg {
+.navbar svg {
   width: 30px;
 }
-nav button svg {
+.navbar button svg {
   width: 20px;
 }
-nav .more {
+.navbar .more {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
-nav .action {
+.navbar .action {
   background: var(--smoke);
   border-radius: 50%;
   height: 30px;
@@ -49,7 +49,7 @@ nav .action {
   border: none;
   cursor: pointer;
 }
-nav .user {
+.navbar .user {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,10 +59,10 @@ nav .user {
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
 }
-nav .user span {
+.navbar .user span {
   font-size: 16px;
 }
-nav .burger {
+.navbar .burger {
   margin-right: 16px;
   border: 1px solid #f5f5f5;
   background: var(--smoke);
@@ -72,62 +72,62 @@ nav .burger {
 }
 
 /* dark mode */
-.App.dark nav {
+.App.dark .navbar {
   background: var(--dark-300);
   border: 1px solid var(--dark-100);
   color: #fff;
 }
-.App.dark nav .action {
+.App.dark .navbar .action {
   background: var(--dark-200);
 }
-.App.dark nav .action svg {
+.App.dark .navbar .action svg {
   color: #fff;
 }
-.App.dark nav ul {
+.App.dark .navbar ul {
   background: var(--dark-200);
 }
-.App.dark nav ul a {
+.App.dark .navbar ul a {
   color: #fff;
 }
-.App.dark nav ul a.active {
+.App.dark .navbar ul a.active {
   background: var(--dark-100);
   color: #fff;
 }
-.App.dark nav button span,
-.App.dark nav button {
+.App.dark .navbar button span,
+.App.dark .navbar button {
   color: #fff;
 }
-.App.dark nav .burger {
+.App.dark .navbar .burger {
   background: var(--dark-400);
   border: 1px solid var(--dark-100);
 }
-.App.dark nav .burger svg {
+.App.dark .navbar .burger svg {
   color: #fff;
 }
 
 @media (max-width: 890px) {
-  nav .logo {
+  .navbar .logo {
     display: none;
   }
 }
 @media (max-width: 690px) {
-  nav .user span {
+  .navbar .user span {
     display: none;
   }
 }
 @media (max-width: 550px) {
-  nav {
+  .navbar {
     padding: 8px;
   }
-  nav .avatar {
+  .navbar .avatar {
     width: 30px;
     height: 30px;
   }
-  /* nav .action:nth-child(1) {
+  /* .navbar .action:nth-child(1) {
     display: none;
     margin: 0;
   }
-  nav .action {
+  .navbar .action {
     margin: 0;
   } */
 }

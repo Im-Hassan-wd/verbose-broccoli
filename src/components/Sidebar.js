@@ -5,6 +5,7 @@ import { useTheme } from "../hooks/useTheme";
 import "./Sidebar.css";
 import Searchbar from "./Searchbar";
 import { useState } from "react";
+import NavbarOption from "./NavbarOption";
 
 export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { color, mode } = useTheme();
@@ -125,6 +126,8 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
               </NavLink>
             </li>
           </ul>
+
+          {screenWidth < 404 && <NavbarOption />}
         </div>
       )}
     </>

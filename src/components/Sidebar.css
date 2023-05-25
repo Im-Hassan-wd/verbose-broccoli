@@ -4,6 +4,8 @@
   width: 300px;
   background: #fff;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .sidebar .logo {
   display: flex;
@@ -54,6 +56,9 @@
 }
 .sidebar svg {
   width: 25px;
+}
+.sidebar .navbar-option {
+  margin-top: auto;
 }
 
 /* dark mode  */

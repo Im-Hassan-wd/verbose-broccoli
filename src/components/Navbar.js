@@ -12,7 +12,7 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { user } = useAuthContext();
 
   return (
-    <nav>
+    <nav className="navbar">
       {!mobileMenu && screenWidth < 549 && (
         <button className="burger" onClick={() => setMobileMenu(true)}>
           <svg
