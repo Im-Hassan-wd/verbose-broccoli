@@ -49,7 +49,6 @@ nav .action {
   border: none;
   cursor: pointer;
 }
-
 nav .user {
   display: flex;
   justify-content: center;
@@ -57,7 +56,6 @@ nav .user {
   background: none;
   border: none;
   gap: 10px;
-  margin-left: 16px;
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
 }
@@ -95,7 +93,8 @@ nav .burger {
   background: var(--dark-100);
   color: #fff;
 }
-.App.dark nav button span {
+.App.dark nav button span,
+.App.dark nav button {
   color: #fff;
 }
 .App.dark nav .burger {
@@ -117,7 +116,18 @@ nav .burger {
   }
 }
 @media (max-width: 550px) {
-  nav .action {
-    display: none;
+  nav {
+    padding: 8px;
   }
+  nav .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  /* nav .action:nth-child(1) {
+    display: none;
+    margin: 0;
+  }
+  nav .action {
+    margin: 0;
+  } */
 }
