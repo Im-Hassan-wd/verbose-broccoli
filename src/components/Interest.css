@@ -24,7 +24,9 @@
 }
 .interest p {
   font-size: 1rem;
-  /* max-width: 350px; */
+}
+.interest ul p {
+  font-size: 0.8rem;
 }
 .interest li {
   width: 300px;
@@ -90,7 +92,6 @@
   .interest li {
     width: inherit;
     padding: 5px;
-    font-size: 0.8rem;
   }
   .interest .interest-img {
     width: 80px;
