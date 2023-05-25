@@ -8,7 +8,6 @@ import "./PostList.css";
 import { useTheme } from "../hooks/useTheme";
 import { useFirestore } from "../hooks/useFirestore";
 import { useAuthContext } from "../hooks/useAuthContext";
-import PostComment from "../pages/post/PostComment";
 import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";

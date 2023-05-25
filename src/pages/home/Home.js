@@ -39,7 +39,7 @@ export default function Home() {
       {userList && userList[0].interests.length === 0 && <Interest />}
       <Create />
       {error && <p className="error">{error}</p>}
-      {documents && <PostList posts={documents} />}
+      {documents && <PostList posts={documents} msg="No posts yet!" />}
     </div>
   );
 }

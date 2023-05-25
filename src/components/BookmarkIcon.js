@@ -7,9 +7,9 @@ export default function BookmarkIcon({ post }) {
   const { user } = useAuthContext();
 
   const author = {
-    displayName: user.displayName,
-    photoURL: user.photoURL,
-    id: user.uid,
+    displayName: post.author.displayName,
+    photoURL: post.author.photoURL,
+    id: post.author.id,
   };
 
   const bookmark = {
