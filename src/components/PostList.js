@@ -13,7 +13,7 @@ import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";
 
-export default function PostList({ posts }) {
+export default function PostList({ posts, msg }) {
   const { mode } = useTheme();
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("posts");
@@ -55,7 +55,7 @@ export default function PostList({ posts }) {
 
   return (
     <div className="">
-      {posts.length === 0 && <p className="msg">No posts yet!</p>}
+      {posts.length === 0 && <p className="msg">{msg}</p>}
       {posts.map((post) => (
         <div
           className="post"

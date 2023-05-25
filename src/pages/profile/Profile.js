@@ -92,9 +92,14 @@ export default function Profile() {
             <li onClick={() => setIsTabbed(false)}>Bookmarks</li>
           </ul>
           {isTabbed ? (
-            posts && <PostList posts={posts} />
+            posts && (
+              <PostList
+                posts={posts}
+                msg="Posts you've made will appear here"
+              />
+            )
           ) : (
-            <PostList posts={bookmarks} />
+            <PostList posts={bookmarks} msg="No posts in your bookmarks" />
           )}
         </div>
       )}
