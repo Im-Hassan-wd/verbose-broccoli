@@ -8,7 +8,6 @@
   z-index: 8;
 }
 .interest {
-  position: relative;
   margin: 24px;
 }
 .interest h2 {
@@ -38,11 +37,23 @@
   gap: 20px;
   cursor: pointer;
 }
-.interest img {
+.interest li.active {
+  border: 3px solid var(--blue);
+}
+.interest .interest-img {
   width: 100px;
 }
 .interest div {
   text-align: center;
+}
+.interest li.active svg {
+  display: block;
+  margin-left: auto;
+  color: var(--blue);
+  width: 30px;
+}
+.interest li svg {
+  display: none;
 }
 .interest button {
   border: none;
@@ -72,14 +83,14 @@
   .interest ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 5px;
   }
   .interest li {
     width: inherit;
     padding: 8px;
-    gap: 10px;
     font-size: 0.8rem;
   }
-  .interest img {
+  .interest .interest-img {
     width: 80px;
   }
 }
