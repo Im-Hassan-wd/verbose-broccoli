@@ -36,6 +36,7 @@
   border-radius: 10px;
   gap: 20px;
   cursor: pointer;
+  border: 3px solid #fff;
 }
 .interest li.active {
   border: 3px solid var(--blue);
@@ -61,7 +62,7 @@
   padding: 10px 16px;
   color: #fff;
   border-radius: 20px;
-  margin-top: 24px;
+  /* margin-top: 24px; */
 }
 .interest button.color-2a85fe {
   background: var(--blue);
@@ -81,13 +82,14 @@
 /* media query 0 */
 @media (max-width: 750px) {
   .interest ul {
+    margin: 8px 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    gap: 5px;
+    gap: 2px;
   }
   .interest li {
     width: inherit;
-    padding: 8px;
+    padding: 5px;
     font-size: 0.8rem;
   }
   .interest .interest-img {
