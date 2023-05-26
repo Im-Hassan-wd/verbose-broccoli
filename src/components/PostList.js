@@ -11,6 +11,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";
+import Options from "./Options";
 
 export default function PostList({ posts, msg }) {
   const { mode } = useTheme();
@@ -69,6 +70,7 @@ export default function PostList({ posts, msg }) {
                 {post.createdAt.toDate().toDateString().slice(3)}
               </span>
             </li>
+            <Options />
             <BookmarkIcon post={post} />
             {user.uid === post.author.id && (
               <svg

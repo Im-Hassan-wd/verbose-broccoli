@@ -1,10 +1,5 @@
-.options {
-  position: absolute;
-  top: 10px;
-  right: 0px;
-}
 .options button {
-  border: 1px solid #f5f5f5;
-  padding: 10px;
   background: none;
+  border: none;
+  margin-left: 8px;
 }
