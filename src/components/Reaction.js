@@ -1,10 +1,12 @@
-// import { useTheme } from "../hooks/useTheme";
 import { timestamp } from "../firebase/config";
-import { useAuthContext } from "../hooks/useAuthContext";
-import { useFirestore } from "../hooks/useFirestore";
+
 // styles
 import "./Reaction.css";
+
+// hooks
 import { useTheme } from "../hooks/useTheme";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useFirestore } from "../hooks/useFirestore";
 
 export default function Reaction({ post }) {
   const { updateDocument, response } = useFirestore("posts");

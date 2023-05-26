@@ -1,18 +1,14 @@
+import { Link } from "react-router-dom";
+
 // styles
 import "./Options.css";
 
-// components && hooks
-import { useAuthContext } from "../hooks/useAuthContext";
-
-// context
-import { useTheme } from "../hooks/useTheme";
-
 export default function Options({ post }) {
-  const { user } = useAuthContext();
-  const { mode } = useTheme();
-
   return (
     <div className="options">
+      <Link to={`/posts/${post.id}/analytics`}>
+        <i class="fi fi-rr-chat-arrow-grow aly"></i>
+      </Link>
       <button className="icon-btn">
         <i className="fi fi-rr-pencil"></i>
       </button>

@@ -3,6 +3,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 8px 0;
+  margin-top: 0;
 }
 .reaction button {
   background: none;
@@ -17,7 +18,7 @@
   color: #fff;
 }
 .reaction svg {
-  width: 20px;
+  font-size: 1.2rem;
 }
 .reaction span {
   font-size: 14px;
@@ -30,6 +31,9 @@
   background: var(--smoke);
   padding: 0 8px;
   border-radius: 8px;
+}
+.post .reaction a {
+  width: 0%;
 }
 
 /* dark mode  */
