@@ -10,8 +10,8 @@
   align-items: center;
   gap: 10px;
 }
-.sidebar .logo svg {
-  width: 40px;
+.sidebar .logo i {
+  font-size: 2rem;
 }
 /* logo theme color  */
 .sidebar .logo span {
@@ -52,8 +52,8 @@
 .sidebar li a.active {
   background: var(--smoke);
 }
-.sidebar svg {
-  width: 25px;
+.sidebar li a i {
+  font-size: 1.2rem;
 }
 .sidebar .navbar-option {
   margin-top: auto;
