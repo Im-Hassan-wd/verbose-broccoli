@@ -73,10 +73,6 @@
     width: auto;
     padding: 24px 0;
   }
-  .sidebar a span,
-  .sidebar .logo span {
-    display: none;
-  }
 }
 
 @media (max-width: 550px) {
