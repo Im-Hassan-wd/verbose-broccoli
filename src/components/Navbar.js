@@ -32,7 +32,7 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
         </button>
       )}
       <div className="logo">
-        <i className="fi fi-ss-house-chimney"></i>
+        <i className="fi fi-sr-house-chimney"></i>
         <span>Home</span>
       </div>
       <ul>
