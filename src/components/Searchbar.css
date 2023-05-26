@@ -19,14 +19,15 @@
   margin: 0;
   padding: 0;
 }
-.seachbar-input-div svg {
+.seachbar-input-div i {
   color: var(--black);
+  font-size: 1.2rem;
 }
 
 /* dark mode  */
 .App.dark .seachbar-input-div {
   border-color: var(--dark-100);
 }
-.App.dark .seachbar-input-div svg {
+.App.dark .seachbar-input-div i {
   color: var(--smoke);
 }

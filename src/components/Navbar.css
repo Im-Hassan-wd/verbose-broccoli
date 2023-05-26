@@ -101,9 +101,6 @@
   background: var(--dark-400);
   border: 1px solid var(--dark-100);
 }
-.App.dark .navbar .burger svg {
-  color: #fff;
-}
 
 @media (max-width: 890px) {
   .navbar .logo {
