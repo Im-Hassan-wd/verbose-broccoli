@@ -10,12 +10,12 @@ export default function NavbarOption() {
       </button>
       {!isPending && (
         <button className="action" onClick={logout}>
-          <i className="fi fi-br-sign-out-alt"></i>
+          <i className="fi fi-ss-sign-out-alt"></i>
         </button>
       )}
       {isPending && (
         <button className="action" disabled>
-          <i className="fi fi-rr-menu-dots"></i>
+          <i className="fi fi-ss-menu-dots"></i>
         </button>
       )}
     </div>

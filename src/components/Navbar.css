@@ -29,11 +29,11 @@
 .navbar a.active {
   background: #fff;
 }
-.navbar svg {
-  width: 30px;
+.navbar i {
+  font-size: 1.5rem;
 }
-.navbar button svg {
-  width: 20px;
+.navbar button i {
+  font-size: 1rem;
 }
 .navbar .more {
   margin-left: auto;
