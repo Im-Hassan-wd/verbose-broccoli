@@ -36,12 +36,13 @@
   margin: 10px 0;
 }
 .post .icon-btn {
+  margin-left: 8px;
   border: none;
   background: none;
 }
-.post svg,
-.post-summary svg {
-  width: 20px;
+.post i,
+.post-summary i {
+  font-size: 1.2rem;
   cursor: pointer;
 }
 .post li,

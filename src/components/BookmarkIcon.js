@@ -42,16 +42,17 @@ export default function BookmarkIcon({ post }) {
       await updateDocument(post.id, {
         bookmarks: [...post.bookmarks, bookmarkToAdd],
       });
-      // add post to bookmak document when bookmark filed is added to post document
-      if (!response.error) {
-        await addDocument(bookmark);
-      }
+      await addDocument(bookmark);
     }
   };
 
   return (
-    <button className="icon-btn">
-      <i class="fi fi-rr-bookmark"></i>
+    <button className="icon-btn" onClick={handleClick}>
+      {bookmarked.length && bookmarked[0].uid === user.uid ? (
+        <i className="fi fi-sr-bookmark"></i>
+      ) : (
+        <i className="fi fi-rr-bookmark"></i>
+      )}
     </button>
   );
 }
