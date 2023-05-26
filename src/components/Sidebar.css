@@ -4,8 +4,6 @@
   width: 300px;
   background: #fff;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 .sidebar .logo {
   display: flex;
