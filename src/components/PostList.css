@@ -35,6 +35,10 @@
 .post-content > p {
   margin: 10px 0;
 }
+.post .icon-btn {
+  border: none;
+  background: none;
+}
 .post svg,
 .post-summary svg {
   width: 20px;
