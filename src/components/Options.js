@@ -14,17 +14,9 @@ export default function Options({ post }) {
   const { mode } = useTheme();
 
   return (
-    <ul className="options">
-      <li>
-        <button>
-          <Link to="/c">View anaytics</Link>
-        </button>
-      </li>
-      {user.uid === post.author.id && (
-        <li>
-          <button>Delete</button>
-        </li>
-      )}
-    </ul>
+    <div className="options">
+      <button>View anaytics</button>
+      <button>Delete</button>
+    </div>
   );
 }
