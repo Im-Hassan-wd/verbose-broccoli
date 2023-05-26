@@ -86,9 +86,6 @@ export default function PostList({ posts, msg }) {
               )}
             </Link>
           </div>
-          <Link to={`/posts/${post.id}/analytics`}>
-            <i class="fi fi-rr-chat-arrow-grow aly"></i>
-          </Link>
           <Reaction post={post} />
         </div>
       ))}
