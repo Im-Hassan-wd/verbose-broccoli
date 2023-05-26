@@ -9,8 +9,8 @@
 .create-post label {
   display: inline;
 }
-.create-post svg {
-  width: 25px;
+.create-post i {
+  font-size: 1.2rem;
   margin: 0 8px;
   color: var(--gray);
   cursor: pointer;
