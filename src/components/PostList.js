@@ -71,7 +71,7 @@ export default function PostList({ posts, msg }) {
               <i className="fi fi-rr-pencil"></i>
             </button>
             <button className="icon-btn">
-              <i class="fi fi-rr-circle-cross"></i>
+              <i class="fi fi-rr-cross-circle"></i>
             </button>
             {user.uid !== post.author.id && <BookmarkIcon post={post} />}
             {user.uid === post.author.id && (
