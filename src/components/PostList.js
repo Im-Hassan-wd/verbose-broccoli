@@ -70,8 +70,8 @@ export default function PostList({ posts, msg }) {
                 {post.createdAt.toDate().toDateString().slice(3)}
               </span>
             </li>
-            <Options />
-            <BookmarkIcon post={post} />
+            {options && <Options />}
+            {user.uid !== post.author.id && <BookmarkIcon post={post} />}
             {user.uid === post.author.id && (
               <svg
                 onClick={() => setOptions(!options)}
