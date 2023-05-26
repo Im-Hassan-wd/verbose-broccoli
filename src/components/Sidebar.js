@@ -22,7 +22,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
               localColor ? `logo color-${localColor}` : `logo color-${color}`
             }
           >
-            <i className="fi fi-ss-comment-quote"></i>
+            <i className="fi fi-sr-comment-quote"></i>
 
             <span>Chatter</span>
           </div>
@@ -39,7 +39,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
                 exact
                 to="/"
               >
-                <i className="fi fi-ss-house-chimney"></i>
+                <i className="fi fi-sr-house-chimney"></i>
                 <span>Home</span>
               </NavLink>
             </li>
@@ -51,7 +51,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
                 }
                 to="/c"
               >
-                <i className="fi fi-ss-users-alt"></i>
+                <i className="fi fi-sr-users-alt"></i>
                 <span>Communities</span>
               </NavLink>
             </li>
@@ -63,7 +63,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
                 }
                 to="/settings"
               >
-                <i className="fi fi-ss-settings"></i>
+                <i className="fi fi-sr-settings"></i>
                 <span>Setting</span>
               </NavLink>
             </li>
