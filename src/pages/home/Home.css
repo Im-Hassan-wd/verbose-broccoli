@@ -44,8 +44,8 @@ div.edit {
   margin-right: 16px;
   cursor: pointer;
 }
-div.edit svg {
-  width: 15px;
+div.edit i {
+  font-size: 0.9rem;
 }
 .form-btn {
   display: flex;
