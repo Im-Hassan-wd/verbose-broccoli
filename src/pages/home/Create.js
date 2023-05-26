@@ -101,8 +101,8 @@ export default function Create() {
             <button
               style={
                 localColor
-                  ? { backgroundColor: `#${localColor}` }
-                  : { backgroundColor: `#${color}` }
+                  ? { border: `1px solid #${localColor}` }
+                  : { border: `1px solid #${color}` }
               }
             >
               Post
