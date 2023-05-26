@@ -30,11 +30,8 @@ export default function PostList({ posts, msg }) {
 
   const handleMouseEnter = async (post) => {
     // posts viewed by the current user
-    const viewPost = () => {
-      return post.views && post.views.filter((view) => view.uid === user.uid);
-    };
-
-    const viewed = viewPost();
+    const viewed =
+      post.views && post.views.filter((view) => view.uid === user.uid);
 
     const views = {
       uid: user.uid,
