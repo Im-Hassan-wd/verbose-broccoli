@@ -92,6 +92,10 @@
 .Appdark .post-summary {
   color: var(--gray);
 }
+.App.dark .post .info i,
+.App.dark .post-summary .info i {
+  color: #fff;
+}
 .App.dark .post .name,
 .Appdark .post-summary .name {
   color: #fff;
