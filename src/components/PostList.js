@@ -67,12 +67,7 @@ export default function PostList({ posts, msg }) {
                 {post.createdAt.toDate().toDateString().slice(3)}
               </span>
             </li>
-            <button className="icon-btn">
-              <i className="fi fi-rr-pencil"></i>
-            </button>
-            <button className="icon-btn">
-              <i class="fi fi-rr-cross-circle"></i>
-            </button>
+            {options && <Options />}
             {user.uid !== post.author.id && <BookmarkIcon post={post} />}
             {user.uid === post.author.id && (
               <button className="icon-btn" onClick={() => setOptions(!options)}>
