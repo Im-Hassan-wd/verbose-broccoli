@@ -2,6 +2,10 @@
   border-radius: 10px;
   background: #fff;
 }
+.post-details .icon-btn {
+  background: none;
+  border: none;
+}
 .navigation {
   margin-bottom: 16px;
   display: flex;
