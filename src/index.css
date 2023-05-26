@@ -108,10 +108,6 @@ textarea {
 .App a {
   color: var(--black);
 }
-.App.dark .post i,
-.App.dark .post-summary i {
-  color: #fff;
-}
 .App.dark a,
 .App.dark h2 {
   color: #fff;
