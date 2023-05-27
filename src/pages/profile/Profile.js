@@ -31,6 +31,10 @@ export default function Profile() {
     user.uid,
   ]);
 
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
   return (
     <>
       {currentUser && (

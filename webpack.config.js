@@ -1,5 +1,0 @@
-resolve: {
-  fallback: {
-    util: false;
-  }
-}

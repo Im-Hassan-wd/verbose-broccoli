@@ -16,8 +16,16 @@
 .mode-toggle {
   margin-right: auto;
 }
-.mode-toggle img {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+.mode-toggle button {
+  background: none;
+  border: none;
+  outline-color: var(--smoke);
+}
+.mode-toggle i {
+  font-size: 3rem;
+}
+
+/* dark mode  */
+.App.dark .mode-toggle i {
+  color: #333;
 }

@@ -1,10 +1,7 @@
 // styles
-import { useTheme } from "../hooks/useTheme";
 import "./Confirm.css";
 
 export default function Confirm({ title, item, type }) {
-  const { mode } = useTheme();
-
   return (
     <div className="confirm-overlay">
       <div className="confirm-popup">

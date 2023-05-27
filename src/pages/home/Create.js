@@ -4,8 +4,6 @@ import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
 import { useTheme } from "../../hooks/useTheme";
 import RichTextEditor from "./RichTextEditor";
-import { natural } from "natural";
-
 // import natural from "natural";
 
 export default function Create() {
@@ -92,10 +90,11 @@ export default function Create() {
           <i className="fi fi-rr-clip"></i>
           <i className="fi fi-rr-grin"></i>
         </div>
-        {image && <img src={image.name} />}
+        {image && <img src={image.name} alt="selected image" />}
+
         <div className="form-btn">
           <div className="edit">
-            <i class="fi fi-rr-edit"></i>
+            <i className="fi fi-rr-edit"></i>
             <span>Draft</span>
           </div>
           {!response.isPending && (

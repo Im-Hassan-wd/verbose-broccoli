@@ -15,7 +15,7 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
     <nav className="navbar">
       {!mobileMenu && screenWidth < 549 && (
         <button className="burger" onClick={() => setMobileMenu(true)}>
-          <i class="fi fi-rr-bars-sort"></i>
+          <i className="fi fi-rr-bars-sort"></i>
         </button>
       )}
       <div className="logo">

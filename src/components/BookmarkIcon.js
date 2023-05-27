@@ -1,5 +1,6 @@
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useFirestore } from "../hooks/useFirestore";
+import { v4 as uuid } from "uuid";
 
 export default function BookmarkIcon({ post }) {
   const { addDocument, response } = useFirestore("bookmarks");
@@ -26,7 +27,7 @@ export default function BookmarkIcon({ post }) {
 
   const bookmarkToAdd = {
     uid: user.uid,
-    id: Math.random(),
+    id: uuid(),
   };
 
   // post bookmarked by the current user

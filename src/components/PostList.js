@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 
 // styles
 import "./PostList.css";
 
 // hooks and components
-import { useTheme } from "../hooks/useTheme";
 import { useFirestore } from "../hooks/useFirestore";
 import { useAuthContext } from "../hooks/useAuthContext";
 import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";
 import Options from "./Options";
+import Confirm from "./Confirm";
 
 export default function PostList({ posts, msg }) {
-  const { mode } = useTheme();
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("posts");
 
@@ -35,7 +35,7 @@ export default function PostList({ posts, msg }) {
 
     const views = {
       uid: user.uid,
-      id: Math.random(),
+      id: uuid(),
     };
 
     // check whether post has been viewed by the current user
@@ -50,10 +50,17 @@ export default function PostList({ posts, msg }) {
     }
   };
 
+  const handleOptions = (index) => {
+    setOptions((state) => ({
+      ...state,
+      [index]: !state[index],
+    }));
+  };
+
   return (
     <div className="">
       {posts.length === 0 && <p className="msg">{msg}</p>}
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <div
           className="post"
           key={post.id}
@@ -67,10 +74,10 @@ export default function PostList({ posts, msg }) {
                 {post.createdAt.toDate().toDateString().slice(3)}
               </span>
             </li>
-            {options && <Options post={post} />}
+            {options[index] && <Options post={post} />}
             {user.uid !== post.author.id && <BookmarkIcon post={post} />}
             {user.uid === post.author.id && (
-              <button className="icon-btn" onClick={() => setOptions(!options)}>
+              <button className="icon-btn" onClick={() => handleOptions(index)}>
                 <i className="fi fi-sr-menu-dots-vertical"></i>
               </button>
             )}
@@ -87,6 +94,7 @@ export default function PostList({ posts, msg }) {
             </Link>
           </div>
           <Reaction post={post} />
+          {/* <Confirm /> */}
         </div>
       ))}
     </div>

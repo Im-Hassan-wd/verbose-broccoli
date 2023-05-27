@@ -8,6 +8,7 @@ const themeColors = ["2a85fe", "a058b3", "ff4545"];
 
 export default function ThemeSelector() {
   const { changeColor, mode, changeMode } = useTheme();
+  const localMode = localStorage.getItem("mode");
 
   const toggleMode = () => {
     changeMode(mode === "light" ? "dark" : "light");
@@ -16,12 +17,15 @@ export default function ThemeSelector() {
   return (
     <div className="theme-selector">
       <div className="mode-toggle">
-        <img
-          onClick={toggleMode}
-          src={modeIcon}
-          alt="light / dark icon mode"
-          style={{ filter: mode === "dark" ? "invert(100%)" : "invert(20%)" }}
-        />
+        <button onClick={toggleMode}>
+          <i
+            className={
+              mode === "light" || (localMode && localMode === "light")
+                ? "fi fi-rr-toggle-off"
+                : "fi fi-sr-toggle-on"
+            }
+          ></i>
+        </button>
       </div>
       <div className="theme-buttons">
         {themeColors.map((color) => (

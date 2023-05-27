@@ -14,11 +14,7 @@ export default function Reaction({ post }) {
   const { color } = useTheme();
   const localColor = localStorage.getItem("color");
 
-  const likedPost = () => {
-    return post.likes.filter((like) => like.uid === user.uid);
-  };
-
-  const like = likedPost();
+  const like = post.likes.filter((like) => like.uid === user.uid);
 
   // like to add
   const handleLike = async () => {

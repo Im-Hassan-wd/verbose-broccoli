@@ -123,7 +123,8 @@ div.edit i {
   background: var(--dark-200);
   color: #fff;
 }
-.App.dark .text-editor .toolbar-class {
+.App.dark .text-editor .toolbar-class,
+.App.dark .rdw-dropdown-wrapper {
   background: var(--dark-400);
   border: 1px solid var(--dark-100);
   color: #fff;

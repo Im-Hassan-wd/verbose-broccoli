@@ -4,5 +4,10 @@
   margin-left: 16px;
 }
 .options .icon-btn:last-of-type i {
-  color: crimson;
+  color: var(--red);
+}
+
+/* dark mode  */
+.App.dark .options .icon-btn:last-of-type i {
+  color: var(--red);
 }

@@ -4,14 +4,12 @@ import { useTheme } from "../hooks/useTheme";
 // styles
 import "./Sidebar.css";
 import Searchbar from "./Searchbar";
-import { useState } from "react";
 import NavbarOption from "./NavbarOption";
 
 export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
-  const { color, mode } = useTheme();
+  const { color } = useTheme();
 
   const localColor = localStorage.getItem("color");
-  const localMode = localStorage.getItem("mode");
 
   return (
     <>

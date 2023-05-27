@@ -32,7 +32,7 @@ const RichTextEditor = ({ setConvertedContent }) => {
   useEffect(() => {
     let html = convertToHTML(editorState.getCurrentContent());
     setConvertedContent(html);
-  }, [editorState]);
+  }, [editorState, setConvertedContent]);
 
   // purifying user inputs to prevent cross-site scripting (XSS
   function createMarkup(html) {

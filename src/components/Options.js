@@ -7,7 +7,7 @@ export default function Options({ post }) {
   return (
     <div className="options">
       <Link to={`/posts/${post.id}/analytics`}>
-        <i class="fi fi-rr-chat-arrow-grow aly"></i>
+        <i className="fi fi-rr-chat-arrow-grow aly"></i>
       </Link>
       <button className="icon-btn">
         <i className="fi fi-rr-pencil"></i>
