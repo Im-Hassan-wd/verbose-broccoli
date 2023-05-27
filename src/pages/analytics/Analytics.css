@@ -42,9 +42,10 @@
 .analytics .img-div {
   width: 100px;
 }
-.analytics .reaction i {
+.analytics i {
   font-size: 1.3rem;
   display: inline-block;
+  margin-bottom: -8px;
 }
 .analytics .impressions {
   display: grid;
@@ -76,17 +77,20 @@
   color: var(--black);
   font-weight: bold;
 }
-.analytics .svg-div {
+.analytics .icon-div {
   background: #fff3ea;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.analytics .svg-div-2 {
+.analytics .icon-div-2 {
   background: #e7f8ff;
 }
-.analytics .svg-div-3 {
+.analytics .icon-div-3 {
   background: #ebf9ed;
 }
 .analytics .impressions li svg {
