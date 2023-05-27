@@ -4,6 +4,7 @@ import { useFirestore } from "../../hooks/useFirestore";
 import Avatar from "../../components/Avatar";
 import { useTheme } from "../../hooks/useTheme";
 import RichTextEditor from "./RichTextEditor";
+import { natural } from "natural";
 
 // import natural from "natural";
 
