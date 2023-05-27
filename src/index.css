@@ -38,6 +38,9 @@ p p {
   margin: 0;
   padding: 0;
 }
+i {
+  margin-bottom: -4px;
+}
 
 /* layout */
 button {

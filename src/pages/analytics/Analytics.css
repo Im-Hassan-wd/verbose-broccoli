@@ -10,11 +10,18 @@
 .analytics .navigations {
   margin: 0;
 }
+.navigations i {
+  font-size: 1.5rem;
+}
 .analytics .author {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
+}
+.analytics div.avatar {
+  width: 30px;
+  height: 30px;
 }
 .analytics p.post-content {
   padding: 0px;
@@ -34,6 +41,10 @@
 }
 .analytics .img-div {
   width: 100px;
+}
+.analytics .reaction i {
+  font-size: 1.3rem;
+  display: inline-block;
 }
 .analytics .impressions {
   display: grid;

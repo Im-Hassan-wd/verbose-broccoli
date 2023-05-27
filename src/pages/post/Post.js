@@ -23,9 +23,9 @@ export default function Post() {
     <>
       <button className="navigation" onClick={() => history.goBack()}>
         <i className="fi fi-rr-arrow-left"></i>
-
         <span>Posts</span>
       </button>
+
       <div className="post-details">
         <PostDetails post={document} />
         <PostComment post={document} />
