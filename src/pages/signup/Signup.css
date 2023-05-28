@@ -80,6 +80,9 @@
 .App.dark .auth-form .input-div {
   background: var(--dark-400);
 }
+.App.dark .auth-form input {
+  color: #fff;
+}
 .App.dark .auth-form .input-div i {
   color: var(--smoke);
 }

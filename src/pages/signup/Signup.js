@@ -6,16 +6,18 @@ import { useSignup } from "../../hooks/useSignup";
 import "./Signup.css";
 
 export default function Signup() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [headline, setHeadline] = useState("");
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, password, displayName, thumbnail);
+    signup(name, email, password, displayName, headline, thumbnail);
   };
 
   const handleFileChange = (e) => {
@@ -31,7 +33,7 @@ export default function Signup() {
       setThumbnailError("Selected file must be an image");
       return;
     }
-    if (selected.size > 100000) {
+    if (selected.size > 1000000) {
       setThumbnailError("Image file size must be less than 1000kb");
       return;
     }
@@ -50,6 +52,17 @@ export default function Signup() {
 
       <h3>Welcome!</h3>
       <p>Join the world largest content creation community (:</p>
+
+      <div className="input-div">
+        <i className="fi fi-rr-id-card-clip-alt"></i>
+        <input
+          required
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          placeholder="Name"
+        />
+      </div>
 
       <div className="input-div">
         <i className="fi fi-rr-envelope"></i>
@@ -72,6 +85,7 @@ export default function Signup() {
           placeholder="Passoword"
         />
       </div>
+
       <div className="input-div">
         <i className="fi fi-rr-user"></i>
         <input
@@ -80,6 +94,17 @@ export default function Signup() {
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
           placeholder="Choose a display name"
+        />
+      </div>
+
+      <div className="input-div">
+        <i className="fi fi-rr-briefcase"></i>
+        <input
+          required
+          type="text"
+          onChange={(e) => setHeadline(e.target.value)}
+          value={headline}
+          placeholder="Headline"
         />
       </div>
 
