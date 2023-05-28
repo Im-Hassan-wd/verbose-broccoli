@@ -46,114 +46,120 @@ export default function Signup() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form sign-form">
-      <div className="logo">
-        <i className="fi fi-sr-comment-quote"></i>
-        <span>Chatter</span>
-      </div>
+    <>
+      {/* <img className="bg" src="./img/bg.jpg" alt="background" /> */}
+      <form onSubmit={handleSubmit} className="auth-form sign-form">
+        {/* bg  */}
 
-      <h3>Welcome!</h3>
-      <p>Join the world largest content creation community (:</p>
+        <div className="logo">
+          <i className="fi fi-sr-comment-quote"></i>
+          <span>Chatter</span>
+        </div>
 
-      <div className="input-div">
-        <label htmlFor="name">
-          <i className="fi fi-rr-id-card-clip-alt"></i>
-        </label>
-        <input
-          id="name"
-          required
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          placeholder="Name"
+        <h3>Welcome!</h3>
+        <p>Join the world largest content creation community (:</p>
+
+        <div className="input-div">
+          <label htmlFor="name">
+            <i className="fi fi-rr-id-card-clip-alt"></i>
+          </label>
+          <input
+            id="name"
+            required
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            placeholder="Name"
+          />
+        </div>
+
+        <div className="input-div">
+          <label htmlFor="email">
+            <i className="fi fi-rr-envelope"></i>
+          </label>
+          <input
+            id="email"
+            required
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            placeholder="Email Address"
+          />
+        </div>
+
+        <div className="input-div">
+          <label htmlFor="password">
+            <i className="fi fi-rr-lock"></i>
+          </label>
+          <input
+            id="password"
+            required
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            placeholder="Passoword"
+          />
+        </div>
+
+        <div className="input-div">
+          <label htmlFor="displayName">
+            <i className="fi fi-rr-user"></i>
+          </label>
+          <input
+            id="displayName"
+            required
+            type="text"
+            onChange={(e) => setDisplayName(e.target.value)}
+            value={displayName}
+            placeholder="Choose a display name"
+          />
+        </div>
+
+        <div className="input-div">
+          <label htmlFor="headline">
+            <i className="fi fi-rr-briefcase"></i>
+          </label>
+          <input
+            id="headline"
+            required
+            type="text"
+            onChange={(e) => setHeadline(e.target.value)}
+            value={headline}
+            placeholder="Headline"
+          />
+        </div>
+
+        <div className="input-div">
+          <label htmlFor="file">
+            <i className="fi fi-rr-picture"></i>
+          </label>
+          <input id="file" required type="file" onChange={handleFileChange} />
+          {thumbnailError && <div className="error">{thumbnailError}</div>}
+        </div>
+
+        {!isPending && <button className="btn">Sign up</button>}
+        {isPending && (
+          <button className="btn" disabled>
+            Signing Up...
+          </button>
+        )}
+
+        <p> or </p>
+
+        <img
+          onClick={googleSignIn}
+          tabIndex={0}
+          role="button"
+          src="./img/sign-up-google.png"
+          alt="google button"
+          className="auth-img"
         />
-      </div>
 
-      <div className="input-div">
-        <label htmlFor="email">
-          <i className="fi fi-rr-envelope"></i>
-        </label>
-        <input
-          id="email"
-          required
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          placeholder="Email Address"
-        />
-      </div>
-
-      <div className="input-div">
-        <label htmlFor="password">
-          <i className="fi fi-rr-lock"></i>
-        </label>
-        <input
-          id="password"
-          required
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          placeholder="Passoword"
-        />
-      </div>
-
-      <div className="input-div">
-        <label htmlFor="displayName">
-          <i className="fi fi-rr-user"></i>
-        </label>
-        <input
-          id="displayName"
-          required
-          type="text"
-          onChange={(e) => setDisplayName(e.target.value)}
-          value={displayName}
-          placeholder="Choose a display name"
-        />
-      </div>
-
-      <div className="input-div">
-        <label htmlFor="headline">
-          <i className="fi fi-rr-briefcase"></i>
-        </label>
-        <input
-          id="headline"
-          required
-          type="text"
-          onChange={(e) => setHeadline(e.target.value)}
-          value={headline}
-          placeholder="Headline"
-        />
-      </div>
-
-      <div className="input-div">
-        <label htmlFor="file">
-          <i className="fi fi-rr-picture"></i>
-        </label>
-        <input id="file" required type="file" onChange={handleFileChange} />
-        {thumbnailError && <div className="error">{thumbnailError}</div>}
-      </div>
-
-      {!isPending && <button className="btn">Sign up</button>}
-      {isPending && (
-        <button className="btn" disabled>
-          Signing Up...
-        </button>
-      )}
-
-      <p> or </p>
-
-      <img
-        onClick={googleSignIn}
-        tabIndex={0}
-        role="button"
-        src="./img/sign-in-google.png"
-        alt="google button"
-      />
-
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
-      {error && <div className="error">{error}</div>}
-    </form>
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
+        {error && <div className="error">{error}</div>}
+      </form>
+    </>
   );
 }

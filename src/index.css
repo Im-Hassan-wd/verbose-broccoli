@@ -18,12 +18,12 @@
 
 /* base styles */
 body {
-  font-family: "Open Sans", sans-serif;
   background: var(--smoke);
   font-size: 0.8rem;
 }
 * {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
