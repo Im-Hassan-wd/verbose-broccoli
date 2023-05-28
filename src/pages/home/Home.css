@@ -21,6 +21,10 @@
   align-items: center;
   margin-top: 16px;
 }
+.create-post .form-btn {
+  display: flex;
+  align-items: center;
+}
 .create-post button {
   display: flex;
   justify-content: center;
@@ -45,10 +49,6 @@ div.edit {
 }
 div.edit i {
   font-size: 0.9rem;
-}
-.form-btn {
-  display: flex;
-  align-items: center;
 }
 
 /* rich text editor  */
@@ -155,5 +155,8 @@ div.edit i {
   .create-post .action {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .create-post .form-btn {
+    margin-top: 16px;
   }
 }
