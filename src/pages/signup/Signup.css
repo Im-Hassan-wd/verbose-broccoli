@@ -68,6 +68,9 @@
   /* width: 120px; */
   color: #fff;
 }
+.auth-form .btn {
+  margin-top: 16px;
+}
 .auth-form img {
   width: 50%;
   border-radius: 5px;

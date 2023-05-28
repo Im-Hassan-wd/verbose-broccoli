@@ -2,9 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
 
-// styles
-import "./Login.css";
-
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,6 +44,15 @@ export default function Login() {
         />
       </div>
 
+      <div className="btn-wrap">
+        {!isPending && <button className="btn">Signin</button>}
+        {isPending && (
+          <button className="btn" disabled>
+            Signing in...
+          </button>
+        )}
+      </div>
+
       <p> or </p>
 
       <img src="./img/sign-in-google.png" />
@@ -55,14 +61,6 @@ export default function Login() {
         Don't have an account? <Link to="/signup">Signup</Link>
       </small>
 
-      <div className="btn-wrap">
-        {!isPending && <button className="btn">Login</button>}
-        {isPending && (
-          <button className="btn" disabled>
-            logging in...
-          </button>
-        )}
-      </div>
       {error && <small className="error">{error}</small>}
     </form>
   );
