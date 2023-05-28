@@ -58,7 +58,14 @@ export default function Login() {
 
       <p> or </p>
 
-      <GoogleButton onClick={googleSignIn} />
+      <img
+        onClick={googleSignIn}
+        tabIndex={0}
+        role="button"
+        src="./img/sign-in-google.png"
+        alt="google button"
+        className="auth-img"
+      />
 
       <small>
         Don't have an account? <Link to="/signup">Signup</Link>
