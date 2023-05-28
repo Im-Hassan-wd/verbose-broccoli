@@ -1,5 +1,6 @@
 import { useReducer, useEffect, useState } from "react";
 import { db, timestamp, storage } from "../firebase/config";
+import { useAuthContext } from "./useAuthContext";
 
 let initialState = {
   document: null,
@@ -43,6 +44,7 @@ const firestoreReducer = (state, action) => {
 export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [isCancelled, setIsCancelled] = useState(false);
+  const { user } = useAuthContext();
 
   // collection ref
   const ref = db.collection(collection);
@@ -61,8 +63,7 @@ export const useFirestore = (collection) => {
       try {
         // if doc include images
         // upload doc iamge
-
-        const uploadPath = `images/${image.name}`;
+        const uploadPath = `images/${user.uid}/${image.name}`;
         const img = await storage.ref(uploadPath).put(image);
         const downloadURL = await img.ref.getDownloadURL();
 
