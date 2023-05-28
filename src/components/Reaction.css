@@ -32,6 +32,18 @@
   padding: 0 8px;
   border-radius: 8px;
 }
+.reaction .color-a058b3 .count {
+  background: var(--purple);
+  color: #fff;
+}
+.reaction .color-ff4545 .count {
+  background: var(--red);
+  color: #fff;
+}
+.reaction .color-2a85fe .count {
+  background: var(--blue);
+  color: #fff;
+}
 .post .reaction a {
   width: 0%;
 }
@@ -39,6 +51,15 @@
 /* dark mode  */
 .App.dark .reaction .count {
   background: var(--dark-100);
+}
+.App.dark .reaction .color-a058b3 .count {
+  background: var(--purple);
+}
+.App.dark .reaction .color-ff4545 .count {
+  background: var(--red);
+}
+.App.dark .reaction .color-2a85fe .count {
+  background: var(--blue);
 }
 
 /* media query */
