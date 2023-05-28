@@ -13,7 +13,7 @@ export default function Options({ post }) {
         <i className="fi fi-rr-pencil"></i>
       </button>
       <button className="icon-btn">
-        <i class="fi fi-rr-cross-circle"></i>
+        <i className="fi fi-rr-cross-circle"></i>
       </button>
     </div>
   );
