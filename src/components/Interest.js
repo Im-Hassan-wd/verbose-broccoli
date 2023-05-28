@@ -65,7 +65,7 @@ export default function Interest() {
           ))}
         </ul>
         <div>
-          <button className={`color-${color}`} onClick={handleSubmit}>
+          <button className={`btn color-${color}`} onClick={handleSubmit}>
             Confirm interests
           </button>
         </div>

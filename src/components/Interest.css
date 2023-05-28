@@ -38,10 +38,13 @@
   border-radius: 10px;
   gap: 20px;
   cursor: pointer;
-  border: 3px solid #fff;
+  border: 3px solid transparent;
 }
 .interest li.active {
   border: 3px solid var(--blue);
+}
+.interest i {
+  display: none;
 }
 .interest .interest-img {
   width: 100px;
@@ -49,22 +52,14 @@
 .interest div {
   text-align: center;
 }
-.interest li.active svg {
+.interest li.active i {
   display: block;
+  font-size: 1.5rem;
   margin-left: auto;
   color: var(--blue);
-  width: 30px;
 }
 .interest li svg {
   display: none;
-}
-.interest button {
-  border: none;
-  background: none;
-  padding: 10px 16px;
-  color: #fff;
-  border-radius: 20px;
-  /* margin-top: 24px; */
 }
 .interest button.color-2a85fe {
   background: var(--blue);
@@ -79,6 +74,7 @@
 }
 .App.dark .interest li {
   background: var(--dark-400);
+  /* border-color: var(--dark-100); */
 }
 
 /* media query 0 */
