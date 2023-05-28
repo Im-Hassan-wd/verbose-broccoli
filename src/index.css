@@ -70,7 +70,8 @@ button {
   align-items: center;
   gap: 10px;
   border-radius: 5px;
-  border: 2px solid var(--smoke);
+  border: none;
+  background: #f6f7fc;
 }
 .auth-form .input-div input {
   border: none;
@@ -98,7 +99,6 @@ button {
 
 /* dark mode  */
 .App.dark .auth-form .input-div {
-  border-color: var(--dark-100);
 }
 .App.dark .auth-form .input-div i {
   color: var(--smoke);

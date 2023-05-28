@@ -19,25 +19,23 @@ export default function Login() {
     <form onSubmit={handleSubmit} className="auth-form">
       <h2>Login</h2>
 
-      <label>
-        <span>email:</span>
+      <div className="input-div">
         <input
           required
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
-      </label>
+      </div>
 
-      <label>
-        <span>password:</span>
+      <div className="input-div">
         <input
           required
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-      </label>
+      </div>
 
       {!isPending && <button className="btn">Login</button>}
       {isPending && (
