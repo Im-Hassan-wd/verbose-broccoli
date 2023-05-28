@@ -56,8 +56,9 @@ export default function Profile() {
             </ul>
 
             <div className="btns">
-              <button>Message</button>
+              <button className="profile-btn">Message</button>
               <button
+                className="profile-btn"
                 style={
                   localColor
                     ? { backgroundColor: `#${localColor}` }
