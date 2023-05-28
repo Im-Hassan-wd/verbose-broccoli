@@ -65,9 +65,6 @@
   background: #5b8dd7;
   height: 40px;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #fff;
 }
 .auth-form img {

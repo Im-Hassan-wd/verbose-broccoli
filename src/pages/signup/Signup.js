@@ -43,39 +43,56 @@ export default function Signup() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h2>sign up</h2>
-      <label>
-        <span>email:</span>
+      <div className="logo">
+        <i className="fi fi-sr-comment-quote"></i>
+        <span>Chatter</span>
+      </div>
+
+      <h3>Welcome!</h3>
+      <p>Join the world largest content creation community (:</p>
+
+      <div className="input-div">
+        <i className="fi fi-rr-envelope"></i>
         <input
           required
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          placeholder="Email Address"
         />
-      </label>
-      <label>
-        <span>password:</span>
+      </div>
+
+      <div className="input-div">
+        <i className="fi fi-rr-lock"></i>
         <input
           required
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          placeholder="Passoword"
         />
-      </label>
-      <label>
-        <span>display name:</span>
+      </div>
+      <div className="input-div">
+        <i className="fi fi-rr-user"></i>
         <input
           required
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
+          placeholder="Choose a display name"
         />
-      </label>
-      <label>
-        <span>Profile thumbnail:</span>
+      </div>
+
+      <div className="input-div">
+        <i className="fi fi-rr-picture"></i>
         <input required type="file" onChange={handleFileChange} />
         {thumbnailError && <div className="error">{thumbnailError}</div>}
-      </label>
+      </div>
+
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
+
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && (
         <button className="btn" disabled>
@@ -83,9 +100,6 @@ export default function Signup() {
         </button>
       )}
       {error && <div className="error">{error}</div>}
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
     </form>
   );
 }
