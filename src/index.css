@@ -61,41 +61,49 @@ button {
 }
 
 /* forms */
+.auth-form .input-div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--smoke);
+}
+.auth-form .input-div input {
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  background: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+.auth-form .input-div i {
+  color: var(--black);
+  font-size: 1.2rem;
+}
 .auth-form p {
   margin-top: 16px;
   font-size: 12px;
   color: var(--purple);
 }
-.App.dark .auth-form {
-  background: var(--dark-300);
-  border: 1px solid var(--dark-100);
-  color: #fff;
-}
 .auth-form a {
   text-decoration: underline;
   color: var(--blue);
 }
-label {
-  display: block;
-  margin: 24px auto;
+
+/* dark mode  */
+.App.dark .auth-form .input-div {
+  border-color: var(--dark-100);
 }
-label span {
-  display: block;
-  margin-bottom: 6px;
+.App.dark .auth-form .input-div i {
+  color: var(--smoke);
 }
-input,
-textarea {
-  padding: 8px 6px;
-  font-size: 1em;
-  color: #777;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-textarea {
-  min-height: 160px;
-}
+
 .error {
   display: block;
   color: red;
