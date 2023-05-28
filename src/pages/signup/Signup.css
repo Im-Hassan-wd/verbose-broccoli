@@ -69,7 +69,7 @@
 .interest .btn {
   background: #5b8dd7;
   height: 40px;
-  /* width: 120px; */
+  width: 120px;
   color: #fff;
 }
 .auth-form .btn {
@@ -78,6 +78,7 @@
 .auth-form img {
   width: 50%;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 /* dark mode  */

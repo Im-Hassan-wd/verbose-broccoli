@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSignup } from "../../hooks/useSignup";
-import { GoogleButton } from "react-google-button";
 import { useGoogle } from "../../hooks/useGoogle";
 
 // styles
@@ -143,7 +142,13 @@ export default function Signup() {
 
       <p> or </p>
 
-      <GoogleButton onClick={googleSignIn} />
+      <img
+        onClick={googleSignIn}
+        tabIndex={0}
+        role="button"
+        src="./img/sign-in-google.png"
+        alt="google button"
+      />
 
       <p>
         Already have an account? <Link to="/login">Login</Link>
