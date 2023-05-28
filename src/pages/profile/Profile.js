@@ -44,15 +44,15 @@ export default function Profile() {
           </div>
 
           <div className="user-info">
-            <h2>{currentUser.displayName}</h2>
+            <h2>{currentUser.name}</h2>
             <p>Nigeria</p>
 
             <ul className="">
-              <li>@{currentUser.displayName}</li>
+              <li>@{currentUser.displayName.toLowerCase()}</li>
               <span>.</span>
               <li>{currentUser.email}</li>
               <span>.</span>
-              <li>This is what I do</li>
+              <li>{currentUser.headline}</li>
             </ul>
 
             <div className="btns">

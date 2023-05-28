@@ -84,6 +84,9 @@
 .profile svg {
   width: 15px;
 }
+.profile p.msg {
+  color: var(--gray);
+}
 
 /* dark mode  */
 .App.dark .profile {
