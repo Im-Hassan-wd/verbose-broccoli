@@ -16,7 +16,8 @@ export const useGoogle = () => {
   const googleSignIn = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      const res = await signInWithPopup(auth, provider);
+      // const res = await signInWithPopup(auth, provider);
+      const res = await signInWithRedirect(auth, provider);
 
       if (!res) {
         throw new Error("Could not complete signup");
