@@ -17,36 +17,49 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h2>Login</h2>
+      <div className="logo">
+        <i className="fi fi-sr-comment-quote"></i>
+        <span>Chatter</span>
+      </div>
+
+      <h3>Welcome!</h3>
+      <p>Login to your account</p>
 
       <div className="input-div">
+        <i className="fi fi-rr-envelope"></i>
         <input
           required
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          placeholder="Email Address"
         />
       </div>
 
       <div className="input-div">
+        <i className="fi fi-rr-lock"></i>
         <input
           required
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          placeholder="Password"
         />
       </div>
 
-      {!isPending && <button className="btn">Login</button>}
-      {isPending && (
-        <button className="btn" disabled>
-          logging in...
-        </button>
-      )}
-      {error && <small className="error">{error}</small>}
-      <p>
+      <small>
         Don't have an account? <Link to="/signup">Signup</Link>
-      </p>
+      </small>
+
+      <div className="btn-wrap">
+        {!isPending && <button className="btn">Login</button>}
+        {isPending && (
+          <button className="btn" disabled>
+            logging in...
+          </button>
+        )}
+      </div>
+      {error && <small className="error">{error}</small>}
     </form>
   );
 }
