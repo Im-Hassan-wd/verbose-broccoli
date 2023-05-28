@@ -44,7 +44,7 @@ export default function Signup() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form">
+    <form onSubmit={handleSubmit} className="auth-form sign-form">
       <div className="logo">
         <i className="fi fi-sr-comment-quote"></i>
         <span>Chatter</span>
@@ -54,8 +54,11 @@ export default function Signup() {
       <p>Join the world largest content creation community (:</p>
 
       <div className="input-div">
-        <i className="fi fi-rr-id-card-clip-alt"></i>
+        <label htmlFor="name">
+          <i className="fi fi-rr-id-card-clip-alt"></i>
+        </label>
         <input
+          id="name"
           required
           type="text"
           onChange={(e) => setName(e.target.value)}
@@ -65,8 +68,11 @@ export default function Signup() {
       </div>
 
       <div className="input-div">
-        <i className="fi fi-rr-envelope"></i>
+        <label htmlFor="email">
+          <i className="fi fi-rr-envelope"></i>
+        </label>
         <input
+          id="email"
           required
           type="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -76,8 +82,11 @@ export default function Signup() {
       </div>
 
       <div className="input-div">
-        <i className="fi fi-rr-lock"></i>
+        <label htmlFor="password">
+          <i className="fi fi-rr-lock"></i>
+        </label>
         <input
+          id="password"
           required
           type="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -87,8 +96,11 @@ export default function Signup() {
       </div>
 
       <div className="input-div">
-        <i className="fi fi-rr-user"></i>
+        <label htmlFor="displayName">
+          <i className="fi fi-rr-user"></i>
+        </label>
         <input
+          id="displayName"
           required
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
@@ -98,8 +110,11 @@ export default function Signup() {
       </div>
 
       <div className="input-div">
-        <i className="fi fi-rr-briefcase"></i>
+        <label htmlFor="headline">
+          <i className="fi fi-rr-briefcase"></i>
+        </label>
         <input
+          id="headline"
           required
           type="text"
           onChange={(e) => setHeadline(e.target.value)}
@@ -109,14 +124,12 @@ export default function Signup() {
       </div>
 
       <div className="input-div">
-        <i className="fi fi-rr-picture"></i>
-        <input required type="file" onChange={handleFileChange} />
+        <label htmlFor="file">
+          <i className="fi fi-rr-picture"></i>
+        </label>
+        <input id="file" required type="file" onChange={handleFileChange} />
         {thumbnailError && <div className="error">{thumbnailError}</div>}
       </div>
-
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
 
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && (
@@ -124,6 +137,14 @@ export default function Signup() {
           Signing Up...
         </button>
       )}
+
+      <p> or </p>
+
+      <img src="./img/sign-up-google.png" />
+
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
       {error && <div className="error">{error}</div>}
     </form>
   );

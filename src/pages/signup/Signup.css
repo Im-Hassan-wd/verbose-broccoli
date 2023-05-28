@@ -7,6 +7,9 @@
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
+.sign-form {
+  max-width: 506px;
+}
 .auth-form .logo {
   display: flex;
   align-items: center;
@@ -47,6 +50,7 @@
 .auth-form .input-div i {
   color: var(--black);
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .auth-form small {
   margin: 16px 0px;
