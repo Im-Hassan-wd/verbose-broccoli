@@ -47,6 +47,10 @@ export default function Login() {
         />
       </div>
 
+      <p> or </p>
+
+      <img src="./img/sign-in-google.png" />
+
       <small>
         Don't have an account? <Link to="/signup">Signup</Link>
       </small>
