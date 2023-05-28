@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSignup } from "../../hooks/useSignup";
+import { GoogleButton } from "react-google-button";
 
 // styles
 import "./Signup.css";
+import { useGoogle } from "../../hooks/useGoogle";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -14,6 +16,7 @@ export default function Signup() {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
+  const { googleSignIn } = useGoogle();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -140,7 +143,7 @@ export default function Signup() {
 
       <p> or </p>
 
-      <img src="./img/sign-up-google.png" />
+      <GoogleButton onClick={googleSignIn} />
 
       <p>
         Already have an account? <Link to="/login">Login</Link>
