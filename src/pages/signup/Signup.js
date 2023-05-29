@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSignup } from "../../hooks/useSignup";
-import { useGoogle } from "../../hooks/useGoogle";
+import GoogleButton from "../../components/GoogleButton";
 
 // styles
 import "./Signup.css";
-import GoogleButton from "../../components/GoogleButton";
 
 export default function Signup() {
   const [name, setName] = useState("");
