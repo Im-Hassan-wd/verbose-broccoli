@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+import { auth, db } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithRedirect,
 } from "firebase/auth";
-import { auth, db } from "../firebase/config";
 
 export const useGoogle = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -13,13 +13,11 @@ export const useGoogle = () => {
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
 
-  const googleSignIn = async () => {
+  const googleSignUp = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      // const res = await signInWithPopup(auth, provider);
-      const res = await signInWithRedirect(auth, provider);
-
-      console.log(res);
+      const res = await signInWithPopup(auth, provider);
+      // const res = await signInWithRedirect(auth, provider);
 
       if (!res) {
         throw new Error("Could not complete signup");
@@ -52,9 +50,40 @@ export const useGoogle = () => {
     }
   };
 
+  const googleSignIn = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const res = await signInWithPopup(auth, provider);
+      // const res = await signInWithRedirect(auth, provider);
+
+      if (!res) {
+        throw new Error("Could not complete signup");
+      }
+
+      // create a user documant
+      await db.collection("users").doc(res.user.uid).update({
+        online: true,
+      });
+
+      // dispatch login action
+      dispatch({ type: "LOGIN", payload: res.user });
+
+      if (!isCancelled) {
+        setIsPending(false);
+        setError(null);
+      }
+    } catch (err) {
+      if (!isCancelled) {
+        console.log(err.message);
+        setError(err.message);
+        setIsPending(false);
+      }
+    }
+  };
+
   useEffect(() => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { googleSignIn, error, isPending };
+  return { googleSignUp, googleSignIn, error, isPending };
 };

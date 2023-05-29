@@ -5,6 +5,7 @@ import GoogleButton from "../../components/GoogleButton";
 
 // styles
 import "./Signup.css";
+import { useGoogle } from "../../hooks/useGoogle";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -15,6 +16,7 @@ export default function Signup() {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
+  const { googleSignUp, signupError } = useGoogle();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -145,7 +147,11 @@ export default function Signup() {
 
         <p> or </p>
 
-        <GoogleButton text="Sign up with Google" />
+        <GoogleButton
+          handleSign={googleSignUp}
+          error={signupError}
+          text="Sign up with Google"
+        />
 
         <p>
           Already have an account? <Link to="/login">Login</Link>

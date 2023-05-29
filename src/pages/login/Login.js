@@ -8,7 +8,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, isPending, error } = useLogin();
-  const { googleSignIn } = useGoogle();
+  const { googleSignIn, error: signinError } = useGoogle();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +58,11 @@ export default function Login() {
 
       <p> or </p>
 
-      <GoogleButton text="Sign in with Google" />
+      <GoogleButton
+        handleSign={googleSignIn}
+        error={signinError}
+        text="Sign in with Google"
+      />
 
       <small>
         Don't have an account? <Link to="/signup">Signup</Link>
