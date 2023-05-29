@@ -19,6 +19,8 @@ export const useGoogle = () => {
       // const res = await signInWithPopup(auth, provider);
       const res = await signInWithRedirect(auth, provider);
 
+      console.log(res);
+
       if (!res) {
         throw new Error("Could not complete signup");
       }
@@ -43,6 +45,7 @@ export const useGoogle = () => {
       }
     } catch (err) {
       if (!isCancelled) {
+        console.log(err.message);
         setError(err.message);
         setIsPending(false);
       }
