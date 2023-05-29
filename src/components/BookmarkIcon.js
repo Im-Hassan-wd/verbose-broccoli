@@ -15,6 +15,7 @@ export default function BookmarkIcon({ post }) {
 
   const bookmark = {
     id: user.uid,
+    postId: post.id,
     author,
     content: post.content,
     imageURL: post.imageURL,
@@ -28,6 +29,7 @@ export default function BookmarkIcon({ post }) {
   const bookmarkToAdd = {
     uid: user.uid,
     id: uuid(),
+    postId: post.id,
   };
 
   // post bookmarked by the current user
