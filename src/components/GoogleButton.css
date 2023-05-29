@@ -8,6 +8,8 @@
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
+  color: #fff;
+  border: 1px solid #f5f5f5;
 }
 .google-icon {
   padding: 8px;
@@ -17,4 +19,9 @@
 }
 .google-text {
   padding: 10px;
+}
+
+/* dark mode  */
+.App.dark .google-button {
+  border-color: var(--dark-100);
 }
