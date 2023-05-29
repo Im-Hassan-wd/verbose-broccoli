@@ -35,6 +35,9 @@
   color: var(--gray);
   padding: 8px 0;
 }
+p.join {
+  margin-bottom: 24px;
+}
 /* forms */
 .auth-form .input-div {
   display: flex;
@@ -80,7 +83,7 @@
 .interest .btn {
   background: #5b8dd7;
   height: 40px;
-  width: 120px;
+  padding: 0 24px;
   color: #fff;
 }
 .auth-form .btn {

@@ -58,7 +58,17 @@ export default function Signup() {
         </div>
 
         <h3>Welcome!</h3>
-        <p>Join the world largest content creation community (:</p>
+        <p className="join">
+          Join the world largest content creation community (:
+        </p>
+
+        <GoogleButton
+          handleSign={googleSignUp}
+          error={signupError}
+          text="Sign up with Google"
+        />
+
+        <p> or </p>
 
         <div className="input-div">
           <label htmlFor="name">
@@ -144,14 +154,6 @@ export default function Signup() {
             Signing Up...
           </button>
         )}
-
-        <p> or </p>
-
-        <GoogleButton
-          handleSign={googleSignUp}
-          error={signupError}
-          text="Sign up with Google"
-        />
 
         <p>
           Already have an account? <Link to="/login">Login</Link>
