@@ -15,7 +15,11 @@ export default function Signup() {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
-  const { googleSignIn } = useGoogle();
+  const {
+    googleSignIn,
+    isPending: googlePending,
+    error: googleError,
+  } = useGoogle();
 
   const handleSubmit = (e) => {
     e.preventDefault();
