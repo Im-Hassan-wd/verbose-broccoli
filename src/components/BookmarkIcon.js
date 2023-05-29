@@ -3,14 +3,20 @@ import { useFirestore } from "../hooks/useFirestore";
 import { v4 as uuid } from "uuid";
 
 export default function BookmarkIcon({ post }) {
-  const { addDocument, response } = useFirestore("bookmarks");
-  const { updateDocument } = useFirestore("posts");
+  const { addDocument } = useFirestore("bookmarks");
+  const { updateDocument, response } = useFirestore("posts");
   const { user } = useAuthContext();
 
   const author = {
     displayName: post.author.displayName,
     photoURL: post.author.photoURL,
     id: post.author.id,
+  };
+
+  const bookmarkToAdd = {
+    userId: user.uid,
+    id: uuid(),
+    postId: post.id,
   };
 
   const bookmark = {
@@ -26,20 +32,15 @@ export default function BookmarkIcon({ post }) {
     bookmarks: post.bookmarks,
   };
 
-  const bookmarkToAdd = {
-    uid: user.uid,
-    id: uuid(),
-    postId: post.id,
-  };
-
   // post bookmarked by the current user
-
   const bookmarked =
     post.bookmarks &&
-    post.bookmarks.filter((bookmark) => bookmark.uid === user.uid);
+    post.bookmarks.filter((bookmark) => bookmark.userId === user.uid);
+
+  // console.log(bookmarked);
 
   const handleClick = async () => {
-    if (bookmarked.length && bookmarked[0].uid === user.uid) {
+    if (bookmarked.length && bookmarked[0].userId === user.uid) {
       console.log("post already bookmarked by you");
     } else {
       await updateDocument(post.id, {
@@ -54,7 +55,7 @@ export default function BookmarkIcon({ post }) {
 
   return (
     <button className="icon-btn" onClick={handleClick}>
-      {bookmarked.length && bookmarked[0].uid === user.uid ? (
+      {bookmarked.length && bookmarked[0].userId === user.uid ? (
         <i className="fi fi-sr-bookmark"></i>
       ) : (
         <i className="fi fi-rr-bookmark"></i>
