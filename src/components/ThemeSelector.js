@@ -1,5 +1,4 @@
 import { useTheme } from "../hooks/useTheme";
-import modeIcon from "../assets/mode-icon.svg";
 
 // styles
 import "./ThemeSelector.css";
@@ -20,7 +19,7 @@ export default function ThemeSelector() {
         <button onClick={toggleMode}>
           <i
             className={
-              mode === "light" || (localMode && localMode === "light")
+              localMode === "light" || mode === "light"
                 ? "fi fi-rr-toggle-off"
                 : "fi fi-sr-toggle-on"
             }

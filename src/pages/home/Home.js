@@ -10,7 +10,6 @@ import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Create from "./Create";
 import { useFirestore } from "../../hooks/useFirestore";
-import { useEffect } from "react";
 
 export default function Home() {
   const { user } = useAuthContext();
@@ -20,7 +19,6 @@ export default function Home() {
     "desc",
   ]);
   const { documents: users, error: userError } = useCollection("users");
-  const { mode } = useTheme();
 
   const userList =
     users &&
@@ -28,14 +26,14 @@ export default function Home() {
       return u.id === user.uid;
     });
 
-  const updateUser = async () => {
-    await updateDocument(user.uid, {
-      email: user.email,
-    });
-  };
+  // const updateUser = async () => {
+  //   await updateDocument(user.uid, {
+  //     email: user.email,
+  //   });
+  // };
 
   return (
-    <div className="home" onClick={updateUser}>
+    <div className="home">
       {userList && userList[0].interests.length === 0 && <Interest />}
       <Create />
       {error && <p className="error">{error}</p>}
