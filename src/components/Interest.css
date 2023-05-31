@@ -1,0 +1,97 @@
+.interest-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 8;
+  overflow: hidden;
+}
+.interest {
+  margin: 24px;
+  margin-bottom: 32px;
+}
+.interest h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 16px 0;
+}
+.interest ul {
+  margin: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  justify-content: center;
+}
+.interest p {
+  font-size: 1rem;
+}
+.interest ul p {
+  font-size: 0.8rem;
+}
+.interest li {
+  width: 300px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  background: var(--smoke);
+  padding: 16px;
+  border-radius: 10px;
+  gap: 20px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+.interest li.active {
+  border: 3px solid var(--blue);
+}
+.interest i {
+  display: none;
+}
+.interest .interest-img {
+  width: 100px;
+}
+.interest div {
+  text-align: center;
+}
+.interest li.active i {
+  display: block;
+  font-size: 1.5rem;
+  margin-left: auto;
+  color: var(--blue);
+}
+.interest li svg {
+  display: none;
+}
+.interest button.color-2a85fe {
+  background: var(--blue);
+}
+
+/* dark mode  */
+.App.dark .interest-container {
+  background: var(--dark-300);
+}
+.App.dark .interest {
+  color: #fff;
+}
+.App.dark .interest li {
+  background: var(--dark-400);
+  /* border-color: var(--dark-100); */
+}
+
+/* media query 0 */
+@media (max-width: 750px) {
+  .interest ul {
+    margin: 8px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 2px;
+  }
+  .interest li {
+    width: inherit;
+    padding: 5px;
+  }
+  .interest .interest-img {
+    width: 80px;
+  }
+}

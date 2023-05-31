@@ -1,0 +1,70 @@
+.reaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 8px 0;
+  margin-top: 0;
+}
+.reaction button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.dark .reaction .reactions {
+  color: #fff;
+}
+.reaction svg {
+  font-size: 1.2rem;
+}
+.reaction span {
+  font-size: 14px;
+}
+.reaction .like {
+  display: flex;
+  align-items: center;
+}
+.reaction .count {
+  background: var(--smoke);
+  padding: 0 8px;
+  border-radius: 8px;
+}
+.reaction .color-a058b3 .count {
+  background: var(--purple);
+  color: #fff;
+}
+.reaction .color-ff4545 .count {
+  background: var(--red);
+  color: #fff;
+}
+.reaction .color-2a85fe .count {
+  background: var(--blue);
+  color: #fff;
+}
+.post .reaction a {
+  width: 0%;
+}
+
+/* dark mode  */
+.App.dark .reaction .count {
+  background: var(--dark-100);
+}
+.App.dark .reaction .color-a058b3 .count {
+  background: var(--purple);
+}
+.App.dark .reaction .color-ff4545 .count {
+  background: var(--red);
+}
+.App.dark .reaction .color-2a85fe .count {
+  background: var(--blue);
+}
+
+/* media query */
+@media (max-width: 550px) {
+  .reaction .r-span {
+    display: none;
+  }
+}

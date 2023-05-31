@@ -1,0 +1,125 @@
+.profile .banner {
+  height: 150px;
+  background: linear-gradient(90deg, #f8e1ab 14.04%, #f4d1c9 100%);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.profile .banner .avatar {
+  position: absolute;
+  bottom: -40%;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  margin-left: 10px;
+}
+.profile .banner .avatar img {
+  padding: 5px;
+  border-radius: 50%;
+}
+.profile p {
+  color: var(--gray);
+  margin: 4px 0;
+}
+.profile .user-info,
+.profile .interests {
+  background: #fff;
+  padding: 8px 16px;
+  padding-top: 64px;
+  border-radius: 0 0 20px 20px;
+}
+.profile .interests {
+  margin: 24px 0;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+.profile ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.profile .info ul {
+  gap: 5px;
+}
+.profile .tabs {
+  margin: 16px 0;
+}
+.profile .tabs li {
+  cursor: pointer;
+}
+.profile .tabs li.active-tab {
+  text-decoration: underline;
+  padding: 5px;
+  font-weight: bold;
+}
+.profile .interests ul {
+  gap: 0px;
+}
+.profile .interests li {
+  border-radius: 5px;
+  margin: 8px 8px 0px 0px;
+  padding: 6px;
+  background: var(--smoke);
+  display: inline-block;
+}
+.profile .btns {
+  margin: 16px 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.profile .btns button {
+  background: none;
+  padding: 8px;
+  border: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border-radius: 5px;
+}
+.profile .btns button:nth-child(2) {
+  color: #fff;
+}
+.profile svg {
+  width: 15px;
+}
+.profile p.msg {
+  color: var(--gray);
+}
+.profile .icon-btn {
+  display: none;
+}
+
+/* dark mode  */
+.App.dark .profile {
+  color: #fff;
+}
+.App.dark .profile .user-info,
+.App.dark .profile .interests {
+  background: var(--dark-300);
+}
+.App.dark .profile .profile-btn {
+  background: var(--dark-300);
+  border-color: var(--dark-400);
+  color: #fff;
+}
+.App.dark .profile .interests li {
+  background: var(--dark-400);
+}
+.App.dark .profile .avatar {
+  background: var(--dark-300);
+}
+.App.dark .profile button {
+  border-color: var(--dark-100);
+}
+
+@media (max-width: 890px) {
+  .profile .banner {
+    height: 100px;
+  }
+}

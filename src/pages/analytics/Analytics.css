@@ -1,0 +1,126 @@
+.analytics .post,
+.analytics .react,
+.analytics .impressions {
+  margin-top: 24px;
+  border: 1px solid #f5f5f5;
+  padding: 16px;
+  background: #fff;
+  border-radius: 20px;
+}
+.analytics .navigations {
+  margin: 0;
+}
+.navigations i {
+  font-size: 1.5rem;
+}
+.analytics .author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.analytics div.avatar {
+  width: 30px;
+  height: 30px;
+}
+.analytics p.post-content {
+  padding: 0px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 0;
+}
+.analytics .content p > p {
+  padding: 0px;
+  margin: 8px 0;
+}
+.analytics .content img {
+  width: 100%;
+  border-radius: 10px;
+}
+.analytics .img-div {
+  width: 100px;
+}
+.analytics i {
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-bottom: -8px;
+}
+.analytics .impressions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+.analytics .impressions li {
+  border: 1px solid #f5f5f5;
+  padding: 8px;
+  color: #ed9b3c;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-radius: 10px;
+}
+.analytics .impressions li:nth-child(2) {
+  color: #215ec2;
+}
+.analytics .impressions li:nth-child(3) {
+  color: #3b9343;
+}
+.analytics .impressions span {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--black);
+}
+.analytics .impressions p {
+  font-size: 2rem;
+  color: var(--black);
+  font-weight: bold;
+}
+.analytics .icon-div {
+  background: #fff3ea;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.analytics .icon-div-2 {
+  background: #e7f8ff;
+}
+.analytics .icon-div-3 {
+  background: #ebf9ed;
+}
+.analytics .impressions li svg {
+  width: 100%;
+}
+
+/* dark mode  */
+.App.dark .analytics {
+  color: #fff;
+}
+.App.dark .analytics .post,
+.App.dark .analytics .react,
+.App.dark .analytics .impressions {
+  background: var(--dark-300);
+  border: 1px solid var(--dark-100);
+}
+.App.dark .analytics .impressions li {
+  border: 1px solid var(--dark-100);
+}
+.App.dark .analytics .impressions p,
+.App.dark .analytics .impressions span {
+  color: #fff;
+}
+
+/* media query  */
+@media (min-width: 550px) {
+  .analytics .content {
+    display: flex;
+  }
+  .analytics p.post-content {
+    padding-left: 16px;
+  }
+}

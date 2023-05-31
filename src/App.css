@@ -1,0 +1,31 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+}
+.App.dark {
+  background: var(--dark-400);
+}
+.App.dark .loading {
+  color: #fff;
+}
+.App .container {
+  width: 100%;
+}
+.pages {
+  margin: 24px;
+}
+
+@media (max-width: 550px) {
+  .pages {
+    margin: 24px 8px;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+  }
+}

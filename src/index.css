@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+
+/* variables */
+:root {
+  --red: #ff4545;
+  --blue: #2a85fe;
+  --purple: #a058b3;
+  --smoke: #f9f9f9;
+  --black: #17191d;
+  --gray: #8d9196;
+  --dark-100: #34353e;
+  --dark-200: #27282f;
+  --dark-300: #1e1f23;
+  --dark-400: #17181c;
+}
+
+/* base styles */
+body {
+  background: var(--smoke);
+  font-size: 0.8rem;
+}
+* {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+p p {
+  margin: 0;
+  padding: 0;
+}
+i {
+  margin-bottom: -4px;
+}
+
+/* layout */
+button {
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
+.btn {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--blue);
+  cursor: pointer;
+  border: 1px solid var(--blue);
+}
+.btn:hover {
+  color: #fff;
+  background-color: var(--blue);
+}
+
+.error {
+  display: block;
+  color: red;
+  background: pink;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+/* color theme picker */
+.App a {
+  color: var(--black);
+}
+.App.dark a,
+.App.dark h2 {
+  color: #fff;
+}
+a.color-a058b3.active,
+p.color-a058b3,
+div.color-a058b3,
+button.color-a058b3 {
+  color: var(--purple);
+}
+a.color-ff4545.active,
+p.color-ff4545,
+div.color-ff4545,
+button.color-ff4545 {
+  color: var(--red);
+}
+a.color-2a85fe.active,
+p.color-2a85fe,
+div.color-2a85fe,
+button.color-2a85fe {
+  color: var(--blue);
+}
+.App.dark a.active {
+  background: var(--dark-100);
+}

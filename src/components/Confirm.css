@@ -1,0 +1,75 @@
+.confirm-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+.confirm-popup {
+  background: #fff;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 500px;
+}
+.confirm-popup h3 {
+  text-align: center;
+  color: var(--black);
+  margin: 16px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.confirm-popup p {
+  text-align: center;
+}
+.confirm-popup .error {
+  border: none;
+  border-left: 3px solid var(--red);
+  border-radius: 5px;
+  margin: 16px 0;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.error svg {
+  width: 20px;
+}
+.confirm-popup span {
+  display: flex;
+  font-size: 15px;
+}
+.confirm-popup .btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.confirm-popup button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  width: 150px;
+}
+.confirm-popup button:nth-child(1) {
+  background: var(--blue);
+}
+
+/* dark mode  */
+.App.dark .confirm-popup {
+  background: var(--dark-400);
+  color: #fff;
+  border: 2px solid var(--dark-100);
+}
+.App.dark .confirm-popup h3 {
+  color: #fff;
+}
