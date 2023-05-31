@@ -8,7 +8,14 @@ import { useFirestore } from "../hooks/useFirestore";
 import { useDocument } from "../hooks/useDocument";
 import { useCollection } from "../hooks/useCollection";
 
-export default function Confirm({ title, item, type, setIsConfirm, post }) {
+export default function Confirm({
+  title,
+  item,
+  type,
+  setIsConfirm,
+  post,
+  setOptions,
+}) {
   const history = useHistory();
 
   const { deleteDocument: deletePostDoc, response: postResponse } =
@@ -25,6 +32,9 @@ export default function Confirm({ title, item, type, setIsConfirm, post }) {
     });
 
   const handleDelete = async () => {
+    // reset options
+    setOptions(false);
+
     await deletePostDoc(post.id);
     if (bookmark.length > 0) {
       await deleteBookmarkDoc(bookmark[0].id);
@@ -33,9 +43,7 @@ export default function Confirm({ title, item, type, setIsConfirm, post }) {
       }
     }
     if (!postResponse.error) {
-      if (history.location.pathname.includes("posts post")) {
-        history.push("/");
-      }
+      history.push("/");
       console.log("post deleted successfully");
     }
   };

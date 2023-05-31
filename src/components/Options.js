@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Options.css";
 import Confirm from "./Confirm";
 
-export default function Options({ post }) {
+export default function Options({ post, setOptions }) {
   const [isConfirm, setIsConfirm] = useState(false);
 
   return (
@@ -27,6 +27,7 @@ export default function Options({ post }) {
           item="post"
           setIsConfirm={setIsConfirm}
           post={post}
+          setOptions={setOptions}
         />
       )}
     </div>

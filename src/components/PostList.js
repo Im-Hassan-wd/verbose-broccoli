@@ -82,7 +82,9 @@ export default function PostList({ posts, msg }) {
               </span>
             </li>
             <div className="option-wrapper">
-              {options[index] && <Options post={post} />}
+              {options[index] && (
+                <Options post={post} setOptions={setOptions} />
+              )}
               {user.uid !== post.author.id && <BookmarkIcon post={post} />}
               {user.uid === post.author.id && (
                 <button
