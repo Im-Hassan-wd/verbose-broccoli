@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { timestamp } from "../firebase/config";
 
 // styles
@@ -57,9 +58,11 @@ export default function Reaction({ post }) {
       </button>
 
       <button className="reactions">
-        <i className="fi fi-rr-comment-alt-middle"></i>
-        <span className="r-span">Comment </span>
-        <span className="count">{post.comments.length}</span>
+        <Link to={`/posts/${post.id}`}>
+          <i className="fi fi-rr-comment-alt-middle"></i>
+          <span className="r-span">Comment </span>
+          <span className="count">{post.comments.length}</span>
+        </Link>
       </button>
 
       <button className="reactions">
