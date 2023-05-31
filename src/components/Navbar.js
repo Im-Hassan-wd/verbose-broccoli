@@ -24,12 +24,14 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
       </div>
       <ul>
         <li>
-          <NavLink exact to="/">
+          <NavLink className="navlink" exact to="/">
             Feeds
           </NavLink>
         </li>
         <li>
-          <NavLink to="/explore">Explore</NavLink>
+          <NavLink className="navlink" to="/explore">
+            Explore
+          </NavLink>
         </li>
       </ul>
       <div className="more">

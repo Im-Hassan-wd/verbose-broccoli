@@ -19,14 +19,14 @@
   border-radius: 5px;
   padding: 8px;
 }
-.navbar a {
+.navbar .navlink {
   display: inline-block;
   color: var(--black);
   padding: 5px 16px;
   font-size: 14px;
   border-radius: 3px;
 }
-.navbar a.active {
+.navbar .navlink.active {
   background: #fff;
 }
 .navbar i {
@@ -89,10 +89,10 @@
 .App.dark .navbar ul {
   background: var(--dark-200);
 }
-.App.dark .navbar ul a {
+.App.dark .navbar ul .navlink {
   color: #fff;
 }
-.App.dark .navbar ul a.active {
+.App.dark .navbar ul .navlink.active {
   background: var(--dark-100);
   color: #fff;
 }
