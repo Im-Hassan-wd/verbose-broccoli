@@ -11,6 +11,7 @@ export default function Settings() {
   return (
     <div className="settings">
       <ThemeSelector />
+      {error && <div className="error">{error}</div>}
       {!isPending && (
         <button className="btn" onClick={logout}>
           Logout
