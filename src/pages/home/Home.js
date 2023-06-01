@@ -4,7 +4,6 @@ import "./Home.css";
 // components and hooks
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useCollection } from "../../hooks/useCollection";
-import { useDocument } from "../../hooks/useDocument";
 import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Create from "./Create";
@@ -12,12 +11,12 @@ import { useFirestore } from "../../hooks/useFirestore";
 
 export default function Home() {
   const { user } = useAuthContext();
-  const { updateDocument, response } = useFirestore("users");
+  const { updateDocument } = useFirestore("users");
   const { documents, error } = useCollection("posts", "", [
     "createdAt",
     "desc",
   ]);
-  const { documents: users, error: userError } = useCollection("users");
+  const { documents: users } = useCollection("users");
 
   const userList =
     users &&

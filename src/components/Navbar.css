@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
 }
-.navbar .action {
+.navbar-option .action {
   background: var(--smoke);
   border-radius: 50%;
   height: 30px;
@@ -80,10 +80,10 @@
   border: 1px solid var(--dark-100);
   color: #fff;
 }
-.App.dark .navbar .action {
+.App.dark .navbar-option .action {
   background: var(--dark-200);
 }
-.App.dark .navbar .action svg {
+.App.dark .navbar-option .action svg {
   color: #fff;
 }
 .App.dark .navbar ul {
@@ -96,8 +96,7 @@
   background: var(--dark-100);
   color: #fff;
 }
-.App.dark .navbar button span,
-.App.dark .navbar button {
+.App.dark .navbar-option button {
   color: #fff;
 }
 .App.dark .navbar .burger {
