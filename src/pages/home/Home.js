@@ -25,18 +25,15 @@ export default function Home() {
       return u.id === user.uid;
     });
 
-  // const updateUser = async () => {
-  //   await updateDocument(user.uid, {
-  //     email: user.email,
-  //   });
-  // };
+  const updateUser = async () => {
+    await updateDocument(user.uid, {
+      email: user.email,
+    });
+  };
 
   return (
-    <div className="home">
-      {userError && <div className="error">{userError}</div>}
-      {userList &&
-        userList[0].interests &&
-        userList[0].interests.length === 0 && <Interest />}
+    <div className="home" onClick={updateUser}>
+      {userList !== null && userList[0]?.interests.length === 0 && <Interest />}
       <Create />
       {error && <p className="error">{error}</p>}
       {documents && <PostList posts={documents} msg="No posts yet!" />}
