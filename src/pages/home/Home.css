@@ -6,6 +6,38 @@
   border: 1px solid #f5f5f5;
   margin-bottom: 24px;
 }
+.new-post {
+  display: flex;
+  align-items: center;
+}
+.new-post button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 0px 16px 16px 0px;
+  border: none;
+  transition: all 0.5s ease;
+  background: #fff;
+}
+.new-post i {
+  font-size: 1rem;
+}
+.App.dark .new-post button {
+  color: var(--black);
+}
+.new-post.color-2a85fe button:hover {
+  background: var(--blue);
+  color: #fff;
+}
+.new-post.color-a058b3 button:hover {
+  background: var(--purple);
+  color: #fff;
+}
+.new-post.color-ff4545 button:hover {
+  background: var(--red);
+  color: #fff;
+}
+/* create button. */
 .create-post label {
   display: inline;
 }
