@@ -38,8 +38,10 @@
 }
 .post-content {
   margin-bottom: 10px;
+  color: #626262;
 }
 .post .read {
+  color: #626262;
   margin: 8px 0;
   margin-bottom: 24px;
   display: flex;
