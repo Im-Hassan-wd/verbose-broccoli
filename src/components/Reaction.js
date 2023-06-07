@@ -61,7 +61,7 @@ export default function Reaction({ post }) {
       </button>
 
       <button className="reactions">
-        <i className="fi fi-rr-share-square"></i>
+        <i className="fi fi-rr-dice-three"></i>
         <span className="count">{post.views.length}</span>
         <span className="r-span">views</span>
       </button>

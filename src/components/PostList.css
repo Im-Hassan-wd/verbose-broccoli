@@ -23,8 +23,12 @@
 }
 .post-summary,
 .post-content {
-  padding-top: 16px;
   font-size: 14px;
+}
+.post h2 {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 500;
 }
 .post .post-content {
   display: -webkit-box;
@@ -34,6 +38,16 @@
 }
 .post-content {
   margin-bottom: 10px;
+}
+.post .read {
+  margin: 8px 0;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.post .read i {
+  font-size: 1rem !important;
 }
 .post .icon-btn {
   margin-left: 8px;

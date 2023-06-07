@@ -93,6 +93,11 @@ export default function PostList({ posts, msg }) {
           </div>
           <div onClick={() => handleClick(post)}>
             <Link to={`/posts/${post.id}`}>
+              <h2>Starting out as a Frontend Engineer</h2>
+              <div className="read">
+                <i className="fi fi-rr-book-alt"></i>
+                <span>20 mins read</span>
+              </div>
               <p
                 className="post-content"
                 dangerouslySetInnerHTML={{ __html: post.content }}

@@ -8,7 +8,7 @@
   --blue: #2a85fe;
   --purple: #a058b3;
   --smoke: #f9f9f9;
-  --black: #17191d;
+  --black: #111;
   --gray: #8d9196;
   --dark-100: #34353e;
   --dark-200: #27282f;
@@ -17,15 +17,16 @@
 }
 
 /* base styles */
-body {
-  background: var(--smoke);
-  font-size: 0.8rem;
-}
 * {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  background: var(--smoke);
+  font-size: 0.8rem;
+  color: #111;
 }
 ul {
   list-style: none;
