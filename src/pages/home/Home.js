@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // styles
 import "./Home.css";
 
@@ -39,6 +41,13 @@ export default function Home({ sw }) {
     <div className="home" onClick={updateUser}>
       {userList !== null && userList[0]?.interests.length === 0 && <Interest />}
       <div className="main-content">
+        <div className="create">
+          <h1>Feed</h1>
+          <Link to="create-post">
+            <i className="fi fi-rr-pencil"></i>
+            <span>Post a content</span>
+          </Link>
+        </div>
         <ul className="home-list">
           <li>
             <button>For you</button>
