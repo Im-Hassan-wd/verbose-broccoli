@@ -71,15 +71,10 @@ export default function PostList({ posts, msg }) {
             <Avatar src={post.author.photoURL} />
             <li>
               <span className="name">{post.author.displayName}</span>
-              <span className="post-date">
-                <i className="fi fi-rr-clock"></i>
-                <span>
-                  {formatDistanceToNow(post.createdAt.toDate(), {
-                    addSuffix: true,
-                  })}
-                </span>
-                <span>{post.author.headline}</span>
-              </span>
+              <div className="post-date">
+                <span>{post.createdAt.toDate().toDateString()}</span>
+                <span>.{post.author.headline}</span>
+              </div>
             </li>
             <div className="option-wrapper">
               {options[index] && (

@@ -39,6 +39,13 @@ export default function Reaction({ post }) {
 
   return (
     <div className="reaction">
+      <button className="reactions">
+        <Link to={`/posts/${post.id}`}>
+          <i className="fi fi-rr-comments"></i>
+          <span className="count">{post.comments.length}</span>
+        </Link>
+      </button>
+
       <button
         className={
           like.length && like[0].uid === user.uid
@@ -49,26 +56,14 @@ export default function Reaction({ post }) {
         }
         onClick={handleLike}
       >
-        <i className="fi fi-rr-social-network"></i>
-        <span className="like r-span">
-          Like
-          {like.length >= 1 && <span>d</span>}
-        </span>
+        <i className="fi fi-rr-heart"></i>
         <span className="count">{post.likes.length}</span>
       </button>
 
       <button className="reactions">
-        <Link to={`/posts/${post.id}`}>
-          <i className="fi fi-rr-comment-alt-middle"></i>
-          <span className="r-span">Comment </span>
-          <span className="count">{post.comments.length}</span>
-        </Link>
-      </button>
-
-      <button className="reactions">
         <i className="fi fi-rr-share-square"></i>
-        <span className="r-span">Share</span>
-        <span className="count">0</span>
+        <span className="count">{post.views.length}</span>
+        <span className="r-span">views</span>
       </button>
     </div>
   );

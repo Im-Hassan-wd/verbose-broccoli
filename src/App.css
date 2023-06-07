@@ -1,6 +1,7 @@
 .App {
   display: flex;
   min-height: 100vh;
+  position: relative;
 }
 .App.dark {
   background: var(--dark-400);

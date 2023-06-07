@@ -1,29 +1,27 @@
-import { useState } from "react";
-
 // styles
 import "./Home.css";
 
 // components and hooks
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useCollection } from "../../hooks/useCollection";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useTheme } from "../../hooks/useTheme";
 import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Create from "./Create";
-import { useFirestore } from "../../hooks/useFirestore";
-import { useTheme } from "../../hooks/useTheme";
+import Aside from "../../components/Aside";
 
-export default function Home() {
-  const [isAdd, setIsAdd] = useState(false);
+export default function Home({ sw }) {
   const { color } = useTheme();
+  const localColor = localStorage.getItem("color");
+
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("users");
+  const { documents: users } = useCollection("users");
   const { documents, error } = useCollection("posts", "", [
     "createdAt",
     "desc",
   ]);
-  const { documents: users } = useCollection("users");
-
-  const localColor = localStorage.getItem("color");
 
   const userList =
     users &&
@@ -39,31 +37,23 @@ export default function Home() {
 
   return (
     <div className="home" onClick={updateUser}>
-      <div
-        className={
-          localColor
-            ? `new-post color-${localColor}`
-            : `new-post color-${color}`
-        }
-      >
-        <button onClick={() => setIsAdd(!isAdd)}>
-          <i className="fi fi-sr-plus"></i>
-        </button>
-        {isAdd && (
-          <button>
-            <i className="fi fi-sr-pencil"></i>
-          </button>
-        )}
-        {isAdd && (
-          <button>
-            <i className="fi fi-sr-feather"></i>
-          </button>
-        )}
-      </div>
       {userList !== null && userList[0]?.interests.length === 0 && <Interest />}
-      <Create />
-      {error && <p className="error">{error}</p>}
-      {documents && <PostList posts={documents} msg="No posts yet!" />}
+      <div className="main-content">
+        <ul className="home-list">
+          <li>
+            <button>For you</button>
+          </li>
+          <li>
+            <button>Featured</button>
+          </li>
+          <li>
+            <button>Recent</button>
+          </li>
+        </ul>
+        {error && <p className="error">{error}</p>}
+        {documents && <PostList posts={documents} msg="No posts yet!" />}
+      </div>
+      {sw > 1050 && <Aside />}
     </div>
   );
 }

@@ -4,6 +4,7 @@
   width: 300px;
   background: #fff;
   min-height: 100vh;
+  /* overflow-y: scroll; */
 }
 .sidebar .logo {
   display: flex;
@@ -30,10 +31,11 @@
 .sidebar ul {
   margin: 24px 0;
 }
-.sidebar li a {
+.sidebar li a,
+.sidebar .tag-list {
   display: inline-block;
   padding: 10px;
-  margin: 24px 0;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -53,7 +55,7 @@
   background: var(--smoke);
 }
 .sidebar li a i {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .sidebar .navbar-option {
   margin-top: auto;

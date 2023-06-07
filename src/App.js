@@ -63,36 +63,29 @@ function App() {
             <div className="pages">
               <Switch>
                 <Route exact path="/">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Home />}
+                  {user ? <Home sw={screenWidth} /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/login">
-                  {user && <Redirect to="/" />}
-                  {!user && <Login />}
+                  {!user ? <Login /> : <Redirect to="/" />}
                 </Route>
                 <Route path="/signup">
-                  {user && <Redirect to="/" />}
-                  {!user && <Signup />}
+                  {!user ? <Signup /> : <Redirect to="/" />}
                 </Route>
                 <Route exact path="/profile">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Profile />}
+                  {user ? <Profile /> : <Redirect to="/login" />}
                 </Route>
                 <Route exact path="/posts/:id">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Post />}
+                  {user ? <Post /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/posts/:id/analytics">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Analytics />}
+                  {user ? <Analytics /> : <Redirect to="/login" />}
                 </Route>
                 <Route exact path="/settings">
                   {!user && <Redirect to="/login" />}
                   {user && <Settings />}
                 </Route>
                 <Route path="/search">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Search />}
+                  {user ? <Search /> : <Redirect to="/login" />}
                 </Route>
               </Switch>
             </div>

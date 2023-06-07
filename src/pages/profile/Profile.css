@@ -1,5 +1,8 @@
+.profile {
+  text-align: center;
+}
 .profile .banner {
-  height: 150px;
+  height: 70px;
   background: linear-gradient(90deg, #f8e1ab 14.04%, #f4d1c9 100%);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -9,15 +12,17 @@
 }
 .profile .banner .avatar {
   position: absolute;
-  bottom: -40%;
-  width: 100px;
-  height: 100px;
+  top: 50%;
+  left: 30%;
+  width: 60px;
+  height: 60px;
   background: #fff;
   margin-left: 10px;
+  border-radius: 15px;
 }
 .profile .banner .avatar img {
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 15px;
 }
 .profile p {
   color: var(--gray);
@@ -27,7 +32,7 @@
 .profile .interests {
   background: #fff;
   padding: 8px 16px;
-  padding-top: 64px;
+  padding-top: 24px;
   border-radius: 0 0 20px 20px;
 }
 .profile .interests {

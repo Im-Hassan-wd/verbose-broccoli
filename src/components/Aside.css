@@ -1,0 +1,32 @@
+aside {
+  width: 300px;
+  padding: 0 24px;
+}
+aside .wrapper {
+  position: fixed;
+  padding-right: 24px;
+}
+aside .interests {
+  margin: 24px 0;
+  flex-wrap: wrap;
+  padding: 16px;
+  border-radius: 10px;
+}
+aside .interests li {
+  display: inline-block;
+  background: #eee;
+  color: var(--blue);
+  margin: 3px;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.category h3 {
+  font-weight: 500;
+}
+.category ul {
+  margin: 16px 0;
+}
+.category li {
+  margin: 8px 0;
+}
