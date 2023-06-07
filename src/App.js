@@ -15,6 +15,7 @@ import Login from "./pages/login/Login";
 import Post from "./pages/post/Post";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
+import Create from "./pages/create/Create";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -65,14 +66,17 @@ function App() {
                 <Route exact path="/">
                   {user ? <Home sw={screenWidth} /> : <Redirect to="/login" />}
                 </Route>
+                <Route path="/create-post">
+                  {user ? <Create /> : <Redirect to="/login" />}
+                </Route>
+                <Route path="/profile">
+                  {user ? <Profile /> : <Redirect to="/login" />}
+                </Route>
                 <Route path="/login">
                   {!user ? <Login /> : <Redirect to="/" />}
                 </Route>
                 <Route path="/signup">
                   {!user ? <Signup /> : <Redirect to="/" />}
-                </Route>
-                <Route exact path="/profile">
-                  {user ? <Profile /> : <Redirect to="/login" />}
                 </Route>
                 <Route exact path="/posts/:id">
                   {user ? <Post /> : <Redirect to="/login" />}
