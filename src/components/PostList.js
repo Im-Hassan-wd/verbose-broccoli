@@ -9,6 +9,7 @@ import "./PostList.css";
 // hooks and components
 import { useFirestore } from "../hooks/useFirestore";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { usePostReadTime } from "../hooks/usePostReadTime";
 import Avatar from "./Avatar";
 import Reaction from "./Reaction";
 import BookmarkIcon from "./BookmarkIcon";
@@ -18,6 +19,7 @@ import Confirm from "./Confirm";
 export default function PostList({ posts, msg }) {
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("posts");
+  const { calculateReadingTime } = usePostReadTime();
 
   const [options, setOptions] = useState(false);
 
@@ -96,7 +98,7 @@ export default function PostList({ posts, msg }) {
               <h2>{post?.title}</h2>
               <div className="read">
                 <i className="fi fi-rr-book-alt"></i>
-                <span>20 mins read</span>
+                <span>{calculateReadingTime(post.content)}</span>
               </div>
               <p
                 className="post-content"
