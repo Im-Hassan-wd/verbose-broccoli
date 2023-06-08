@@ -28,3 +28,14 @@
   border: none;
   padding: 0;
 }
+.analytic .avatar {
+  border: 1px solid #f5f5f5;
+}
+.analytic .btn {
+  display: inline;
+}
+
+/* dark mode  */
+.App.dark .analytic .avatar {
+  border-color: var(--dark-100);
+}

@@ -16,7 +16,7 @@ import BookmarkIcon from "./BookmarkIcon";
 import Options from "./Options";
 import Confirm from "./Confirm";
 
-export default function PostList({ posts, msg }) {
+export default function PostList({ posts, msg, btn }) {
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("posts");
   const { calculateReadingTime } = usePostReadTime();
@@ -110,6 +110,11 @@ export default function PostList({ posts, msg }) {
             </Link>
           </div>
           <Reaction post={post} />
+          {btn && (
+            <Link className="btn" to={`/posts/${post.id}/analytics`}>
+              View post activity
+            </Link>
+          )}
         </div>
       ))}
     </div>

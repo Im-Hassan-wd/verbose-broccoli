@@ -6,6 +6,7 @@ import "./App.css";
 
 // pages & components & hooks
 import Analytic from "./pages/analytics/Analytic";
+import Analytics from "./pages/analytics/Analytics";
 import Settings from "./pages/settings/Settings";
 import Sidebar from "./components/Sidebar";
 import Signup from "./pages/signup/Signup";
@@ -80,6 +81,9 @@ function App() {
                 </Route>
                 <Route exact path="/posts/:id">
                   {user ? <Post /> : <Redirect to="/login" />}
+                </Route>
+                <Route path="/posts/:id/analytics">
+                  {user ? <Analytics /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/my-posts/analytic">
                   {user ? <Analytic /> : <Redirect to="/login" />}

@@ -25,7 +25,7 @@ export default function Analytic() {
       <span className="date">Top posts</span>
       <span className="duration">earned 2890 impressions</span>
       {isPending && <div className="loading">Loading...</div>}
-      {documents && <PostList posts={documents} />}
+      {documents && <PostList posts={documents} btn={true} />}
       <div className="summary"></div>
     </div>
   );
