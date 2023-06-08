@@ -16,7 +16,7 @@ export default function Analytic() {
 
   return (
     <div className="analytic">
-      <h3>Post analytics</h3>
+      <h3>Posts analytics</h3>
       <div className="period">
         <span className="date">May 2023,</span>
         <span className="duration">25 days so far</span>
@@ -25,8 +25,29 @@ export default function Analytic() {
       <span className="date">Top posts</span>
       <span className="duration">earned 2890 impressions</span>
       {isPending && <div className="loading">Loading...</div>}
-      {documents && <PostList posts={documents} btn={true} />}
-      <div className="summary"></div>
+      {/* {documents && <PostList posts={documents} btn={true} />} */}
+      <div className="summary">
+        <h3>Posts summary</h3>
+        <span className="duration">May 2023 summary</span>
+      </div>
+      <ul>
+        <li>
+          <span>Posts</span>
+          <p>2</p>
+        </li>
+        <li>
+          <span>Post impressions</span>
+          <p>2.98k views</p>
+        </li>
+        <li>
+          <span>Post visits</span>
+          <p>300</p>
+        </li>
+        <li>
+          <span>New followers</span>
+          <p>300</p>
+        </li>
+      </ul>
     </div>
   );
 }

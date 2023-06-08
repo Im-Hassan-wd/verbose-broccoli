@@ -3,13 +3,14 @@
   font-weight: 500;
   margin: 8px 0;
 }
-.analytic .period {
+.analytic .period,
+.analytic .summary {
   margin: 16px 0;
   border-bottom: 2px solid var(--blue);
   padding-bottom: 8px;
 }
 .analytic span.date {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: inline-block;
   margin-right: 5px;
 }
@@ -34,8 +35,21 @@
 .analytic .btn {
   display: inline;
 }
+.analytic ul {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+}
+.analytic li {
+  margin: 8px 0;
+}
+.analytic li span {
+  color: var(--gray);
+}
 
 /* dark mode  */
+.App.dark .analytic {
+  color: #fff;
+}
 .App.dark .analytic .avatar {
   border-color: var(--dark-100);
 }
