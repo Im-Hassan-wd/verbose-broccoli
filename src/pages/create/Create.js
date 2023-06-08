@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 //styles
 import "./Create.css";
@@ -15,6 +16,7 @@ export default function Create() {
   const { document: currrentUser } = useDocument("users", user.uid);
 
   const localColor = localStorage.getItem("color");
+  const history = useHistory();
 
   const { addDocument, response } = useFirestore("posts");
   const [add, setAdd] = useState(false);
@@ -48,7 +50,6 @@ export default function Create() {
       displayName: user.displayName,
       photoURL: user.photoURL,
       id: user.uid,
-      headline: currrentUser.headline,
     };
 
     const post = {
@@ -69,12 +70,19 @@ export default function Create() {
       setTitle("");
       setContent(null);
       setImage("");
+      history.push("/");
     }
   };
 
   return (
-    <form className="create" onSubmit={handleSubmit}>
-      <button>Publish</button>
+    <form className="create-post" onSubmit={handleSubmit}>
+      {response.isPending ? (
+        <button className="btn" disabled>
+          Publishing...
+        </button>
+      ) : (
+        <button className="btn">Publish</button>
+      )}
       <div className="text">
         <i
           onClick={() => setAdd(!add)}
@@ -96,7 +104,20 @@ export default function Create() {
               value={content}
             ></textarea>
           </div>
-        ) : null}
+        ) : (
+          <div className="files">
+            <input
+              id="file"
+              type="file"
+              onChange={handleFileChange}
+              style={{ display: "none" }}
+            />
+            <label htmlFor="file">
+              <i className="fi fi-rr-camera"></i>
+            </label>
+            <i className="fi fi-rr-video-camera-alt"></i>
+          </div>
+        )}
       </div>
     </form>
   );

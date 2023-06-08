@@ -1,4 +1,4 @@
-.create input {
+.create-post input {
   font-size: 2.5rem;
   background: none;
   border: none;
@@ -6,7 +6,7 @@
   width: 100%;
   color: var(--gray);
 }
-.create textarea {
+.create-post textarea {
   width: 100%;
   min-height: 100vh;
   margin-top: 32px;
@@ -17,14 +17,26 @@
   color: var(--gray);
   resize: none;
 }
-.create .text {
+.create-post .text {
   display: flex;
   gap: 20px;
 }
-.create i {
-  height: 200px;
+.create-post i {
   margin-top: 24px;
   color: var(--gray);
   font-size: 3rem;
   cursor: pointer;
+}
+.create-post .files {
+  border-left: 1px solid var(--gray);
+  padding-left: 16px;
+}
+
+@media (max-width: 550px) {
+  .create-post input {
+    font-size: 2rem;
+  }
+  .create-post i {
+    font-size: 2rem;
+  }
 }

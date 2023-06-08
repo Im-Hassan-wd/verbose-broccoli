@@ -49,16 +49,20 @@ button {
   cursor: pointer;
 }
 .btn {
-  background: #fff;
-  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  background: var(--blue);
+  padding: 10px 16px;
   border-radius: 4px;
-  color: var(--blue);
-  cursor: pointer;
-  border: 1px solid var(--blue);
+  border: 1px solid transparent;
+  color: #fff !important;
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 .btn:hover {
-  color: #fff;
-  background-color: var(--blue);
+  color: var(--blue) !important;
+  border-color: var(--blue);
+  background: #fff;
 }
 
 .error {

@@ -1,10 +1,12 @@
 import { useState } from "react";
+
+// components and hooks
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useDocument } from "../../hooks/useDocument";
-import Avatar from "../../components/Avatar";
 import { useTheme } from "../../hooks/useTheme";
 import RichTextEditor from "./RichTextEditor";
+import Avatar from "../../components/Avatar";
 // import natural from "natural";
 
 export default function Create() {

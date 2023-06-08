@@ -43,7 +43,7 @@ export default function Home({ sw }) {
       <div className="main-content">
         <div className="create">
           <h1>Feed</h1>
-          <Link to="create-post">
+          <Link className="btn" to="create-post">
             <i className="fi fi-rr-pencil"></i>
             <span>Post a content</span>
           </Link>
