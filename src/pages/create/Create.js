@@ -115,7 +115,7 @@ export default function Create() {
               </>
             )}
             <textarea
-              id="content"
+              name="content"
               required
               placeholder="Write a post..."
               onChange={(e) => setContent(e.target.value)}

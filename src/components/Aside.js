@@ -28,7 +28,11 @@ export default function Aside() {
                 <span>.</span>
                 <li>{currentUser?.email}</li>
                 <span>.</span>
-                <li>{currentUser?.headline}</li>
+                {currentUser?.headline ? (
+                  <li>{currentUser?.headline}</li>
+                ) : (
+                  <li>What do you do?</li>
+                )}
               </ul>
             </div>
           </div>

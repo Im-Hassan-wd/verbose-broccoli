@@ -25,7 +25,9 @@ export default function Analytic() {
       <span className="date">Top posts</span>
       <span className="duration">earned 2890 impressions</span>
       {isPending && <div className="loading">Loading...</div>}
-      {/* {documents && <PostList posts={documents} btn={true} />} */}
+      {error && <div className="error"></div>}
+      {documents && <PostList posts={documents} btn={true} />}
+
       <div className="summary">
         <h3>Posts summary</h3>
         <span className="duration">May 2023 summary</span>
@@ -33,7 +35,7 @@ export default function Analytic() {
       <ul>
         <li>
           <span>Posts</span>
-          <p>2</p>
+          <p>{documents?.length}</p>
         </li>
         <li>
           <span>Post impressions</span>

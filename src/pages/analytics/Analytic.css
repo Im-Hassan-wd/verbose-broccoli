@@ -9,6 +9,9 @@
   border-bottom: 2px solid var(--blue);
   padding-bottom: 8px;
 }
+.analytic .summary {
+  margin-top: 24px;
+}
 .analytic span.date {
   font-size: 1.3rem;
   display: inline-block;
@@ -23,17 +26,24 @@
 }
 .analytic .posts {
   margin-top: 24px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 .analytic .post {
+  min-width: 100%;
   background: none;
   border: none;
-  padding: 0;
+
+  scroll-padding: 50%;
+  scroll-snap-align: start;
 }
 .analytic .avatar {
   border: 1px solid #f5f5f5;
 }
 .analytic .btn {
-  display: inline;
+  display: inline-block;
+  width: max-content;
 }
 .analytic ul {
   display: grid;
