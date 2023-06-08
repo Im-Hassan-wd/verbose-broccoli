@@ -86,7 +86,7 @@ export default function Create() {
       <div className="text">
         <i
           onClick={() => setAdd(!add)}
-          className={add ? "fi fi-rr-circle-xmark" : "fi fi-rr-add"}
+          className={add ? "add fi fi-rr-circle-xmark" : "add fi fi-rr-add"}
         ></i>
         {!add ? (
           <div className="input">
@@ -112,10 +112,12 @@ export default function Create() {
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
-            <label htmlFor="file">
-              <i className="fi fi-rr-camera"></i>
+            <label htmlFor="file" role="button" tabIndex={1}>
+              <i className="fi fi-rr-picture"></i>
             </label>
-            <i className="fi fi-rr-video-camera-alt"></i>
+            <label>
+              <i className="fi fi-rr-video-camera-alt"></i>
+            </label>
           </div>
         )}
       </div>

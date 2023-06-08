@@ -1,3 +1,6 @@
+.create-post button {
+  margin-bottom: 24px;
+}
 .create-post input {
   font-size: 2.5rem;
   background: none;
@@ -21,7 +24,7 @@
   display: flex;
   gap: 20px;
 }
-.create-post i {
+.create-post i.add {
   margin-top: 24px;
   color: var(--gray);
   font-size: 3rem;
@@ -30,6 +33,21 @@
 .create-post .files {
   border-left: 1px solid var(--gray);
   padding-left: 16px;
+  align-self: center;
+}
+.create-post .files label {
+  padding: 4px;
+  border: 1px solid var(--blue);
+  display: inline-block;
+  margin-right: 8px;
+  border-radius: 100%;
+  height: 43px;
+  width: 43px;
+}
+.create-post .files i {
+  display: inline-block;
+  color: var(--blue);
+  margin-top: 5px;
 }
 
 @media (max-width: 550px) {
