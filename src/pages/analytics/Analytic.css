@@ -1,0 +1,30 @@
+.analytic h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+.analytic .period {
+  margin: 16px 0;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 8px;
+}
+.analytic span.date {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-right: 5px;
+}
+.analytic span.duration {
+  color: var(--gray);
+}
+.analytic .highlight {
+  font-size: 20px;
+  margin: 16px 0;
+}
+.analytic .posts {
+  margin-top: 24px;
+}
+.analytic .post {
+  background: none;
+  border: none;
+  padding: 0;
+}

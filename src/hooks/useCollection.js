@@ -4,11 +4,13 @@ import { db } from "../firebase/config";
 export const useCollection = (collection, _query, _orderBy) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);
+  const [isPending, setIspending] = useState(false);
 
   const query = useRef(_query).current;
   const orderBy = useRef(_orderBy).current;
 
   useEffect(() => {
+    setIspending(true);
     let ref = db.collection(collection);
 
     if (query) {
@@ -26,18 +28,20 @@ export const useCollection = (collection, _query, _orderBy) => {
           results.push({ ...doc.data(), id: doc.id });
         });
 
-        // udate state
+        // update state
         setDocuments(results);
         setError(null);
+        setIspending(false);
       },
       (err) => {
         console.log(err.message);
-        setError("could not fetch transaction");
+        setError("failed to load posts");
+        setIspending(false);
       }
     );
 
     return () => unsub();
   }, [collection, query, orderBy]);
 
-  return { documents, error };
+  return { documents, error, isPending };
 };

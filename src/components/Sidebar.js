@@ -13,7 +13,7 @@ const overviews = [
   { icon: "bookmark", name: "Bookmarks", to: "/bookmarks" },
   { icon: "users", name: "Team blogs", to: "/b" },
   { icon: "envelope", name: "Drafs", to: "/d" },
-  { icon: "", name: "Analytics", to: `my-posts/analytic` },
+  { icon: "", name: "Analytics", to: "/my-posts/analytic" },
 ];
 
 const tags = [
