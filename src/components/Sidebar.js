@@ -19,7 +19,7 @@ const overviews = [
 const tags = [
   "Programming",
   "Data science",
-  "users",
+  "Technology",
   "Machine learning",
   "Politics",
 ];
