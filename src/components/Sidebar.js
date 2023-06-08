@@ -6,13 +6,14 @@ import { useLogout } from "../hooks/useLogout";
 import "./Sidebar.css";
 import Searchbar from "./Searchbar";
 import NavbarOption from "./NavbarOption";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const overviews = [
   { icon: "circle-f", name: "Feed", to: "/" },
   { icon: "bookmark", name: "Bookmarks", to: "/bookmarks" },
   { icon: "users", name: "Team blogs", to: "/b" },
   { icon: "envelope", name: "Drafs", to: "/d" },
-  { icon: "", name: "Analytics", to: "analytics" },
+  { icon: "", name: "Analytics", to: `my-posts/analytic` },
 ];
 
 const tags = [
@@ -30,6 +31,7 @@ const personal = [
 
 export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
   const { logout, isPending, error } = useLogout();
+  const { user } = useAuthContext();
   const { color } = useTheme();
 
   const localColor = localStorage.getItem("color");

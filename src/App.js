@@ -5,7 +5,7 @@ import { useTheme } from "./hooks/useTheme";
 import "./App.css";
 
 // pages & components & hooks
-import Analytics from "./pages/analytics/Analytics";
+import Analytic from "./pages/analytics/Analytic";
 import Settings from "./pages/settings/Settings";
 import Sidebar from "./components/Sidebar";
 import Signup from "./pages/signup/Signup";
@@ -81,8 +81,8 @@ function App() {
                 <Route exact path="/posts/:id">
                   {user ? <Post /> : <Redirect to="/login" />}
                 </Route>
-                <Route path="/posts/:id/analytics">
-                  {user ? <Analytics /> : <Redirect to="/login" />}
+                <Route path="/my-posts/analytic">
+                  {user ? <Analytic /> : <Redirect to="/login" />}
                 </Route>
                 <Route exact path="/settings">
                   {!user && <Redirect to="/login" />}
