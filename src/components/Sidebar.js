@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
+import { useLogout } from "../hooks/useLogout";
 
 // styles
 import "./Sidebar.css";
@@ -28,6 +29,7 @@ const personal = [
 ];
 
 export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
+  const { logout, isPending, error } = useLogout();
   const { color } = useTheme();
 
   const localColor = localStorage.getItem("color");
@@ -94,6 +96,18 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
               </li>
             ))}
           </ul>
+
+          {error && <div className="error">{error}</div>}
+          {!isPending && (
+            <button className="btn" onClick={logout}>
+              Logout
+            </button>
+          )}
+          {isPending && (
+            <button className="btn" disabled>
+              Logging out...
+            </button>
+          )}
 
           {screenWidth < 404 && <NavbarOption />}
         </div>

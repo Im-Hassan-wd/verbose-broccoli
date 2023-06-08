@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 //styles
@@ -24,6 +24,13 @@ export default function Create() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+
+  useEffect(() => {
+    if (image) {
+      setImageUrl(URL.createObjectURL(image));
+    }
+  }, [image]);
 
   const handleFileChange = (e) => {
     setImage(null);
@@ -37,10 +44,15 @@ export default function Create() {
       setImageError("Selected file must be an image");
       return;
     }
+    if (selected.size > 5000000) {
+      setImageError("Image file size must be less than 5MB");
+      return;
+    }
 
     setImageError(null);
     setImage(selected);
     console.log("thumbnail updated");
+    setAdd(false);
   };
 
   const handleSubmit = async (e) => {
@@ -97,7 +109,13 @@ export default function Create() {
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />
+            {image && (
+              <>
+                <img src={imageUrl} alt="profile" className="image" />
+              </>
+            )}
             <textarea
+              id="content"
               required
               placeholder="Write a post..."
               onChange={(e) => setContent(e.target.value)}

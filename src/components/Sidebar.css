@@ -60,6 +60,15 @@
 .sidebar .navbar-option {
   margin-top: auto;
 }
+.sidebar .btn {
+  border: none;
+  background: none;
+  color: var(--red) !important;
+  font-weight: bold;
+}
+.sidebar .btn:hover {
+  color: var(--red);
+}
 
 /* dark mode  */
 .App.dark .sidebar li a.active {
