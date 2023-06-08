@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
 @import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
 
@@ -19,7 +19,7 @@
 /* base styles */
 * {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
