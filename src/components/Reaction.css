@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8px 0;
-  margin-top: 0;
 }
 .reaction button,
 .reaction a {

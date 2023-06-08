@@ -7,6 +7,9 @@
   background: #fff;
   border-radius: 20px;
 }
+.analytics .react {
+  padding: 0px 16px;
+}
 .analytics .navigations {
   margin: 0;
 }
@@ -117,6 +120,11 @@
 
 /* media query  */
 @media (min-width: 550px) {
+  .analytics .post,
+  .analytics .react,
+  .analytics .impressions {
+    padding: 8px;
+  }
   .analytics .content {
     display: flex;
   }
