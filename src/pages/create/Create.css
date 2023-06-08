@@ -24,11 +24,16 @@
   display: flex;
   gap: 20px;
 }
-.create-post i.add {
+.create-post .add {
   margin-top: 24px;
   color: var(--gray);
   font-size: 3rem;
   cursor: pointer;
+}
+.create-post .image {
+  width: 100%;
+  height: 242px;
+  object-fit: cover;
 }
 .create-post .files {
   border-left: 1px solid var(--gray);
@@ -51,10 +56,24 @@
 }
 
 @media (max-width: 550px) {
+  .create-post {
+    padding: 8px;
+  }
   .create-post input {
     font-size: 2rem;
   }
-  .create-post i {
-    font-size: 2rem;
+  .create-post .text {
+    gap: 5px;
+  }
+  .create-post .files label {
+    width: 30px;
+    height: 30px;
+  }
+  .create-post .add {
+    font-size: 1.5rem;
+  }
+  .create-post .files i {
+    font-size: 1rem;
+    margin: 0;
   }
 }
