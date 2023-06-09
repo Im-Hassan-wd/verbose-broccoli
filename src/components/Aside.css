@@ -5,7 +5,6 @@ aside {
 }
 aside .wrapper {
   position: fixed;
-  padding-right: 24px;
 }
 aside .interests {
   margin: 24px 0;
@@ -30,4 +29,9 @@ aside .interests li {
 }
 .category li {
   margin: 8px 0;
+}
+
+/* dark mode  */
+.App.dark aside .interests h4 {
+  color: #fff;
 }

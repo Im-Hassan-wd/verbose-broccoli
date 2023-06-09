@@ -111,9 +111,13 @@ p.join {
 }
 
 /* dark mode  */
-.App.dark .auth-form {
+.App.dark .auth-form,
+.App.dark .auth-form .auth-content {
   color: #fff;
   background: var(--dark-300);
+}
+.App.dark .link a {
+  background: none;
 }
 .App.dark .auth-form .input-div {
   background: var(--dark-400);

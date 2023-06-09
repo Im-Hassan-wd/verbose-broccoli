@@ -43,6 +43,15 @@ i {
 }
 
 /* layout */
+.analytic,
+.analytics,
+.create-post,
+.home,
+.profile,
+.settings,
+.search {
+  margin: 24px;
+}
 button {
   cursor: pointer;
 }
