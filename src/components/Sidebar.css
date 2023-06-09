@@ -78,6 +78,10 @@
   border: 1px solid var(--dark-100);
   background: var(--dark-300);
 }
+.App.dark .sidebar h4,
+.App.dark .sidebar li {
+  color: #fff;
+}
 
 @media (max-width: 890px) {
   .sidebar {

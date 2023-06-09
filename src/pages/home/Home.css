@@ -160,12 +160,19 @@ div.edit i {
   background: var(--dark-300);
   border: 1px solid var(--dark-100);
 }
+.App.dark .home-list {
+  border-color: var(--dark-100);
+  color: #fff;
+  background: var(--dark-300);
+}
 .App.dark .create-post input,
 .dark textarea {
   background: var(--dark-200);
   outline-color: var(--dark-100);
 }
-.App.dark .create-post button {
+.App.dark .create-post button,
+.App.dark .home-list button,
+.App.dark .home .create {
   color: #fff;
 }
 .App.dark .create-post div.edit {
