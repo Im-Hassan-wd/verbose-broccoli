@@ -47,29 +47,29 @@ export default function Signup() {
   };
 
   return (
-    <>
-      {/* <img className="bg" src="./img/bg.jpg" alt="background" /> */}
-      <form onSubmit={handleSubmit} className="auth-form sign-form">
-        {/* bg  */}
+    <form onSubmit={handleSubmit} className="auth-form sign-form">
+      <div className="auth-img-div">
+        <img src="./img/bg.png" alt="intro" className="auth-img" />
+      </div>
 
-        <div className="logo">
-          <i className="fi fi-sr-comment-quote"></i>
-          <span>Chatter</span>
+      <div className="auth-content">
+        <div className="link">
+          <Link className="active" to="/signup">
+            Register
+          </Link>
+          <Link to="/login">Login</Link>
         </div>
 
-        <h3>Welcome!</h3>
-        <p className="join">
-          Join the world largest content creation community :)
-        </p>
+        <h3>Register as a Writer/Reader</h3>
 
-        <GoogleButton
+        {/* <GoogleButton
           handleSign={googleSignUp}
           error={signupError}
           isPending={signupPending}
           text="Sign up with Google"
         />
 
-        <p> or </p>
+        <p> or </p> */}
 
         <div className="input-div">
           <label htmlFor="name">
@@ -155,12 +155,8 @@ export default function Signup() {
             Signing Up...
           </button>
         )}
-
-        <p>
-          Already have an account? <Link to="/login">Login</Link>
-        </p>
         {error && <div className="error">{error}</div>}
-      </form>
-    </>
+      </div>
+    </form>
   );
 }

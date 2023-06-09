@@ -62,41 +62,39 @@ function App() {
                 setMobileMenu={setMobileMenu}
               />
             )}
-            <div className="pages">
-              <Switch>
-                <Route exact path="/">
-                  {user ? <Home sw={screenWidth} /> : <Redirect to="/login" />}
-                </Route>
-                <Route path="/create-post">
-                  {user ? <Create /> : <Redirect to="/login" />}
-                </Route>
-                <Route path="/profile">
-                  {user ? <Profile /> : <Redirect to="/login" />}
-                </Route>
-                <Route path="/login">
-                  {!user ? <Login /> : <Redirect to="/" />}
-                </Route>
-                <Route path="/signup">
-                  {!user ? <Signup /> : <Redirect to="/" />}
-                </Route>
-                <Route exact path="/posts/:id">
-                  {user ? <Post /> : <Redirect to="/login" />}
-                </Route>
-                <Route path="/posts/:id/analytics">
-                  {user ? <Analytics /> : <Redirect to="/login" />}
-                </Route>
-                <Route path="/my-posts/analytic">
-                  {user ? <Analytic /> : <Redirect to="/login" />}
-                </Route>
-                <Route exact path="/settings">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Settings />}
-                </Route>
-                <Route path="/search">
-                  {user ? <Search /> : <Redirect to="/login" />}
-                </Route>
-              </Switch>
-            </div>
+            <Switch>
+              <Route exact path="/">
+                {user ? <Home sw={screenWidth} /> : <Redirect to="/login" />}
+              </Route>
+              <Route path="/create-post">
+                {user ? <Create /> : <Redirect to="/login" />}
+              </Route>
+              <Route path="/profile">
+                {user ? <Profile /> : <Redirect to="/login" />}
+              </Route>
+              <Route path="/login">
+                {!user ? <Login /> : <Redirect to="/" />}
+              </Route>
+              <Route path="/signup">
+                {!user ? <Signup /> : <Redirect to="/" />}
+              </Route>
+              <Route exact path="/posts/:id">
+                {user ? <Post /> : <Redirect to="/login" />}
+              </Route>
+              <Route path="/posts/:id/analytics">
+                {user ? <Analytics /> : <Redirect to="/login" />}
+              </Route>
+              <Route path="/my-posts/analytic">
+                {user ? <Analytic /> : <Redirect to="/login" />}
+              </Route>
+              <Route exact path="/settings">
+                {!user && <Redirect to="/login" />}
+                {user && <Settings />}
+              </Route>
+              <Route path="/search">
+                {user ? <Search /> : <Redirect to="/login" />}
+              </Route>
+            </Switch>
           </div>
         </BrowserRouter>
       )}

@@ -21,59 +21,65 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <div className="logo">
-        <i className="fi fi-sr-comment-quote"></i>
-        <span>Chatter</span>
+      <div className="auth-img-div">
+        <img src="./img/bg.png" alt="intro" className="auth-img" />
       </div>
 
-      <h3>Welcome!</h3>
-      <p>Login to your account</p>
+      <div className="auth-content">
+        <div className="link">
+          <Link to="/signup">Register</Link>
+          <Link className="active" to="/login">
+            Login
+          </Link>
+        </div>
 
-      <div className="input-div">
-        <i className="fi fi-rr-envelope"></i>
-        <input
-          required
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          placeholder="Email Address"
-        />
-      </div>
+        <h3>Welcome back!</h3>
 
-      <div className="input-div">
-        <i className="fi fi-rr-lock"></i>
-        <input
-          required
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          placeholder="Password"
-        />
-      </div>
-
-      <div className="btn-wrap">
-        {!isPending && <button className="btn">Signin</button>}
-        {isPending && (
-          <button className="btn" disabled>
-            Signing in...
-          </button>
-        )}
-      </div>
-
-      <p> or </p>
-
-      <GoogleButton
+        {/* <GoogleButton
         handleSign={googleSignIn}
         error={signinError}
         isPending={signinPending}
-        text="Sign in with Google"
+        text="Signin with Google"
       />
 
-      <small>
-        Don't have an account? <Link to="/signup">Signup</Link>
-      </small>
+      <p> or </p> */}
 
-      {error && <small className="error">{error}</small>}
+        <div className="input-div">
+          <label htmlFor="email">
+            <i className="fi fi-rr-envelope"></i>
+          </label>
+          <input
+            id="email"
+            required
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            placeholder="Email Address"
+          />
+        </div>
+
+        <div className="input-div">
+          <label htmlFor="password">
+            <i className="fi fi-rr-lock"></i>
+          </label>
+          <input
+            id="password"
+            required
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            placeholder="Passoword"
+          />
+        </div>
+
+        {!isPending && <button className="btn">Login</button>}
+        {isPending && (
+          <button className="btn" disabled>
+            Logging In...
+          </button>
+        )}
+        {error && <div className="error">{error}</div>}
+      </div>
     </form>
   );
 }
