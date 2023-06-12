@@ -12,8 +12,8 @@ const overviews = [
   { icon: "circle-f", name: "Feed", to: "/" },
   { icon: "bookmark", name: "Bookmarks", to: "/bookmarks" },
   { icon: "users", name: "Team blogs", to: "/b" },
-  { icon: "envelope", name: "Drafs", to: "/d" },
-  { icon: "", name: "Analytics", to: "/my-posts/analytic" },
+  { icon: "envelope", name: "Drafts", to: "/d" },
+  { icon: "chart-histogram", name: "Analytics", to: "/my-posts/analytic" },
 ];
 
 const tags = [
@@ -72,7 +72,9 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
           </ul>
 
           <ul>
-            <h4>Tranding Tags</h4>
+            <h4>
+              Tranding Tags <i className="fi fi-rr-arrow-trend-up"></i>
+            </h4>
             {tags.map((item) => (
               <li className="tag-list" key={item}>
                 {item}
