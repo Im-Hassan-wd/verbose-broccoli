@@ -9,10 +9,12 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useDocument } from "../../hooks/useDocument";
 import { useTheme } from "../../hooks/useTheme";
+import { useCategorize } from "../../hooks/useCategorize";
 
 export default function Create() {
   const { user } = useAuthContext();
   const { color } = useTheme();
+  const { categorizePost } = useCategorize();
   const { document: currrentUser } = useDocument("users", user.uid);
 
   const localColor = localStorage.getItem("color");
@@ -25,6 +27,10 @@ export default function Create() {
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
+
+  useEffect(async () => {
+    categorizePost();
+  }, []);
 
   useEffect(() => {
     if (image) {

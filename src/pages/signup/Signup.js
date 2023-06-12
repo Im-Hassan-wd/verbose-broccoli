@@ -49,6 +49,13 @@ export default function Signup() {
   return (
     <form onSubmit={handleSubmit} className="auth-form sign-form">
       <div className="auth-img-div">
+        <div className="text">
+          <h1>Chatter</h1>
+          <p>
+            Unleash the Power of Words, Connect with Like-minded Readers and
+            Writers
+          </p>
+        </div>
         <img src="./img/bg.png" alt="intro" className="auth-img" />
       </div>
 
