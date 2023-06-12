@@ -27,14 +27,6 @@
 .post-summary-img {
   width: 100%;
 }
-@media (min-width: 850px) {
-  .post-summary {
-    padding: 24px 64px;
-  }
-  .post-summary-img {
-    height: 400px;
-  }
-}
 .comment-header {
   display: flex;
   gap: 10px;
@@ -86,6 +78,16 @@
 }
 .comment-content {
   display: flex;
+}
+
+/* responsive classes  */
+@media (min-width: 850px) {
+  .post-summary {
+    padding: 24px 64px;
+  }
+  .post-summary-img {
+    height: 400px;
+  }
 }
 
 /* dark mode  */

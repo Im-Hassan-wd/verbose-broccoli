@@ -17,6 +17,7 @@ import Post from "./pages/post/Post";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Create from "./pages/create/Create";
+import Bookmark from "./pages/bookmark/Bookmark";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -78,6 +79,9 @@ function App() {
               <Route path="/signup">
                 {!user ? <Signup /> : <Redirect to="/" />}
               </Route>
+              <Route exact path="/bookmarks">
+                {user ? <Bookmark /> : <Redirect to="/login" />}
+              </Route>
               <Route exact path="/posts/:id">
                 {user ? <Post /> : <Redirect to="/login" />}
               </Route>
@@ -88,8 +92,7 @@ function App() {
                 {user ? <Analytic /> : <Redirect to="/login" />}
               </Route>
               <Route exact path="/settings">
-                {!user && <Redirect to="/login" />}
-                {user && <Settings />}
+                {user ? <Settings /> : <Redirect to="/login" />}
               </Route>
               <Route path="/search">
                 {user ? <Search /> : <Redirect to="/login" />}

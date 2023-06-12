@@ -142,14 +142,6 @@ div.post-date {
   .post-summary {
     padding: 8px;
   }
-  .post .post-content,
-  .post-summary .post-content {
-    padding: 0 8px;
-  }
-  .post .info,
-  .post-summary .info {
-    padding: 8px;
-  }
 }
 @media (max-width: 389px) {
   span.post-date {
