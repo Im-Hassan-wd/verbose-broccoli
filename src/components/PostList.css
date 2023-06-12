@@ -9,6 +9,9 @@
   padding: 24px;
   padding-bottom: 0;
 }
+.post-summary {
+  margin-bottom: 0;
+}
 .post .info,
 .post-summary .info {
   display: flex;
