@@ -3,9 +3,11 @@ import Input from "../../components/Input";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Reaction from "../../components/Reaction";
 import BookmarkIcon from "../../components/BookmarkIcon";
+import { usePostReadTime } from "../../hooks/usePostReadTime";
 
 export default function PostDetails({ post }) {
   const { user } = useAuthContext();
+  const { calculateReadingTime } = usePostReadTime();
 
   return (
     <div>
@@ -14,20 +16,29 @@ export default function PostDetails({ post }) {
           <Avatar src={post.author.photoURL} />
           <li>
             <span>{post.author.displayName}</span>
-            <span className="post-date">
+            <div className="post-date">
               {post.createdAt.toDate().toDateString().slice(3)}
-            </span>
+            </div>
           </li>
           <BookmarkIcon post={post} />
           <button className="icon-btn">
             <i className="fi fi-sr-menu-dots-vertical"></i>
           </button>
         </div>
+        <h2>{post?.title}</h2>
+        <div className="read">
+          <i className="fi fi-rr-book-alt"></i>
+          <span>{calculateReadingTime(post.content)}</span>
+        </div>
         <p
           className="post-content"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
-        <img className="post-summary-img" src={post.imageURL} alt="" />
+        <img
+          className="post-img post-summary-img"
+          src={post.imageURL}
+          alt="post thumbnail"
+        />
         <Reaction post={post} />
       </div>
       <div className="comment-header">

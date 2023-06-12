@@ -26,8 +26,9 @@
 .post-content {
   font-size: 14px;
 }
-.post h2 {
-  margin-top: 8px;
+.post h2,
+.post-summary h2 {
+  margin-top: 16px;
   font-size: 24px;
   font-weight: 500;
 }
@@ -40,8 +41,10 @@
 .post-content {
   margin-bottom: 10px;
   color: #626262;
+  line-height: 1.5;
 }
-.post .read {
+.post .read,
+.post-summary .read {
   color: #626262;
   margin: 8px 0;
   margin-bottom: 24px;
@@ -49,7 +52,8 @@
   gap: 10px;
   align-items: center;
 }
-.post .read i {
+.post .read i,
+.post-summary .read i {
   font-size: 1rem !important;
 }
 .post .icon-btn {

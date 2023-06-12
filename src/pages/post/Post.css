@@ -1,6 +1,5 @@
 .post-details {
   border-radius: 10px;
-  background: #fff;
 }
 .post-details .icon-btn {
   background: none;
@@ -25,8 +24,16 @@
   background: #fff;
   border-radius: 10px 10px 0px 0px;
 }
-.post-summary .post-summary-img {
+.post-summary-img {
   width: 100%;
+}
+@media (min-width: 850px) {
+  .post-summary {
+    padding: 24px 64px;
+  }
+  .post-summary-img {
+    height: 400px;
+  }
 }
 .comment-header {
   display: flex;
