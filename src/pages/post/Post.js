@@ -3,6 +3,7 @@ import "./Post.css";
 
 import { useParams, useHistory } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
+import PostList from "../../components/PostList";
 import PostDetails from "./PostDetails";
 import PostComment from "./PostComment";
 
