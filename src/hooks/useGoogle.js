@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { auth, db } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithRedirect,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 export const useGoogle = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -19,20 +15,23 @@ export const useGoogle = () => {
     try {
       const provider = new GoogleAuthProvider();
       const res = await signInWithPopup(auth, provider);
-      // const res = await signInWithRedirect(auth, provider);
 
       if (!res) {
         throw new Error("Could not complete signup");
       }
 
+      const splitName = res.user.displayName.split(" ");
+      const firstName = splitName[0];
+      const lastName = splitName[1];
+
       // create a user document
       await db.collection("users").doc(res.user.uid).set({
         online: true,
-        displayName: res.user.displayName,
         photoURL: res.user.photoURL,
         interests: [],
         email: res.user.email,
-        name: res.user.displayName,
+        firstName: firstName,
+        lastName: lastName,
         headline: "",
       });
 

@@ -5,6 +5,7 @@ aside {
 }
 aside .wrapper {
   position: fixed;
+  padding-right: 24px;
 }
 aside .interests {
   margin: 24px 0;

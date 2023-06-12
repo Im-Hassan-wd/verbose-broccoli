@@ -8,14 +8,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
 
-  const signup = async (
-    name,
-    email,
-    password,
-    displayName,
-    headline,
-    thumbnail
-  ) => {
+  const signup = async (firstName, lastName, email, password, thumbnail) => {
     setError(null);
     setIsPending(true);
 
@@ -33,17 +26,19 @@ export const useSignup = () => {
       const downloadURL = await img.ref.getDownloadURL();
 
       // add display AND PHOTO_URL name to user
-      await res.user.updateProfile({ displayName, photoURL: downloadURL });
+      await res.user.updateProfile({
+        displayName: firstName + " " + lastName,
+        photoURL: downloadURL,
+      });
 
       // create a user documant
       await db.collection("users").doc(res.user.uid).set({
         online: true,
-        displayName,
+        firstName,
         photoURL: downloadURL,
         interests: [],
         email,
-        name,
-        headline,
+        lastName,
       });
 
       // dispatch login action
