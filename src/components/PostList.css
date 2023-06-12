@@ -127,17 +127,13 @@ div.post-date {
   color: #fff;
 }
 .App.dark .post .name,
-.Appdark .post-summary .name {
+.Appdark .post-summary .name,
+.App.dark .post,
+.App.dark .msg {
   color: #fff;
 }
 .App.dark .post-img {
   border-color: var(--dark-100);
-}
-.App.dark .post a {
-  color: #fff;
-}
-.App .msg {
-  color: #fff;
 }
 
 @media (max-width: 550px) {

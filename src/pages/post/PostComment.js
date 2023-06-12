@@ -31,7 +31,8 @@ export default function PostComment({ post }) {
             <div className="comment-author">
               <Avatar src={comment.photoURL} />
               <div className="comment-content">
-                <p>{comment.displayName}:</p>
+                {comment.displayName && <p>{comment.displayName}:</p>}
+                {comment.firstName && <p>{comment.firstName}:</p>}
                 <span>{comment.content}</span>
               </div>
             </div>

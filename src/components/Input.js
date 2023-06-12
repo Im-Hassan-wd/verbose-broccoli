@@ -2,6 +2,7 @@ import { useState } from "react";
 import { timestamp } from "../firebase/config";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useFirestore } from "../hooks/useFirestore";
+import { useDocument } from "../hooks/useDocument";
 import { v4 as uuid } from "uuid";
 
 // styles
@@ -10,6 +11,7 @@ import "./Input.css";
 export default function Input({ post }) {
   const { updateDocument, response } = useFirestore("posts");
   const { user } = useAuthContext();
+  const { document: currentUser } = useDocument("users", user.uid);
 
   const [newComment, setNewComment] = useState("");
 
@@ -17,8 +19,8 @@ export default function Input({ post }) {
     e.preventDefault();
 
     const commentToAdd = {
-      displayName: user.displayName,
-      photoURL: user.photoURL,
+      firstName: currentUser?.firstName,
+      photoURL: currentUser?.photoURL,
       content: newComment,
       createdAt: timestamp.fromDate(new Date()),
       id: uuid(),
