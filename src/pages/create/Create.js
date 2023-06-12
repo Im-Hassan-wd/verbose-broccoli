@@ -14,8 +14,7 @@ import { useCategorize } from "../../hooks/useCategorize";
 export default function Create() {
   const { user } = useAuthContext();
   const { color } = useTheme();
-  const { categorizePost } = useCategorize();
-  const { document: currrentUser } = useDocument("users", user.uid);
+  const { document: currentUser } = useDocument("users", user.uid);
 
   const localColor = localStorage.getItem("color");
   const history = useHistory();
@@ -23,14 +22,17 @@ export default function Create() {
   const { addDocument, response } = useFirestore("posts");
   const [add, setAdd] = useState(false);
   const [content, setContent] = useState("");
+  const [tags, setTages] = useState([]);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
+  const { category } = useCategorize(content);
 
-  useEffect(async () => {
-    categorizePost();
-  }, []);
+  // assign tags to post based on keywords
+  useEffect(() => {
+    category && setTages(category.split("-"));
+  }, [category]);
 
   useEffect(() => {
     if (image) {
@@ -57,7 +59,6 @@ export default function Create() {
 
     setImageError(null);
     setImage(selected);
-    console.log("thumbnail updated");
     setAdd(false);
   };
 
@@ -65,9 +66,11 @@ export default function Create() {
     e.preventDefault();
 
     const author = {
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      id: user.uid,
+      firstName: currentUser?.firstName,
+      lastName: currentUser?.lastName,
+      photoURL: currentUser?.photoURL,
+      id: currentUser?.uid,
+      headline: currentUser?.headline,
     };
 
     const post = {
@@ -80,6 +83,7 @@ export default function Create() {
       expands: 0,
       views: [],
       author,
+      tags,
     };
 
     await addDocument(post, image);

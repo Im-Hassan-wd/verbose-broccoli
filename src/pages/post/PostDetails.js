@@ -15,7 +15,7 @@ export default function PostDetails({ post }) {
         <div className="info">
           <Avatar src={post.author.photoURL} />
           <li>
-            <span>{post.author.displayName}</span>
+            <span>{post.author?.firstName}</span>
             <div className="post-date">
               {post.createdAt.toDate().toDateString().slice(3)}
             </div>
@@ -34,11 +34,13 @@ export default function PostDetails({ post }) {
           className="post-content"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
-        <img
-          className="post-img post-summary-img"
-          src={post.imageURL}
-          alt="post thumbnail"
-        />
+        {post.imageURL && (
+          <img
+            className="post-img post-summary-img"
+            src={post.imageURL}
+            alt="post thumbnail"
+          />
+        )}
         <Reaction post={post} />
       </div>
       <div className="comment-header">

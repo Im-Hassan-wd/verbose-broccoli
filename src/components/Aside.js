@@ -20,11 +20,13 @@ export default function Aside() {
             </div>
 
             <div className="user-info">
-              <h2>{currentUser?.name}</h2>
+              <h2>
+                {currentUser?.firstName} {currentUser?.lastName}
+              </h2>
               <p>Nigeria</p>
 
               <ul className="">
-                <li>@{currentUser?.displayName.toLowerCase()}</li>
+                <li>@{currentUser?.firstName.toLowerCase()}</li>
                 <span>.</span>
                 <li>{currentUser?.email}</li>
                 <span>.</span>
