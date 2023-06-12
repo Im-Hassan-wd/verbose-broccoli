@@ -39,6 +39,7 @@ export const useSignup = () => {
         interests: [],
         email,
         lastName,
+        headline: "",
       });
 
       // dispatch login action
