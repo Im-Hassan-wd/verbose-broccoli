@@ -7,12 +7,20 @@ import GoogleButton from "../../components/GoogleButton";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [textType, setTextType] = useState(false);
   const { login, isPending, error } = useLogin();
   const {
     googleSignIn,
     error: signinError,
     isPending: signinPending,
   } = useGoogle();
+
+  const handleInputType = (e) => {
+    setTextType(!textType);
+    textType
+      ? e.target.previousElementSibling.setAttribute("type", "password")
+      : e.target.previousElementSibling.setAttribute("type", "text");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,15 +50,6 @@ export default function Login() {
 
         <h3>Welcome back!</h3>
 
-        {/* <GoogleButton
-        handleSign={googleSignIn}
-        error={signinError}
-        isPending={signinPending}
-        text="Signin with Google"
-      />
-
-      <p> or </p> */}
-
         <div className="input-div">
           <label htmlFor="email">
             <i className="fi fi-rr-envelope"></i>
@@ -75,8 +74,12 @@ export default function Login() {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-            placeholder="Passoword"
+            placeholder="Password"
           />
+          <i
+            onClick={handleInputType}
+            className={textType ? "fi fi-rr-eye-crossed" : "fi fi-rr-eye"}
+          ></i>
         </div>
 
         {!isPending && <button className="btn">Login</button>}
@@ -85,6 +88,14 @@ export default function Login() {
             Logging In...
           </button>
         )}
+
+        <GoogleButton
+          handleSign={googleSignIn}
+          error={signinError}
+          isPending={signinPending}
+          text="Signin with Google"
+        />
+
         {error && <div className="error">{error}</div>}
       </div>
     </form>

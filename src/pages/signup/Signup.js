@@ -8,11 +8,11 @@ import "./Signup.css";
 import { useGoogle } from "../../hooks/useGoogle";
 
 export default function Signup() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
-  const [headline, setHeadline] = useState("");
+  const [textType, setTextType] = useState(false);
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
@@ -20,7 +20,14 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(name, email, password, displayName, headline, thumbnail);
+    signup(firstName, lastName, email, password, thumbnail);
+  };
+
+  const handleInputType = (e) => {
+    setTextType(!textType);
+    textType
+      ? e.target.previousElementSibling.setAttribute("type", "password")
+      : e.target.previousElementSibling.setAttribute("type", "text");
   };
 
   const handleFileChange = (e) => {
@@ -69,91 +76,74 @@ export default function Signup() {
 
         <h3>Register as a Writer/Reader</h3>
 
-        {/* <GoogleButton
-          handleSign={googleSignUp}
-          error={signupError}
-          isPending={signupPending}
-          text="Sign up with Google"
-        />
+        <div className="inputs-wrapper">
+          <div className="input-div">
+            <label htmlFor="first-name">
+              <i className="fi fi-rr-id-card-clip-alt"></i>
+            </label>
+            <input
+              id="first-name"
+              required
+              type="text"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+              placeholder="First name"
+            />
+          </div>
 
-        <p> or </p> */}
+          <div className="input-div">
+            <label htmlFor="last-name">
+              <i className="fi fi-rr-user"></i>
+            </label>
+            <input
+              id="last-name"
+              required
+              type="text"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+              placeholder="Last name"
+            />
+          </div>
 
-        <div className="input-div">
-          <label htmlFor="name">
-            <i className="fi fi-rr-id-card-clip-alt"></i>
-          </label>
-          <input
-            id="name"
-            required
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            placeholder="Name"
-          />
-        </div>
+          <div className="input-div">
+            <label htmlFor="email">
+              <i className="fi fi-rr-envelope"></i>
+            </label>
+            <input
+              id="email"
+              required
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              placeholder="Email Address"
+            />
+          </div>
 
-        <div className="input-div">
-          <label htmlFor="email">
-            <i className="fi fi-rr-envelope"></i>
-          </label>
-          <input
-            id="email"
-            required
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            placeholder="Email Address"
-          />
-        </div>
+          <div className="input-div">
+            <label htmlFor="password">
+              <i className="fi fi-rr-lock"></i>
+            </label>
+            <input
+              id="password"
+              required
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              placeholder="Password"
+            />
+            <i
+              onClick={handleInputType}
+              className={textType ? "fi fi-rr-eye-crossed" : "fi fi-rr-eye"}
+            ></i>
+          </div>
 
-        <div className="input-div">
-          <label htmlFor="password">
-            <i className="fi fi-rr-lock"></i>
-          </label>
-          <input
-            id="password"
-            required
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-            placeholder="Passoword"
-          />
-        </div>
-
-        <div className="input-div">
-          <label htmlFor="displayName">
-            <i className="fi fi-rr-user"></i>
-          </label>
-          <input
-            id="displayName"
-            required
-            type="text"
-            onChange={(e) => setDisplayName(e.target.value)}
-            value={displayName}
-            placeholder="Choose a display name"
-          />
-        </div>
-
-        <div className="input-div">
-          <label htmlFor="headline">
-            <i className="fi fi-rr-briefcase"></i>
-          </label>
-          <input
-            id="headline"
-            required
-            type="text"
-            onChange={(e) => setHeadline(e.target.value)}
-            value={headline}
-            placeholder="Headline"
-          />
-        </div>
-
-        <div className="input-div">
-          <label htmlFor="file">
-            <i className="fi fi-rr-picture"></i>
-          </label>
-          <input id="file" required type="file" onChange={handleFileChange} />
-          {thumbnailError && <div className="error">{thumbnailError}</div>}
+          <div className="input-div">
+            <label htmlFor="file">
+              <i className="fi fi-rr-picture"></i>
+            </label>
+            <input id="file" required type="file" onChange={handleFileChange} />
+            {thumbnailError && <div className="error">{thumbnailError}</div>}
+          </div>
         </div>
 
         {!isPending && <button className="btn">Sign up</button>}
@@ -162,6 +152,14 @@ export default function Signup() {
             Signing Up...
           </button>
         )}
+
+        <GoogleButton
+          handleSign={googleSignUp}
+          error={signupError}
+          isPending={signupPending}
+          text="Sign up with Google"
+        />
+
         {error && <div className="error">{error}</div>}
       </div>
     </form>
