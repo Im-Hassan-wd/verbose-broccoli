@@ -72,7 +72,9 @@ export default function PostList({ posts, msg, btn }) {
           <div className="info">
             <Avatar src={post.author.photoURL} />
             <li>
-              <span className="name">{post.author?.firstName}</span>
+              <span className="name">
+                {post.author?.firstName} {post.author?.lastName}
+              </span>
               <div className="post-date">
                 <span>{post.createdAt.toDate().toDateString()}</span>
                 <span>.{post.author.headline}</span>

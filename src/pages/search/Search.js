@@ -13,7 +13,7 @@ export default function Search() {
   const queryParams = new URLSearchParams(queryString);
   const query = queryParams.get("q");
 
-  const { documents, error } = useCollection("posts");
+  const { documents, error, isPending } = useCollection("posts");
 
   const posts =
     documents &&
@@ -21,11 +21,19 @@ export default function Search() {
       (doc) =>
         (doc.content &&
           doc.content.toLowerCase().includes(query.toLocaleLowerCase())) ||
-        doc.author.displayName.toLowerCase().includes(query.toLocaleLowerCase())
+        doc.author?.firstName
+          .toLowerCase()
+          .includes(query.toLocaleLowerCase()) ||
+        doc.author?.lastName
+          .toLowerCase()
+          .includes(query.toLocaleLowerCase()) ||
+        doc.title?.toLocaleLowerCase().includes(query.toLocaleLowerCase())
     );
 
   return (
     <>
+      {isPending && <div className="loading">Loading..</div>}
+      {error && <div className="error">{error}</div>}
       {posts && (
         <div className="search">
           <h2 className="navigation">

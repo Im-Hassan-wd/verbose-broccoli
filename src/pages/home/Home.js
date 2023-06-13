@@ -12,6 +12,7 @@ import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Create from "./Create";
 import Aside from "../../components/Aside";
+import React from "react";
 
 export default function Home({ sw }) {
   const { color } = useTheme();
@@ -43,29 +44,31 @@ export default function Home({ sw }) {
       {isPending && <div className="loading">Loading...</div>}
       {error && <p className="error">{error}</p>}
       {documents && (
-        <div className="main-content">
-          <div className="create">
-            <h1>Feed</h1>
-            <Link className="btn" to="create-post">
-              <i className="fi fi-rr-pencil"></i>
-              <span>Post a content</span>
-            </Link>
+        <React.Fragment>
+          <div className="main-content">
+            <div className="create">
+              <h1>Feed</h1>
+              <Link className="btn" to="create-post">
+                <i className="fi fi-rr-pencil"></i>
+                <span>Post a content</span>
+              </Link>
+            </div>
+            <ul className="home-list">
+              <li>
+                <button>For you</button>
+              </li>
+              <li>
+                <button>Featured</button>
+              </li>
+              <li>
+                <button>Recent</button>
+              </li>
+            </ul>
+            <PostList posts={documents} msg="No posts yet!" />
           </div>
-          <ul className="home-list">
-            <li>
-              <button>For you</button>
-            </li>
-            <li>
-              <button>Featured</button>
-            </li>
-            <li>
-              <button>Recent</button>
-            </li>
-          </ul>
-          <PostList posts={documents} msg="No posts yet!" />
-        </div>
+          {sw > 1050 && <Aside />}
+        </React.Fragment>
       )}
-      {sw > 1050 && <Aside />}
     </div>
   );
 }
