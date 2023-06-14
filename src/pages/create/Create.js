@@ -24,10 +24,7 @@ export default function Create() {
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-  const { category } = useCategorize(content);
-
-  // assign tags to post based on keywords
-  useEffect(() => {}, [category]);
+  const { category, isPending, error } = useCategorize(content);
 
   useEffect(() => {
     if (image) {
@@ -58,16 +55,15 @@ export default function Create() {
   };
 
   const handleSubmit = async (e) => {
-    // category && setTages(category.split("-"));
-    // console.log(tags);
-
+    setTages(category.split("-"));
+    console.log(tags);
     e.preventDefault();
 
     const author = {
       firstName: currentUser?.firstName,
       lastName: currentUser?.lastName,
       photoURL: currentUser?.photoURL,
-      id: currentUser?.uid,
+      id: currentUser?.id,
       headline: currentUser?.headline,
     };
 
@@ -84,13 +80,12 @@ export default function Create() {
       tags,
     };
 
-    await addDocument(post, image);
-    console.log(response);
+    // await addDocument(post, image);
     if (!response.error) {
       // resetting the fields
       // setTitle("");
-      // setContent(null);
-      // setImage("");
+      // setContent("");
+      // setImage(null);
       // history.push("/");
     }
   };

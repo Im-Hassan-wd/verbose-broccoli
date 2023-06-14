@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 
 export const useCategorize = (postContent) => {
   const [category, setCategory] = useState(null);
+  const [error, setError] = useState(null);
+  const [isPending, setIsPending] = useState(false);
 
   useEffect(async () => {
+    setIsPending(true);
+
     const formdata = new FormData();
     formdata.append("key", "603d4cd6e7612cba7091153d8a863691");
     formdata.append("txt", postContent);
@@ -23,11 +27,15 @@ export const useCategorize = (postContent) => {
 
       const data = await response.json();
 
-      setCategory(data.category_list[0].label);
+      if (data) {
+        setCategory(data.category_list[0].label);
+        setIsPending(false);
+      }
     } catch (error) {
-      // console.log(error);
+      setError(error);
+      setIsPending(false);
     }
   }, [postContent]);
 
-  return { category };
+  return { category, error, isPending };
 };

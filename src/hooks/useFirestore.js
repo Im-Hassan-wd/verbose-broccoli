@@ -64,7 +64,6 @@ export const useFirestore = (collection) => {
         // if doc include images
         // upload doc iamge
         const uploadPath = `images/${image.name}`;
-        console.log(image.name);
         const img = await storage.ref(uploadPath).put(image);
         const downloadURL = await img.ref.getDownloadURL();
 
