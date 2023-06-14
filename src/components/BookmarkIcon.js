@@ -1,4 +1,5 @@
 import { useAuthContext } from "../hooks/useAuthContext";
+import { useDocument } from "../hooks/useDocument";
 import { useFirestore } from "../hooks/useFirestore";
 import { v4 as uuid } from "uuid";
 
@@ -6,9 +7,12 @@ export default function BookmarkIcon({ post }) {
   const { addDocument } = useFirestore("bookmarks");
   const { updateDocument } = useFirestore("posts");
   const { user } = useAuthContext();
+  const { document: currentUser } = useDocument("users", user.uid);
 
+  // bookmark data
   const author = {
-    displayName: post.author.displayName,
+    firstName: post.author?.firstName,
+    lastName: post.author?.lastName,
     photoURL: post.author.photoURL,
     id: post.author.id,
     headline: post.author.headline,

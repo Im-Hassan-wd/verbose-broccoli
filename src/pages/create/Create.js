@@ -6,17 +6,14 @@ import "./Create.css";
 
 // hooks
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useCategorize } from "../../hooks/useCategorize";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useDocument } from "../../hooks/useDocument";
-import { useTheme } from "../../hooks/useTheme";
-import { useCategorize } from "../../hooks/useCategorize";
 
 export default function Create() {
   const { user } = useAuthContext();
-  const { color } = useTheme();
   const { document: currentUser } = useDocument("users", user.uid);
 
-  const localColor = localStorage.getItem("color");
   const history = useHistory();
 
   const { addDocument, response } = useFirestore("posts");
@@ -30,9 +27,7 @@ export default function Create() {
   const { category } = useCategorize(content);
 
   // assign tags to post based on keywords
-  useEffect(() => {
-    category && setTages(category.split("-"));
-  }, [category]);
+  useEffect(() => {}, [category]);
 
   useEffect(() => {
     if (image) {
@@ -63,6 +58,9 @@ export default function Create() {
   };
 
   const handleSubmit = async (e) => {
+    // category && setTages(category.split("-"));
+    // console.log(tags);
+
     e.preventDefault();
 
     const author = {
@@ -87,17 +85,19 @@ export default function Create() {
     };
 
     await addDocument(post, image);
+    console.log(response);
     if (!response.error) {
       // resetting the fields
-      setTitle("");
-      setContent(null);
-      setImage("");
-      history.push("/");
+      // setTitle("");
+      // setContent(null);
+      // setImage("");
+      // history.push("/");
     }
   };
 
   return (
     <form className="create-post" onSubmit={handleSubmit}>
+      {response.error && <div className="error">{response.error}</div>}
       {response.isPending ? (
         <button className="btn" disabled>
           Publishing...
@@ -140,7 +140,7 @@ export default function Create() {
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
-            <label htmlFor="file" role="button" tabIndex={1}>
+            <label htmlFor="file">
               <i className="fi fi-rr-picture"></i>
             </label>
             <label>

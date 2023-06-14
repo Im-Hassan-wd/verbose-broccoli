@@ -38,11 +38,16 @@ export default function Home({ sw }) {
     });
   };
 
+  if (error) return <div className="error">{error}</div>;
+
+  if (documents?.length === 0)
+    return <div className="error">Failed to load post...</div>;
+
+  if (isPending) return <div className="loading">Loading...</div>;
+
   return (
     <div className="home" onClick={updateUser}>
       {userList !== null && userList[0]?.interests.length === 0 && <Interest />}
-      {isPending && <div className="loading">Loading...</div>}
-      {error && <p className="error">{error}</p>}
       {documents && (
         <React.Fragment>
           <div className="main-content">

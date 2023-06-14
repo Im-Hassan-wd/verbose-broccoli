@@ -50,7 +50,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
             <span>Chatter</span>
           </div>
 
-          {/* <Searchbar setMobileMenu={setMobileMenu} /> */}
+          <Searchbar setMobileMenu={setMobileMenu} />
 
           <ul>
             <h4>Overview</h4>

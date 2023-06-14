@@ -27,7 +27,8 @@ export default function Search() {
         doc.author?.lastName
           .toLowerCase()
           .includes(query.toLocaleLowerCase()) ||
-        doc.title?.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+        doc.title?.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+        query.toLocaleLowerCase().includes(doc?.tags)
     );
 
   return (

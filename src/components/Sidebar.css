@@ -5,6 +5,11 @@
   background: #fff;
   min-height: 100vh;
   /* overflow-y: scroll; */
+  position: relative;
+}
+.sidebar h4 {
+  position: static;
+  top: 0px;
 }
 .sidebar .logo {
   display: flex;
@@ -86,7 +91,7 @@
 @media (max-width: 890px) {
   .sidebar {
     width: auto;
-    padding: 24px 0;
+    padding: 24px 8px;
   }
 }
 

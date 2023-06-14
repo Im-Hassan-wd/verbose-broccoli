@@ -29,14 +29,13 @@ export const useCollection = (collection, _query, _orderBy) => {
         });
 
         // update state
+        setIspending(false);
         setDocuments(results);
         setError(null);
-        setIspending(false);
       },
       (err) => {
         console.log(err.message);
         setError("failed to load posts");
-        setIspending(false);
       }
     );
 
