@@ -62,6 +62,7 @@ export default function PostList({ posts, msg, btn }) {
 
   return (
     <div className="posts">
+      {posts.length === 0 && <div className="error">{msg}</div>}
       {posts.map((post, index) => (
         <div
           className="post"

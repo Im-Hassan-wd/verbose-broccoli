@@ -73,7 +73,8 @@ button {
   background: #fff;
 }
 
-.error {
+.error,
+.msg {
   display: block;
   color: red;
   background: pink;

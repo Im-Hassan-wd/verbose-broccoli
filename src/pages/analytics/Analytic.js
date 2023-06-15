@@ -15,13 +15,17 @@ export default function Analytic() {
     ["createdAt", "desc"]
   );
 
-  documents && console.log(documents);
+  console.log(documents);
+
+  if (error) return <div className="error">{error}</div>;
+
+  if (isPending) return <div className="loading">Loading...</div>;
+
+  if (documents?.length === 0)
+    return <div className="error">No analytics to display</div>;
 
   return (
     <React.Fragment>
-      {isPending && <div className="loading">Loading...</div>}
-      {error && <div className="error">{error}</div>}
-      {documents?.length === 0 && <div>No post means no analytics</div>}
       {documents?.length > 0 && (
         <div className="analytic">
           <h3>Posts analytics</h3>
