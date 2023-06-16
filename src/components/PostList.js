@@ -76,7 +76,7 @@ export default function PostList({ posts, msg, btn }) {
                 {post.author?.firstName} {post.author?.lastName}
               </span>
               <div className="post-date">
-                <span>{post.createdAt.toDate().toDateString()}</span>
+                <span>{post.createdAt.toDate().toDateString().slice(3)}</span>
                 <span>.{post.author.headline}</span>
               </div>
             </li>

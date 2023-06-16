@@ -44,7 +44,6 @@ const firestoreReducer = (state, action) => {
 export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [isCancelled, setIsCancelled] = useState(false);
-  const { user } = useAuthContext();
 
   // collection ref
   const ref = db.collection(collection);
@@ -57,7 +56,7 @@ export const useFirestore = (collection) => {
   };
 
   // add a document
-  const addDocument = async (doc, image) => {
+  const addDocument = async (doc, image, tags) => {
     dispatch({ type: "IS_PENDING" });
     if (image) {
       try {

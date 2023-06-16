@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
-export const useCategorize = (postContent) => {
-  const [category, setCategory] = useState(null);
+export const useCategorize = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
-  useEffect(async () => {
+  const category = async (postContent) => {
     setIsPending(true);
 
     const formdata = new FormData();
@@ -26,16 +25,15 @@ export const useCategorize = (postContent) => {
       );
 
       const data = await response.json();
+      console.log(data);
 
       if (data) {
-        setCategory(data.category_list[0].label);
-        setIsPending(false);
+        return data.category_list[0].label.split("-" || ",");
       }
     } catch (error) {
-      setError(error);
-      setIsPending(false);
+      console.log(error);
     }
-  }, [postContent]);
+  };
 
   return { category, error, isPending };
 };

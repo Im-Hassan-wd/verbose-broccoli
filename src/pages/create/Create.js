@@ -19,12 +19,12 @@ export default function Create() {
   const { addDocument, response } = useFirestore("posts");
   const [add, setAdd] = useState(false);
   const [content, setContent] = useState("");
-  const [tags, setTages] = useState([]);
+  const [tags, setTags] = useState([]);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-  const { category, isPending, error } = useCategorize(content);
+  const { category } = useCategorize(content);
 
   useEffect(() => {
     if (image) {
@@ -55,9 +55,10 @@ export default function Create() {
   };
 
   const handleSubmit = async (e) => {
-    setTages(category.split("-"));
-    console.log(tags);
     e.preventDefault();
+
+    const newTags = await category(content);
+    console.log(newTags);
 
     const author = {
       firstName: currentUser?.firstName,
@@ -77,16 +78,15 @@ export default function Create() {
       expands: 0,
       views: [],
       author,
-      tags,
     };
 
-    // await addDocument(post, image);
+    await addDocument(post, image);
     if (!response.error) {
       // resetting the fields
-      // setTitle("");
-      // setContent("");
-      // setImage(null);
-      // history.push("/");
+      setTitle("");
+      setContent("");
+      setImage(null);
+      history.push("/");
     }
   };
 

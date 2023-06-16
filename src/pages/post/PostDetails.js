@@ -30,10 +30,6 @@ export default function PostDetails({ post }) {
           <i className="fi fi-rr-book-alt"></i>
           <span>{calculateReadingTime(post.content)}</span>
         </div>
-        <p
-          className="post-content"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
         {post.imageURL && (
           <img
             className="post-img post-summary-img"
@@ -41,6 +37,10 @@ export default function PostDetails({ post }) {
             alt="post thumbnail"
           />
         )}
+        <p
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
         <Reaction post={post} />
       </div>
       <div className="comment-header">

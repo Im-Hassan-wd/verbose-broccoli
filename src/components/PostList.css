@@ -143,7 +143,7 @@ div.post-date {
   }
 }
 @media (max-width: 389px) {
-  span.post-date {
+  div.post-date {
     display: block;
   }
 }
