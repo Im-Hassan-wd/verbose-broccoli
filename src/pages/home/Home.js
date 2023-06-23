@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 // styles
@@ -10,9 +11,8 @@ import { useFirestore } from "../../hooks/useFirestore";
 import { useTheme } from "../../hooks/useTheme";
 import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
-import Create from "./Create";
 import Aside from "../../components/Aside";
-import React from "react";
+import Create from "./Create";
 
 export default function Home({ sw }) {
   const { color } = useTheme();
@@ -51,8 +51,12 @@ export default function Home({ sw }) {
       {documents && (
         <React.Fragment>
           <div className="main-content">
+            <Create />
             <div className="create">
-              <h1>Feed</h1>
+              <div>
+                <h1>Feed</h1>
+                <p>Explore different content you’d love </p>
+              </div>
               <Link className="btn" to="create-post">
                 <i className="fi fi-rr-pencil"></i>
                 <span>Post a content</span>

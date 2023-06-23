@@ -18,6 +18,7 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Create from "./pages/create/Create";
 import Bookmark from "./pages/bookmark/Bookmark";
+import Landing from "./pages/landing/Landing";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -65,37 +66,40 @@ function App() {
             )}
             <Switch>
               <Route exact path="/">
+                <Landing />
+              </Route>
+              <Route path="/posts">
                 {user ? <Home sw={screenWidth} /> : <Redirect to="/login" />}
               </Route>
               <Route path="/create-post">
-                {user ? <Create /> : <Redirect to="/login" />}
+                {user ? <Create /> : <Redirect to="/" />}
               </Route>
               <Route path="/profile">
-                {user ? <Profile /> : <Redirect to="/login" />}
+                {user ? <Profile /> : <Redirect to="/" />}
               </Route>
               <Route path="/login">
                 {!user ? <Login /> : <Redirect to="/" />}
               </Route>
               <Route path="/signup">
-                {!user ? <Signup /> : <Redirect to="/" />}
+                {!user ? <Signup /> : <Redirect to="/posts" />}
               </Route>
               <Route exact path="/bookmarks">
-                {user ? <Bookmark /> : <Redirect to="/login" />}
+                {user ? <Bookmark /> : <Redirect to="/" />}
               </Route>
               <Route exact path="/posts/:id">
-                {user ? <Post /> : <Redirect to="/login" />}
+                {user ? <Post /> : <Redirect to="/" />}
               </Route>
               <Route path="/posts/:id/analytics">
-                {user ? <Analytics /> : <Redirect to="/login" />}
+                {user ? <Analytics /> : <Redirect to="/" />}
               </Route>
               <Route path="/my-posts/analytic">
-                {user ? <Analytic /> : <Redirect to="/login" />}
+                {user ? <Analytic /> : <Redirect to="/" />}
               </Route>
               <Route exact path="/settings">
-                {user ? <Settings /> : <Redirect to="/login" />}
+                {user ? <Settings /> : <Redirect to="/" />}
               </Route>
               <Route path="/search">
-                {user ? <Search /> : <Redirect to="/login" />}
+                {user ? <Search /> : <Redirect to="/" />}
               </Route>
             </Switch>
           </div>

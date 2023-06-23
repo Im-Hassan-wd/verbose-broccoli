@@ -34,6 +34,7 @@ export const useCollection = (collection, _query, _orderBy) => {
         setError(null);
       },
       (err) => {
+        setIspending(false);
         console.log(err.message);
         setError("failed to load posts");
       }

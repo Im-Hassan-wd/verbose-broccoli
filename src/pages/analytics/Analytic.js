@@ -15,8 +15,6 @@ export default function Analytic() {
     ["createdAt", "desc"]
   );
 
-  console.log(documents);
-
   if (error) return <div className="error">{error}</div>;
 
   if (isPending) return <div className="loading">Loading...</div>;

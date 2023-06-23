@@ -4,7 +4,7 @@
   width: 300px;
   background: #fff;
   min-height: 100vh;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   position: relative;
 }
 .sidebar h4 {

@@ -58,7 +58,6 @@ export default function Create() {
     e.preventDefault();
 
     const newTags = await category(content);
-    console.log(newTags);
 
     const author = {
       firstName: currentUser?.firstName,
@@ -78,6 +77,7 @@ export default function Create() {
       expands: 0,
       views: [],
       author,
+      tags: newTags,
     };
 
     await addDocument(post, image);
