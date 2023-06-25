@@ -225,4 +225,7 @@ div.edit i {
   .create-post .form-btn {
     margin-top: 16px;
   }
+  .create-post span span {
+    display: none;
+  }
 }

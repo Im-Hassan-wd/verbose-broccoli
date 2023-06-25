@@ -12,6 +12,7 @@ import { useTheme } from "../../hooks/useTheme";
 import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Aside from "../../components/Aside";
+import Loader from "../../components/Loader";
 
 export default function Home({ sw }) {
   const { color } = useTheme();
@@ -42,7 +43,7 @@ export default function Home({ sw }) {
   if (documents?.length === 0)
     return <div className="error">Failed to load post...</div>;
 
-  if (isPending) return <div className="loading">Loading...</div>;
+  if (isPending) return <Loader />;
 
   return (
     <div className="home" onClick={updateUser}>
@@ -57,7 +58,9 @@ export default function Home({ sw }) {
               </div>
               <Link className="btn" to="create-post">
                 <i className="fi fi-rr-pencil"></i>
-                <span>Post a content</span>
+                <span>
+                  Post <span>a content</span>
+                </span>
               </Link>
             </div>
             <ul className="home-list">
