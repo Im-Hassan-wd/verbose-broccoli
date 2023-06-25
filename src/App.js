@@ -19,6 +19,7 @@ import Profile from "./pages/profile/Profile";
 import Create from "./pages/create/Create";
 import Bookmark from "./pages/bookmark/Bookmark";
 import Landing from "./pages/landing/Landing";
+import Error404 from "./pages/error/Error404";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -97,6 +98,9 @@ function App() {
               </Route>
               <Route path="/search">
                 {user ? <Search /> : <Redirect to="/" />}
+              </Route>
+              <Route path="*">
+                <Error404 />
               </Route>
             </Switch>
           </div>

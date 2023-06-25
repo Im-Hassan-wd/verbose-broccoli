@@ -5,6 +5,7 @@ import "./Bookmark.css";
 import { useCollection } from "../../hooks/useCollection";
 import PostList from "../../components/PostList";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Loader from "../../components/Loader";
 
 export default function Bookmark() {
   const { user } = useAuthContext();
@@ -14,10 +15,12 @@ export default function Bookmark() {
     error,
   } = useCollection("bookmarks", ["id", "==", user.uid]);
 
+  if (isPending) return <Loader />;
+
+  if (error) return <div className="error"></div>;
+
   return (
     <div className="bookmark">
-      {isPending && <div className="loading">loading...</div>}
-      {error && <div className="error">{error}</div>}
       {bookmarks && (
         <PostList
           posts={bookmarks}

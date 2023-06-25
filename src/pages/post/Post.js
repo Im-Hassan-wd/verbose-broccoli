@@ -6,6 +6,7 @@ import { useDocument } from "../../hooks/useDocument";
 import PostList from "../../components/PostList";
 import PostDetails from "./PostDetails";
 import PostComment from "./PostComment";
+import Loader from "../../components/Loader";
 
 export default function Post() {
   const history = useHistory();
@@ -17,7 +18,7 @@ export default function Post() {
   }
 
   if (!document) {
-    return <div className="loading">Loading...</div>;
+    return <Loader />;
   }
 
   return (

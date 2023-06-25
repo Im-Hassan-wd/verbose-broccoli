@@ -1,0 +1,36 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.error-image {
+  width: 300px;
+  height: auto;
+}
+
+.error-heading {
+  font-size: 28px;
+  margin-top: 20px;
+  color: #555;
+}
+
+.error-message {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #777;
+}
+
+.home-link {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}

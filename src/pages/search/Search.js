@@ -7,6 +7,7 @@ import "./Search.css";
 // hooks and components
 import { useCollection } from "../../hooks/useCollection";
 import PostList from "../../components/PostList";
+import Loader from "../../components/Loader";
 
 export default function Search() {
   const queryString = useLocation().search;
@@ -31,10 +32,12 @@ export default function Search() {
         query.toLocaleLowerCase().includes(doc?.tags)
     );
 
+  if (isPending) return <Loader />;
+
+  if (error) return <div className="error"></div>;
+
   return (
     <>
-      {isPending && <div className="loading">Loading..</div>}
-      {error && <div className="error">{error}</div>}
       {posts && (
         <div className="search">
           <h2 className="navigation">

@@ -6,6 +6,7 @@ import { useCollection } from "../../hooks/useCollection";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import PostList from "../../components/PostList";
 import React from "react";
+import Loader from "../../components/Loader";
 
 export default function Analytic() {
   const { user } = useAuthContext();
@@ -17,7 +18,7 @@ export default function Analytic() {
 
   if (error) return <div className="error">{error}</div>;
 
-  if (isPending) return <div className="loading">Loading...</div>;
+  if (isPending) return <Loader />;
 
   if (documents?.length === 0)
     return <div className="error">No analytics to display</div>;

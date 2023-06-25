@@ -8,6 +8,7 @@ import Avatar from "../../components/Avatar";
 import Reaction from "../../components/Reaction";
 import { useDocument } from "../../hooks/useDocument";
 import { useTheme } from "../../hooks/useTheme";
+import Loader from "../../components/Loader";
 
 export default function Analytics() {
   const history = useHistory();
@@ -20,7 +21,7 @@ export default function Analytics() {
   }
 
   if (!document) {
-    return <div className="loading">Loading...</div>;
+    return <Loader />;
   }
 
   return (
