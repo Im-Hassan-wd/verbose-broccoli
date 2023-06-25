@@ -12,7 +12,6 @@ import { useTheme } from "../../hooks/useTheme";
 import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Aside from "../../components/Aside";
-import Create from "./Create";
 
 export default function Home({ sw }) {
   const { color } = useTheme();
@@ -51,7 +50,6 @@ export default function Home({ sw }) {
       {documents && (
         <React.Fragment>
           <div className="main-content">
-            <Create />
             <div className="create">
               <div>
                 <h1>Feed</h1>

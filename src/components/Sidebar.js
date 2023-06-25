@@ -9,7 +9,7 @@ import NavbarOption from "./NavbarOption";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const overviews = [
-  { icon: "circle-f", name: "Feed", to: "/" },
+  { icon: "circle-f", name: "Feed", to: "/posts" },
   { icon: "bookmark", name: "Bookmarks", to: "/bookmarks" },
   { icon: "users", name: "Team blogs", to: "/b" },
   { icon: "envelope", name: "Drafts", to: "/d" },
@@ -25,7 +25,7 @@ const tags = [
 ];
 
 const personal = [
-  { icon: "user", name: "Account", to: "/" },
+  { icon: "user", name: "Account", to: "/settings" },
   { icon: "bell", name: "Notification", to: "/bookmarks" },
 ];
 
@@ -40,11 +40,7 @@ export default function Sidebar({ screenWidth, mobileMenu, setMobileMenu }) {
     <>
       {(mobileMenu || screenWidth > 550) && (
         <div className="sidebar">
-          <div
-            className={
-              localColor ? `logo color-${localColor}` : `logo color-${color}`
-            }
-          >
+          <div className="logo">
             <i className="fi fi-sr-comment-quote"></i>
 
             <span>Chatter</span>

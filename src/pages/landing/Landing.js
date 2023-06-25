@@ -9,6 +9,10 @@ import "./Landing.css";
 // components
 import Card from "./components/Card";
 
+// hooks
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useLogout } from "../../hooks/useLogout";
+
 const cardContents = [
   {
     image: Analytic,
@@ -27,6 +31,9 @@ const cardContents = [
   },
 ];
 export default function Landing() {
+  const { user } = useAuthContext();
+  const { logout, isPending, error } = useLogout();
+
   return (
     <div className="landing">
       <nav>
@@ -45,17 +52,32 @@ export default function Landing() {
             <Link to="#">Contact</Link>
           </li>
           <li>
-            <Link to="/login">Blogs</Link>
+            <Link to="/posts">Blogs</Link>
           </li>
         </ul>
-        <div className="btns">
-          <Link className="btn btn-login" to="/login">
-            Log in
-          </Link>
-          <Link className="btn" to="/signup">
-            Sign up
-          </Link>
-        </div>
+        {!user && (
+          <div className="btns">
+            <Link className="btn btn-login" to="/login">
+              Log in
+            </Link>
+            <Link className="btn" to="/signup">
+              Sign up
+            </Link>
+          </div>
+        )}
+        {user && (
+          <div className="btns">
+            {isPending ? (
+              <button className="btn" disabled>
+                Logging out...
+              </button>
+            ) : (
+              <button className="btn" onClick={logout}>
+                Logout
+              </button>
+            )}
+          </div>
+        )}
       </nav>
 
       <section id="hero">

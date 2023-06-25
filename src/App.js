@@ -68,17 +68,14 @@ function App() {
               <Route exact path="/">
                 <Landing />
               </Route>
-              <Route path="/posts">
+              <Route exact path="/posts">
                 {user ? <Home sw={screenWidth} /> : <Redirect to="/login" />}
               </Route>
               <Route path="/create-post">
                 {user ? <Create /> : <Redirect to="/" />}
               </Route>
-              <Route path="/profile">
-                {user ? <Profile /> : <Redirect to="/" />}
-              </Route>
               <Route path="/login">
-                {!user ? <Login /> : <Redirect to="/" />}
+                {!user ? <Login /> : <Redirect to="/posts" />}
               </Route>
               <Route path="/signup">
                 {!user ? <Signup /> : <Redirect to="/posts" />}

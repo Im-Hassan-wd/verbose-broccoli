@@ -1,3 +1,11 @@
+.landing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background: var(--smoke);
+}
 .landing nav {
   display: flex;
   justify-content: space-between;

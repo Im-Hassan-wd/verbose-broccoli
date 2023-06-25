@@ -76,8 +76,6 @@ p.join {
 }
 /* forms */
 .auth-form .input-div {
-  display: flex;
-  align-items: center;
   padding: 10px;
   margin-top: 24px;
   display: flex;
@@ -85,6 +83,16 @@ p.join {
   gap: 10px;
   border-radius: 5px;
   border: 2px solid #f6f7fc;
+}
+.auth-form .input-div:nth-child(3) {
+  display: block;
+  text-align: left;
+  border: none;
+  padding: 10px 0;
+}
+.auth-form .input-div:nth-child(3) label {
+  margin-bottom: 8px;
+  display: inline-block;
 }
 .auth-form .input-div input {
   border: none;

@@ -24,7 +24,7 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
       </div>
       <ul>
         <li>
-          <NavLink className="navlink" exact to="/">
+          <NavLink className="navlink" exact to="/posts">
             Feeds
           </NavLink>
         </li>
@@ -36,10 +36,10 @@ export default function Navbar({ screenWidth, mobileMenu, setMobileMenu }) {
       </ul>
       <div className="more">
         {screenWidth > 404 && <NavbarOption />}
-        <Link to="/profile" className="user">
+        <div className="user">
           <span>{user.displayName}</span>
           <Avatar src={user.photoURL} />
-        </Link>
+        </div>
       </div>
     </nav>
   );

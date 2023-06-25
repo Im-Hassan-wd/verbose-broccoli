@@ -1,26 +1,39 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSignup } from "../../hooks/useSignup";
-import GoogleButton from "../../components/GoogleButton";
+import Select from "react-select";
 
 // styles
 import "./Signup.css";
+
+// hooks & components
 import { useGoogle } from "../../hooks/useGoogle";
+import { useSignup } from "../../hooks/useSignup";
+import GoogleButton from "../../components/GoogleButton";
+
+const userCategories = [
+  { value: "writer", label: "Writer" },
+  { value: "reader", label: "Reader" },
+];
 
 export default function Signup() {
+  // states
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [textType, setTextType] = useState(false);
   const [thumbnail, setThumbnail] = useState(null);
+  const [userCategory, setUserCategory] = useState("");
+
   const [thumbnailError, setThumbnailError] = useState(null);
+  const [textType, setTextType] = useState(false);
+
+  // functions
   const { signup, isPending, error } = useSignup();
   const { googleSignUp, signupError, isPending: signupPending } = useGoogle();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(firstName, lastName, email, password, thumbnail);
+    signup(firstName, lastName, email, password, thumbnail, userCategory);
   };
 
   const handleInputType = (e) => {
@@ -101,6 +114,14 @@ export default function Signup() {
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
               placeholder="Last name"
+            />
+          </div>
+
+          <div className="input-div">
+            <label className="join">You rare joining as?</label>
+            <Select
+              options={userCategories}
+              onChange={(option) => setUserCategory(option.value)}
             />
           </div>
 
