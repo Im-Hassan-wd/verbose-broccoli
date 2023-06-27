@@ -15,7 +15,7 @@ export default function PostDetails({ post }) {
         <div className="info">
           <Avatar src={post.author.photoURL} />
           <li>
-            <span>
+            <span className="me">
               {post.author?.firstName} {post.author?.lastName}
             </span>
             <div className="post-date">

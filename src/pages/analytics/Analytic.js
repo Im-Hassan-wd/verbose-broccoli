@@ -16,6 +16,16 @@ export default function Analytic() {
     ["createdAt", "desc"]
   );
 
+  const now = new Date();
+
+  const impressions =
+    documents &&
+    documents.forEach((doc) => {
+      return doc.views.length;
+    });
+
+  console.log(impressions);
+
   if (error) return <div className="error">{error}</div>;
 
   if (isPending) return <Loader />;
@@ -29,8 +39,8 @@ export default function Analytic() {
         <div className="analytic">
           <h3>Posts analytics</h3>
           <div className="period">
-            <span className="date">May 2023,</span>
-            <span className="duration">25 days so far</span>
+            <span className="date">{now.toDateString().slice(3)},</span>
+            <span className="duration">{now.getDate()} days so far</span>
           </div>
           <div className="highlight">Posts highlights</div>
           <span className="date">Top posts</span>
@@ -39,7 +49,9 @@ export default function Analytic() {
 
           <div className="summary">
             <h3>Posts summary</h3>
-            <span className="duration">May 2023 summary</span>
+            <span className="duration">
+              {now.toDateString().slice(3)} summary
+            </span>
           </div>
           <ul>
             <li>
@@ -48,7 +60,7 @@ export default function Analytic() {
             </li>
             <li>
               <span>Post impressions</span>
-              <p>2.98k views</p>
+              <p>{impressions} views</p>
             </li>
             <li>
               <span>Post visits</span>

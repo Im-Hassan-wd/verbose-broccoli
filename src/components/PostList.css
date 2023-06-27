@@ -78,10 +78,10 @@
   margin-right: auto;
   list-style: none;
 }
-.post span,
-.post-summary span {
+.post span.me,
+.post-summary span.me {
   display: block;
-  font-size: 12px;
+  font-size: 19px;
 }
 .post .avatar,
 .post-summary .avatar {
