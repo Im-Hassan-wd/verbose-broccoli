@@ -43,7 +43,7 @@ export default function Confirm({
       }
     }
     if (!postResponse.error) {
-      history.push("/");
+      history.push("/posts");
       console.log("post deleted successfully");
     }
   };

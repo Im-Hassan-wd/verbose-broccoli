@@ -57,7 +57,7 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newTags = await category(content);
+    // const newTags = await category(content);
 
     const author = {
       firstName: currentUser?.firstName,
@@ -77,7 +77,6 @@ export default function Create() {
       expands: 0,
       views: [],
       author,
-      tags: newTags,
     };
 
     await addDocument(post, image);
@@ -86,7 +85,7 @@ export default function Create() {
       setTitle("");
       setContent("");
       setImage(null);
-      history.push("/");
+      history.push("/posts");
     }
   };
 
@@ -111,7 +110,10 @@ export default function Create() {
               type="text"
               required
               placeholder="Title"
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                setTags([e.target.title]);
+              }}
               value={title}
             />
             {image && (
