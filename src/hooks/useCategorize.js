@@ -25,7 +25,7 @@ export const useCategorize = () => {
       );
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
 
       if (data) {
         return data.category_list[0].label.split("-" || ",");

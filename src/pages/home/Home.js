@@ -13,6 +13,7 @@ import PostList from "../../components/PostList";
 import Interest from "../../components/Interest";
 import Aside from "../../components/Aside";
 import Loader from "../../components/Loader";
+import { useDocument } from "../../hooks/useDocument";
 
 export default function Home({ sw }) {
   const { color } = useTheme();
@@ -21,6 +22,7 @@ export default function Home({ sw }) {
   const { user } = useAuthContext();
   const { updateDocument } = useFirestore("users");
   const { documents: users } = useCollection("users");
+  const { document: currentUser } = useDocument("users", user.uid);
   const { documents, error, isPending } = useCollection("posts", "", [
     "createdAt",
     "desc",

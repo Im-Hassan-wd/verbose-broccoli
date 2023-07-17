@@ -246,12 +246,6 @@ footer li {
 }
 
 /* responsive styles  */
-@media (min-width: 1840px) {
-  .landing {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
 @media (max-width: 712px) {
   .landing .logo span {
     display: none;
